@@ -12,6 +12,7 @@ Each arc is represented by a pipeline job, and reading-order arrows are modeled 
   - [Table of Contents](#table-of-contents)
   - [Personal context](#personal-context)
   - [Core idea](#core-idea)
+  - [Pipeline file organization](#pipeline-file-organization)
   - [Mermaid graph](#mermaid-graph)
   - [Local GitLab Runner setup (`local` tag)](#local-gitlab-runner-setup-local-tag)
   - [How to mark arcs as read](#how-to-mark-arcs-as-read)
@@ -41,6 +42,22 @@ My suggestion is to start at one of the major crossovers depending on how many y
 - A job only passes if its `READ_*` variable is set to `1`.
 - Jobs also depend on previous arcs, so you cannot progress without completing prerequisites.
 - All jobs are tagged with `local`, so they run on a runner with that tag.
+
+----
+
+## Pipeline file organization
+
+The `.gitlab-ci.yml` is grouped by reading branches to keep dependencies easier to scan:
+
+- `Core timeline`
+- `Batman branch`
+- `Superman branch`
+- `Green Lantern branch`
+- `Event spine`
+- `Swamp Thing branch`
+- `Animal Man branch`
+
+When adding a new arc, place it in the matching section and define `needs` as a multiline list for readability.
 
 ----
 
@@ -175,6 +192,7 @@ flowchart TD
     flash_flashpoint --> swamp_thing_raise_them_bones
     animal_man_the_hunt --> animal_man_animal_vs_man["Animal Man: Animal vs. Man"]
     swamp_thing_raise_them_bones --> animal_man_animal_vs_man
+    swamp_thing_by_raise_them_bones --> swamp_thing_family_tree["Swamp Thing: Family Tree"]
   end
 ```
 
