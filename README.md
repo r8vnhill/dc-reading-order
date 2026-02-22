@@ -93,6 +93,7 @@ flowchart TD
     swamp_thing_earth_to_earth --> swamp_thing_reunion["Swamp Thing: Reunion"]
 
     batman_hush --> identity_crisis["Identity Crisis"]
+    grant_morrisons_animal_man --> identity_crisis
   end
 
   subgraph pre_infinite_crisis["Pre Infinite Crisis"]
