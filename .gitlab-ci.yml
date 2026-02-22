@@ -141,7 +141,7 @@ day_of_judgment:
 identity_crisis:
   extends: .arc_job
   needs:
-    - batman_a_death_in_the_family
+    - batman_a_lonely_place_of_dying
     - day_of_judgment
   variables:
     ARC_VAR: READ_IDENTITY_CRISIS
@@ -275,3 +275,11 @@ blackest_night:
   variables:
     ARC_VAR: READ_BLACKEST_NIGHT
     ARC_NAME: "Blackest Night"
+
+# Batman: A Lonely Place of Dying
+batman_a_lonely_place_of_dying:
+  extends: .arc_job
+  needs: [batman_a_death_in_the_family]
+  variables:
+    ARC_VAR: READ_BATMAN_A_LONELY_PLACE_OF_DYING
+    ARC_NAME: "Batman: A Lonely Place of Dying"

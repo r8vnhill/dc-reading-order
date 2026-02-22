@@ -100,6 +100,7 @@ flowchart TD
   batman_the_long_halloween --> batman_dark_victory["Batman: Dark Victory"]
   batman_dark_victory --> batman_the_killing_joke["Batman: The Killing Joke"]
   batman_the_killing_joke --> batman_a_death_in_the_family["Batman: A Death in the Family"]
+  batman_a_death_in_the_family --> batman_a_lonely_place_of_dying["Batman: A Lonely Place of Dying"]
 
   the_death_of_superman --> rise_of_the_supermen["Rise of the Supermen"]
   rise_of_the_supermen --> the_return_of_superman["The Return of Superman"]
@@ -111,7 +112,7 @@ flowchart TD
   zero_hour --> the_final_night["The Final Night"]
   the_final_night --> day_of_judgment["Day of Judgment"]
 
-  batman_a_death_in_the_family --> identity_crisis["Identity Crisis"]
+  batman_a_lonely_place_of_dying --> identity_crisis["Identity Crisis"]
   day_of_judgment --> identity_crisis
 
   identity_crisis --> villains_united["Villains United"]
