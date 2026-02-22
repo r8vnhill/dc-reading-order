@@ -375,3 +375,27 @@ brightest_day:
   variables:
     ARC_VAR: READ_BRIGHTEST_DAY
     ARC_NAME: "Brightest Day"
+
+# Batman and Robin
+batman_and_robin:
+  extends: .arc_job
+  needs: [batman_battle_for_the_cowl]
+  variables:
+    ARC_VAR: READ_BATMAN_AND_ROBIN
+    ARC_NAME: "Batman and Robin (1-12)"
+
+# Batman: Battle for the Cowl
+batman_battle_for_the_cowl:
+  extends: .arc_job
+  needs: [final_crisis]
+  variables:
+    ARC_VAR: READ_BATMAN_BATTLE_FOR_THE_COWL
+    ARC_NAME: "Batman: Battle for the Cowl"
+
+# Return of Bruce Wayne
+batman_return_of_bruce_wayne:
+  extends: .arc_job
+  needs: [batman_and_robin]
+  variables:
+    ARC_VAR: READ_BATMAN_RETURN_OF_BRUCE_WAYNE
+    ARC_NAME: "Return of Bruce Wayne"

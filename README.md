@@ -154,6 +154,9 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_SINESTRO_CORPS_WAR`
 - `READ_FINAL_CRISIS`
 - `READ_FLASH_REBIRTH`
+- `READ_BATMAN_AND_ROBIN`
+- `READ_BATMAN_BATTLE_FOR_THE_COWL`
+- `READ_BATMAN_RETURN_OF_BRUCE_WAYNE`
 - `READ_WAR_OF_LIGHT`
 - `READ_BLACKEST_NIGHT`
 - `READ_BRIGHTEST_DAY`
@@ -162,7 +165,7 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 
 ## Note
 
-The pipeline is based on the attached diagram and currently extends it with additional Batman branches (`Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`), plus `The Flash: Rebirth` and `Brightest Day`.
+The pipeline is based on the attached diagram and currently extends it with additional Batman branches (`Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`), plus `The Flash: Rebirth` and `Brightest Day`.
 
 Key convergence points are:
 
@@ -248,6 +251,9 @@ flowchart TD
   batman_rip --> final_crisis
 
   final_crisis --> flash_rebirth["The Flash: Rebirth"]
+  final_crisis --> batman_and_robin["Batman and Robin"]
+  final_crisis --> batman_battle_for_the_cowl["Batman: Battle for the Cowl"]
+  batman_and_robin --> batman_return_of_bruce_wayne["Return of Bruce Wayne"]
   final_crisis --> war_of_light["War of Light"]
   war_of_light --> blackest_night["Blackest Night"]
   flash_rebirth --> blackest_night
