@@ -64,34 +64,36 @@ flowchart TD
   swamp_thing_a_murder_of_crows --> swamp_thing_earth_to_earth["Swamp Thing: Earth to Earth"]
   swamp_thing_earth_to_earth --> swamp_thing_reunion["Swamp Thing: Reunion"]
 
-  crisis_on_infinite_earths --> batman_year_one["Batman: Year One"]
-  crisis_on_infinite_earths --> the_death_of_superman["The Death of Superman"]
-  crisis_on_infinite_earths --> green_lantern_emerald_dawn["Green Lantern: Emerald Dawn"]
+  subgraph pre_identity_crisis["Pre Identity Crisis"]
+    crisis_on_infinite_earths --> batman_year_one["Batman: Year One"]
+    crisis_on_infinite_earths --> the_death_of_superman["The Death of Superman"]
+    crisis_on_infinite_earths --> green_lantern_emerald_dawn["Green Lantern: Emerald Dawn"]
 
-  batman_year_one --> batman_haunted_knight["Batman: Haunted Knight"]
-  batman_haunted_knight --> batman_the_long_halloween["Batman: The Long Halloween"]
-  batman_the_long_halloween --> batman_dark_victory["Batman: Dark Victory"]
-  batman_dark_victory --> batman_the_killing_joke["Batman: The Killing Joke"]
-  batman_the_killing_joke --> arkham_asylum_serious_house["Arkham Asylum: A Serious House on Serious Earth"]
-  batman_the_killing_joke --> batman_gothic["Batman: Gothic"]
-  arkham_asylum_serious_house --> batman_a_death_in_the_family["Batman: A Death in the Family"]
-  batman_gothic --> batman_a_death_in_the_family
-  batman_a_death_in_the_family --> batman_a_lonely_place_of_dying["Batman: A Lonely Place of Dying"]
-  batman_a_lonely_place_of_dying --> batman_hush["Batman: Hush"]
+    batman_year_one --> batman_haunted_knight["Batman: Haunted Knight"]
+    batman_haunted_knight --> batman_the_long_halloween["Batman: The Long Halloween"]
+    batman_the_long_halloween --> batman_dark_victory["Batman: Dark Victory"]
+    batman_dark_victory --> batman_the_killing_joke["Batman: The Killing Joke"]
+    batman_the_killing_joke --> arkham_asylum_serious_house["Arkham Asylum: A Serious House on Serious Earth"]
+    batman_the_killing_joke --> batman_gothic["Batman: Gothic"]
+    arkham_asylum_serious_house --> batman_a_death_in_the_family["Batman: A Death in the Family"]
+    batman_gothic --> batman_a_death_in_the_family
+    batman_a_death_in_the_family --> batman_a_lonely_place_of_dying["Batman: A Lonely Place of Dying"]
+    batman_a_lonely_place_of_dying --> batman_hush["Batman: Hush"]
 
-  the_death_of_superman --> rise_of_the_supermen["Rise of the Supermen"]
-  rise_of_the_supermen --> the_return_of_superman["The Return of Superman"]
+    the_death_of_superman --> rise_of_the_supermen["Rise of the Supermen"]
+    rise_of_the_supermen --> the_return_of_superman["The Return of Superman"]
 
-  the_return_of_superman --> green_lantern_emerald_twilight["Green Lantern: Emerald Twilight"]
-  green_lantern_emerald_dawn --> green_lantern_emerald_twilight
-  green_lantern_emerald_twilight --> green_lantern_a_new_dawn["Green Lantern: A New Dawn"]
-  green_lantern_a_new_dawn --> zero_hour["Zero Hour"]
-  zero_hour --> the_final_night["The Final Night"]
-  the_final_night --> day_of_judgment["Day of Judgment"]
+    the_return_of_superman --> green_lantern_emerald_twilight["Green Lantern: Emerald Twilight"]
+    green_lantern_emerald_dawn --> green_lantern_emerald_twilight
+    green_lantern_emerald_twilight --> green_lantern_a_new_dawn["Green Lantern: A New Dawn"]
+    green_lantern_a_new_dawn --> zero_hour["Zero Hour"]
+    zero_hour --> the_final_night["The Final Night"]
+    the_final_night --> day_of_judgment["Day of Judgment"]
 
-  batman_hush --> identity_crisis["Identity Crisis"]
-  day_of_judgment --> identity_crisis
-  swamp_thing_reunion --> identity_crisis
+    batman_hush --> identity_crisis["Identity Crisis"]
+    day_of_judgment --> identity_crisis
+    swamp_thing_reunion --> identity_crisis
+  end
 
   identity_crisis --> villains_united["Villains United"]
   identity_crisis --> omac_project["OMAC Project"]
