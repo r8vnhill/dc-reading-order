@@ -187,7 +187,7 @@ rann_thanagar_war:
 
 green_lantern_rebirth:
   extends: .arc_job
-  needs: [identity_crisis]
+  needs: [identity_crisis, day_of_judgment]
   variables:
     ARC_VAR: READ_GREEN_LANTERN_REBIRTH
     ARC_NAME: "Green Lantern: Rebirth"
@@ -221,7 +221,7 @@ fifty_two:
 
 green_lantern_secret_origin:
   extends: .arc_job
-  needs: [infinite_crisis]
+  needs: [infinite_crisis, green_lantern_rebirth]
   variables:
     ARC_VAR: READ_GREEN_LANTERN_SECRET_ORIGIN
     ARC_NAME: "Green Lantern: Secret Origin"
@@ -276,7 +276,7 @@ final_crisis:
 
 war_of_light:
   extends: .arc_job
-  needs: [final_crisis]
+  needs: [final_crisis, sinestro_corps_war]
   variables:
     ARC_VAR: READ_WAR_OF_LIGHT
     ARC_NAME: "War of Light"
@@ -307,7 +307,7 @@ batman_hush:
 # Batman: Under the Hood
 batman_under_the_hood:
   extends: .arc_job
-  needs: [identity_crisis]
+  needs: [identity_crisis, batman_hush]
   variables:
     ARC_VAR: READ_BATMAN_UNDER_THE_HOOD
     ARC_NAME: "Batman: Under the Hood"
@@ -315,7 +315,7 @@ batman_under_the_hood:
 # Batman: Face the Face
 batman_face_the_face:
   extends: .arc_job
-  needs: [infinite_crisis]
+  needs: [infinite_crisis, batman_under_the_hood]
   variables:
     ARC_VAR: READ_BATMAN_FACE_THE_FACE
     ARC_NAME: "Batman: Face the Face"
@@ -395,7 +395,7 @@ batman_and_robin:
 # Batman: Battle for the Cowl
 batman_battle_for_the_cowl:
   extends: .arc_job
-  needs: [final_crisis]
+  needs: [final_crisis, batman_rip]
   variables:
     ARC_VAR: READ_BATMAN_BATTLE_FOR_THE_COWL
     ARC_NAME: "Batman: Battle for the Cowl"
@@ -411,7 +411,7 @@ batman_return_of_bruce_wayne:
 # Flash: Flashpoint
 flash_flashpoint:
   extends: .arc_job
-  needs: [batman_return_of_bruce_wayne, brightest_day]
+  needs: [batman_return_of_bruce_wayne, brightest_day, flash_rebirth]
   variables:
     ARC_VAR: READ_FLASH_FLASHPOINT
     ARC_NAME: "Flash: Flashpoint"

@@ -93,6 +93,7 @@ flowchart TD
   identity_crisis --> day_of_vengeance["Day of Vengeance"]
   identity_crisis --> rann_thanagar_war["Rann-Thanagar War"]
   identity_crisis --> green_lantern_rebirth["Green Lantern: Rebirth"]
+  day_of_judgment --> green_lantern_rebirth
 
   villains_united --> infinite_crisis["Infinite Crisis"]
   omac_project --> infinite_crisis
@@ -103,7 +104,9 @@ flowchart TD
   infinite_crisis --> one_year_later["One Year Later"]
   infinite_crisis --> fifty_two["52"]
   infinite_crisis --> green_lantern_secret_origin["Green Lantern: Secret Origin"]
+  green_lantern_rebirth --> green_lantern_secret_origin
   infinite_crisis --> batman_face_the_face["Batman: Face the Face"]
+  batman_under_the_hood --> batman_face_the_face
   batman_face_the_face --> batman_and_son["Batman and Son"]
   batman_and_son --> batman_resurrection_of_ras_al_ghul["Batman: The Resurrection of Ra's al Ghul"]
   batman_resurrection_of_ras_al_ghul --> batman_the_black_glove["Batman: The Black Glove"]
@@ -129,18 +132,22 @@ flowchart TD
 
   final_crisis --> flash_rebirth["The Flash: Rebirth"]
   final_crisis --> batman_battle_for_the_cowl["Batman: Battle for the Cowl"]
+  batman_rip --> batman_battle_for_the_cowl
   batman_battle_for_the_cowl --> batman_and_robin["Batman and Robin"]
   batman_and_robin --> batman_return_of_bruce_wayne["Return of Bruce Wayne"]
   final_crisis --> war_of_light["War of Light"]
+  sinestro_corps_war --> war_of_light
   war_of_light --> blackest_night["Blackest Night"]
   flash_rebirth --> blackest_night
   blackest_night --> brightest_day["Brightest Day"]
   blackest_night --> batman_return_of_bruce_wayne
   batman_return_of_bruce_wayne --> flash_flashpoint["Flash: Flashpoint"]
   brightest_day --> flash_flashpoint
+  flash_rebirth --> flash_flashpoint
 
   batman_under_the_hood["Batman: Under the Hood"] --> infinite_crisis
   identity_crisis --> batman_under_the_hood
+  batman_hush --> batman_under_the_hood
 ```
 
 ----
