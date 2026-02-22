@@ -91,6 +91,7 @@ flowchart TD
     swamp_thing_the_curse --> swamp_thing_a_murder_of_crows["Swamp Thing: A Murder of Crows"]
     swamp_thing_a_murder_of_crows --> swamp_thing_earth_to_earth["Swamp Thing: Earth to Earth"]
     swamp_thing_earth_to_earth --> swamp_thing_reunion["Swamp Thing: Reunion"]
+    swamp_thing_reunion --> swamp_thing_by_brian_k_vaughan["Swamp Thing by Brian K. Vaughan"]
 
     batman_hush --> identity_crisis["Identity Crisis"]
     grant_morrisons_animal_man --> identity_crisis
@@ -170,6 +171,10 @@ flowchart TD
     flash_rebirth --> flash_flashpoint
     grant_morrisons_animal_man --> animal_man_the_hunt["Animal Man: The Hunt"]
     flash_flashpoint --> animal_man_the_hunt["Animal Man: The Hunt"]
+    swamp_thing_by_brian_k_vaughan --> swamp_thing_raise_them_bones["Swamp Thing: Raise Them Bones"]
+    flash_flashpoint --> swamp_thing_raise_them_bones
+    animal_man_the_hunt --> animal_man_animal_vs_man["Animal Man: Animal vs. Man"]
+    swamp_thing_raise_them_bones --> animal_man_animal_vs_man
   end
 ```
 
@@ -301,12 +306,15 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_FLASH_FLASHPOINT`
 - `READ_GRANT_MORRISONS_ANIMAL_MAN`
 - `READ_ANIMAL_MAN_THE_HUNT`
+- `READ_SWAMP_THING_BY_BRIAN_K_VAUGHAN`
+- `READ_SWAMP_THING_RAISE_THEM_BONES`
+- `READ_ANIMAL_MAN_ANIMAL_VS_MAN`
 
 ----
 
 ## Note
 
-The pipeline is based on the attached diagram and currently extends it with additional branches (`Roots of the Swamp Thing` plus an Alan Moore-era Swamp Thing run, plus Batman-heavy arcs such as `Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`), plus `The Flash: Rebirth`, `Brightest Day`, `Flashpoint`, `Grant Morrison's Animal Man`, and `Animal Man: The Hunt`.
+The pipeline is based on the attached diagram and currently extends it with additional branches (`Roots of the Swamp Thing` plus an Alan Moore-era Swamp Thing run, plus Batman-heavy arcs such as `Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`), plus `The Flash: Rebirth`, `Brightest Day`, `Flashpoint`, `Grant Morrison's Animal Man`, `Animal Man: The Hunt`, `Swamp Thing by Brian K. Vaughan`, `Swamp Thing: Raise Them Bones`, and `Animal Man: Animal vs. Man`.
 
 Key convergence points are:
 

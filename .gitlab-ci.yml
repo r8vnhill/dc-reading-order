@@ -480,3 +480,27 @@ grant_morrisons_animal_man:
   variables:
     ARC_VAR: READ_GRANT_MORRISONS_ANIMAL_MAN
     ARC_NAME: "Grant Morrison's Animal Man"
+
+# Animal Man: Animal vs. Man
+animal_man_animal_vs_man:
+  extends: .arc_job
+  needs: [animal_man_the_hunt, swamp_thing_raise_them_bones]
+  variables:
+    ARC_VAR: READ_ANIMAL_MAN_ANIMAL_VS_MAN
+    ARC_NAME: "Animal Man: Animal vs. Man"
+
+# Swamp Thing: Raise Them Bones
+swamp_thing_raise_them_bones:
+  extends: .arc_job
+  needs: [swamp_thing_by_brian_k_vaughan, flash_flashpoint]
+  variables:
+    ARC_VAR: READ_SWAMP_THING_RAISE_THEM_BONES
+    ARC_NAME: "Swamp Thing: Raise Them Bones"
+
+# Swamp Thing by Brian K. Vaughan
+swamp_thing_by_brian_k_vaughan:
+  extends: .arc_job
+  needs: [swamp_thing_reunion]
+  variables:
+    ARC_VAR: READ_SWAMP_THING_BY_BRIAN_K_VAUGHAN
+    ARC_NAME: "Swamp Thing by Brian K. Vaughan"
