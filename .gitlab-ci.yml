@@ -261,7 +261,7 @@ final_crisis:
     - seven_soldiers_of_victory
     - death_of_the_new_gods
     - sinestro_corps_war
-    - batman_resurrection_of_ras_al_ghul
+    - batman_rip
   variables:
     ARC_VAR: READ_FINAL_CRISIS
     ARC_NAME: "Final Crisis"
@@ -343,3 +343,19 @@ batman_resurrection_of_ras_al_ghul:
   variables:
     ARC_VAR: READ_BATMAN_RESURRECTION_OF_RAS_AL_GHUL
     ARC_NAME: "Batman: The Resurrection of Ra's al Ghul"
+
+# Batman: The Black Glove
+batman_the_black_glove:
+  extends: .arc_job
+  needs: [batman_resurrection_of_ras_al_ghul]
+  variables:
+    ARC_VAR: READ_BATMAN_THE_BLACK_GLOVE
+    ARC_NAME: "Batman: The Black Glove"
+
+# Batman R.I.P.
+batman_rip:
+  extends: .arc_job
+  needs: [batman_the_black_glove]
+  variables:
+    ARC_VAR: READ_BATMAN_RIP
+    ARC_NAME: "Batman R.I.P."

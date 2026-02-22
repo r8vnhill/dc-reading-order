@@ -146,6 +146,8 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_BATMAN_FACE_THE_FACE`
 - `READ_BATMAN_AND_SON`
 - `READ_BATMAN_RESURRECTION_OF_RAS_AL_GHUL`
+- `READ_BATMAN_THE_BLACK_GLOVE`
+- `READ_BATMAN_RIP`
 - `READ_COUNTDOWN`
 - `READ_SEVEN_SOLDIERS_OF_VICTORY`
 - `READ_DEATH_OF_THE_NEW_GODS`
@@ -158,7 +160,7 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 
 ## Note
 
-The pipeline is based on the attached diagram and currently extends it with additional Batman branches (`Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`).
+The pipeline is based on the attached diagram and currently extends it with additional Batman branches (`Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`).
 
 Key convergence points are:
 
@@ -222,6 +224,8 @@ flowchart TD
   infinite_crisis --> batman_face_the_face["Batman: Face the Face"]
   batman_face_the_face --> batman_and_son["Batman and Son"]
   batman_and_son --> batman_resurrection_of_ras_al_ghul["Batman: The Resurrection of Ra's al Ghul"]
+  batman_resurrection_of_ras_al_ghul --> batman_the_black_glove["Batman: The Black Glove"]
+  batman_the_black_glove --> batman_rip["Batman R.I.P."]
 
   one_year_later --> countdown["Countdown"]
   fifty_two --> countdown
@@ -239,7 +243,7 @@ flowchart TD
   seven_soldiers_of_victory --> final_crisis
   death_of_the_new_gods --> final_crisis
   sinestro_corps_war --> final_crisis
-  batman_resurrection_of_ras_al_ghul --> final_crisis
+  batman_rip --> final_crisis
 
   final_crisis --> war_of_light["War of Light"]
   war_of_light --> blackest_night["Blackest Night"]
