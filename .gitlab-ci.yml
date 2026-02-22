@@ -152,6 +152,7 @@ identity_crisis:
   needs:
     - batman_hush
     - day_of_judgment
+    - swamp_thing_reunion
   variables:
     ARC_VAR: READ_IDENTITY_CRISIS
     ARC_NAME: "Identity Crisis"
@@ -414,3 +415,51 @@ flash_flashpoint:
   variables:
     ARC_VAR: READ_FLASH_FLASHPOINT
     ARC_NAME: "Flash: Flashpoint"
+
+# Saga of the Swamp Thing
+saga_of_the_swamp_thing:
+  extends: .arc_job
+  needs: [crisis_on_infinite_earths, roots_of_the_swamp_thing]
+  variables:
+    ARC_VAR: READ_SAGA_OF_THE_SWAMP_THING
+    ARC_NAME: "Saga of the Swamp Thing"
+
+# Swamp Thing: Love and Death
+swamp_thing_love_and_death:
+  extends: .arc_job
+  needs: [saga_of_the_swamp_thing]
+  variables:
+    ARC_VAR: READ_SWAMP_THING_LOVE_AND_DEATH
+    ARC_NAME: "Swamp Thing: Love and Death"
+
+# Swamp Thing: The Curse
+swamp_thing_the_curse:
+  extends: .arc_job
+  needs: [swamp_thing_love_and_death]
+  variables:
+    ARC_VAR: READ_SWAMP_THING_THE_CURSE
+    ARC_NAME: "Swamp Thing: The Curse"
+
+# Swamp Thing: A Murder of Crows
+swamp_thing_a_murder_of_crows:
+  extends: .arc_job
+  needs: [swamp_thing_the_curse]
+  variables:
+    ARC_VAR: READ_SWAMP_THING_A_MURDER_OF_CROWS
+    ARC_NAME: "Swamp Thing: A Murder of Crows"
+
+# Swamp Thing: Earth to Earth
+swamp_thing_earth_to_earth:
+  extends: .arc_job
+  needs: [swamp_thing_a_murder_of_crows]
+  variables:
+    ARC_VAR: READ_SWAMP_THING_EARTH_TO_EARTH
+    ARC_NAME: "Swamp Thing: Earth to Earth"
+
+# Swamp Thing: Reunion
+swamp_thing_reunion:
+  extends: .arc_job
+  needs: [swamp_thing_earth_to_earth]
+  variables:
+    ARC_VAR: READ_SWAMP_THING_REUNION
+    ARC_NAME: "Swamp Thing: Reunion"

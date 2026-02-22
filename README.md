@@ -12,13 +12,13 @@ Each arc is represented by a pipeline job, and reading-order arrows are modeled 
   - [Table of Contents](#table-of-contents)
   - [Personal context](#personal-context)
   - [Core idea](#core-idea)
+  - [Mermaid graph](#mermaid-graph)
   - [Local GitLab Runner setup (`local` tag)](#local-gitlab-runner-setup-local-tag)
   - [How to mark arcs as read](#how-to-mark-arcs-as-read)
   - [Quick example](#quick-example)
   - [Recommended workflow](#recommended-workflow)
   - [Reading variables](#reading-variables)
   - [Note](#note)
-  - [Mermaid graph](#mermaid-graph)
 
 ----
 
@@ -41,6 +41,107 @@ My suggestion is to start at one of the major crossovers depending on how many y
 - A job only passes if its `READ_*` variable is set to `1`.
 - Jobs also depend on previous arcs, so you cannot progress without completing prerequisites.
 - All jobs are tagged with `local`, so they run on a runner with that tag.
+
+----
+
+## Mermaid graph
+
+```mermaid
+flowchart TD
+  crisis_on_multiple_earths["Crisis on Multiple Earths"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
+  crisis_on_multiple_earths --> roots_of_the_swamp_thing["Roots of the Swamp Thing"]
+  roots_of_the_swamp_thing --> crisis_on_infinite_earths
+  roots_of_the_swamp_thing --> saga_of_the_swamp_thing["Saga of the Swamp Thing"]
+  crisis_on_infinite_earths --> saga_of_the_swamp_thing
+  saga_of_the_swamp_thing --> swamp_thing_love_and_death["Swamp Thing: Love and Death"]
+  swamp_thing_love_and_death --> swamp_thing_the_curse["Swamp Thing: The Curse"]
+  swamp_thing_the_curse --> swamp_thing_a_murder_of_crows["Swamp Thing: A Murder of Crows"]
+  swamp_thing_a_murder_of_crows --> swamp_thing_earth_to_earth["Swamp Thing: Earth to Earth"]
+  swamp_thing_earth_to_earth --> swamp_thing_reunion["Swamp Thing: Reunion"]
+
+  crisis_on_infinite_earths --> batman_year_one["Batman: Year One"]
+  crisis_on_infinite_earths --> the_death_of_superman["The Death of Superman"]
+  crisis_on_infinite_earths --> green_lantern_emerald_dawn["Green Lantern: Emerald Dawn"]
+
+  batman_year_one --> batman_haunted_knight["Batman: Haunted Knight"]
+  batman_haunted_knight --> batman_the_long_halloween["Batman: The Long Halloween"]
+  batman_the_long_halloween --> batman_dark_victory["Batman: Dark Victory"]
+  batman_dark_victory --> batman_the_killing_joke["Batman: The Killing Joke"]
+  batman_the_killing_joke --> arkham_asylum_serious_house["Arkham Asylum: A Serious House on Serious Earth"]
+  batman_the_killing_joke --> batman_gothic["Batman: Gothic"]
+  arkham_asylum_serious_house --> batman_a_death_in_the_family["Batman: A Death in the Family"]
+  batman_gothic --> batman_a_death_in_the_family
+  batman_a_death_in_the_family --> batman_a_lonely_place_of_dying["Batman: A Lonely Place of Dying"]
+  batman_a_lonely_place_of_dying --> batman_hush["Batman: Hush"]
+
+  the_death_of_superman --> rise_of_the_supermen["Rise of the Supermen"]
+  rise_of_the_supermen --> the_return_of_superman["The Return of Superman"]
+
+  the_return_of_superman --> green_lantern_emerald_twilight["Green Lantern: Emerald Twilight"]
+  green_lantern_emerald_dawn --> green_lantern_emerald_twilight
+  green_lantern_emerald_twilight --> green_lantern_a_new_dawn["Green Lantern: A New Dawn"]
+  green_lantern_a_new_dawn --> zero_hour["Zero Hour"]
+  zero_hour --> the_final_night["The Final Night"]
+  the_final_night --> day_of_judgment["Day of Judgment"]
+
+  batman_hush --> identity_crisis["Identity Crisis"]
+  day_of_judgment --> identity_crisis
+  swamp_thing_reunion --> identity_crisis
+
+  identity_crisis --> villains_united["Villains United"]
+  identity_crisis --> omac_project["OMAC Project"]
+  identity_crisis --> day_of_vengeance["Day of Vengeance"]
+  identity_crisis --> rann_thanagar_war["Rann-Thanagar War"]
+  identity_crisis --> green_lantern_rebirth["Green Lantern: Rebirth"]
+
+  villains_united --> infinite_crisis["Infinite Crisis"]
+  omac_project --> infinite_crisis
+  day_of_vengeance --> infinite_crisis
+  rann_thanagar_war --> infinite_crisis
+  green_lantern_rebirth --> infinite_crisis
+
+  infinite_crisis --> one_year_later["One Year Later"]
+  infinite_crisis --> fifty_two["52"]
+  infinite_crisis --> green_lantern_secret_origin["Green Lantern: Secret Origin"]
+  infinite_crisis --> batman_face_the_face["Batman: Face the Face"]
+  batman_face_the_face --> batman_and_son["Batman and Son"]
+  batman_and_son --> batman_resurrection_of_ras_al_ghul["Batman: The Resurrection of Ra's al Ghul"]
+  batman_resurrection_of_ras_al_ghul --> batman_the_black_glove["Batman: The Black Glove"]
+  batman_the_black_glove --> batman_rip["Batman R.I.P."]
+
+  one_year_later --> countdown["Countdown"]
+  fifty_two --> countdown
+
+  one_year_later --> seven_soldiers_of_victory["Seven Soldiers of Victory"]
+  fifty_two --> seven_soldiers_of_victory
+
+  fifty_two --> death_of_the_new_gods["Death of the New Gods"]
+
+  fifty_two --> sinestro_corps_war["Sinestro Corps War"]
+  green_lantern_secret_origin --> sinestro_corps_war
+  one_year_later --> sinestro_corps_war
+
+  countdown --> final_crisis["Final Crisis"]
+  seven_soldiers_of_victory --> final_crisis
+  death_of_the_new_gods --> final_crisis
+  sinestro_corps_war --> final_crisis
+  batman_rip --> final_crisis
+
+  final_crisis --> flash_rebirth["The Flash: Rebirth"]
+  final_crisis --> batman_battle_for_the_cowl["Batman: Battle for the Cowl"]
+  batman_battle_for_the_cowl --> batman_and_robin["Batman and Robin"]
+  batman_and_robin --> batman_return_of_bruce_wayne["Return of Bruce Wayne"]
+  final_crisis --> war_of_light["War of Light"]
+  war_of_light --> blackest_night["Blackest Night"]
+  flash_rebirth --> blackest_night
+  blackest_night --> brightest_day["Brightest Day"]
+  blackest_night --> batman_return_of_bruce_wayne
+  batman_return_of_bruce_wayne --> flash_flashpoint["Flash: Flashpoint"]
+  brightest_day --> flash_flashpoint
+
+  batman_under_the_hood["Batman: Under the Hood"] --> infinite_crisis
+  identity_crisis --> batman_under_the_hood
+```
 
 ----
 
@@ -114,6 +215,12 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_CRISIS_ON_MULTIPLE_EARTHS`
 - `READ_ROOTS_OF_THE_SWAMP_THING`
 - `READ_CRISIS_ON_INFINITE_EARTHS`
+- `READ_SAGA_OF_THE_SWAMP_THING`
+- `READ_SWAMP_THING_LOVE_AND_DEATH`
+- `READ_SWAMP_THING_THE_CURSE`
+- `READ_SWAMP_THING_A_MURDER_OF_CROWS`
+- `READ_SWAMP_THING_EARTH_TO_EARTH`
+- `READ_SWAMP_THING_REUNION`
 - `READ_BATMAN_YEAR_ONE`
 - `READ_THE_DEATH_OF_SUPERMAN`
 - `READ_GREEN_LANTERN_EMERALD_DAWN`
@@ -167,7 +274,7 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 
 ## Note
 
-The pipeline is based on the attached diagram and currently extends it with additional branches (`Roots of the Swamp Thing`, plus Batman-heavy arcs such as `Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`), plus `The Flash: Rebirth`, `Brightest Day`, and `Flashpoint`.
+The pipeline is based on the attached diagram and currently extends it with additional branches (`Roots of the Swamp Thing` plus an Alan Moore-era Swamp Thing run, plus Batman-heavy arcs such as `Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`), plus `The Flash: Rebirth`, `Brightest Day`, and `Flashpoint`.
 
 Key convergence points are:
 
@@ -178,94 +285,3 @@ Key convergence points are:
 - `Blackest Night`
 
 ----
-
-## Mermaid graph
-
-```mermaid
-flowchart TD
-  crisis_on_multiple_earths["Crisis on Multiple Earths"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
-  crisis_on_multiple_earths --> roots_of_the_swamp_thing["Roots of the Swamp Thing"]
-  roots_of_the_swamp_thing --> crisis_on_infinite_earths
-
-  crisis_on_infinite_earths --> batman_year_one["Batman: Year One"]
-  crisis_on_infinite_earths --> the_death_of_superman["The Death of Superman"]
-  crisis_on_infinite_earths --> green_lantern_emerald_dawn["Green Lantern: Emerald Dawn"]
-
-  batman_year_one --> batman_haunted_knight["Batman: Haunted Knight"]
-  batman_haunted_knight --> batman_the_long_halloween["Batman: The Long Halloween"]
-  batman_the_long_halloween --> batman_dark_victory["Batman: Dark Victory"]
-  batman_dark_victory --> batman_the_killing_joke["Batman: The Killing Joke"]
-  batman_the_killing_joke --> arkham_asylum_serious_house["Arkham Asylum: A Serious House on Serious Earth"]
-  batman_the_killing_joke --> batman_gothic["Batman: Gothic"]
-  arkham_asylum_serious_house --> batman_a_death_in_the_family["Batman: A Death in the Family"]
-  batman_gothic --> batman_a_death_in_the_family
-  batman_a_death_in_the_family --> batman_a_lonely_place_of_dying["Batman: A Lonely Place of Dying"]
-  batman_a_lonely_place_of_dying --> batman_hush["Batman: Hush"]
-
-  the_death_of_superman --> rise_of_the_supermen["Rise of the Supermen"]
-  rise_of_the_supermen --> the_return_of_superman["The Return of Superman"]
-
-  the_return_of_superman --> green_lantern_emerald_twilight["Green Lantern: Emerald Twilight"]
-  green_lantern_emerald_dawn --> green_lantern_emerald_twilight
-  green_lantern_emerald_twilight --> green_lantern_a_new_dawn["Green Lantern: A New Dawn"]
-  green_lantern_a_new_dawn --> zero_hour["Zero Hour"]
-  zero_hour --> the_final_night["The Final Night"]
-  the_final_night --> day_of_judgment["Day of Judgment"]
-
-  batman_hush --> identity_crisis["Identity Crisis"]
-  day_of_judgment --> identity_crisis
-
-  identity_crisis --> villains_united["Villains United"]
-  identity_crisis --> omac_project["OMAC Project"]
-  identity_crisis --> day_of_vengeance["Day of Vengeance"]
-  identity_crisis --> rann_thanagar_war["Rann-Thanagar War"]
-  identity_crisis --> green_lantern_rebirth["Green Lantern: Rebirth"]
-
-  villains_united --> infinite_crisis["Infinite Crisis"]
-  omac_project --> infinite_crisis
-  day_of_vengeance --> infinite_crisis
-  rann_thanagar_war --> infinite_crisis
-  green_lantern_rebirth --> infinite_crisis
-
-  infinite_crisis --> one_year_later["One Year Later"]
-  infinite_crisis --> fifty_two["52"]
-  infinite_crisis --> green_lantern_secret_origin["Green Lantern: Secret Origin"]
-  infinite_crisis --> batman_face_the_face["Batman: Face the Face"]
-  batman_face_the_face --> batman_and_son["Batman and Son"]
-  batman_and_son --> batman_resurrection_of_ras_al_ghul["Batman: The Resurrection of Ra's al Ghul"]
-  batman_resurrection_of_ras_al_ghul --> batman_the_black_glove["Batman: The Black Glove"]
-  batman_the_black_glove --> batman_rip["Batman R.I.P."]
-
-  one_year_later --> countdown["Countdown"]
-  fifty_two --> countdown
-
-  one_year_later --> seven_soldiers_of_victory["Seven Soldiers of Victory"]
-  fifty_two --> seven_soldiers_of_victory
-
-  fifty_two --> death_of_the_new_gods["Death of the New Gods"]
-
-  fifty_two --> sinestro_corps_war["Sinestro Corps War"]
-  green_lantern_secret_origin --> sinestro_corps_war
-  one_year_later --> sinestro_corps_war
-
-  countdown --> final_crisis["Final Crisis"]
-  seven_soldiers_of_victory --> final_crisis
-  death_of_the_new_gods --> final_crisis
-  sinestro_corps_war --> final_crisis
-  batman_rip --> final_crisis
-
-  final_crisis --> flash_rebirth["The Flash: Rebirth"]
-  final_crisis --> batman_battle_for_the_cowl["Batman: Battle for the Cowl"]
-  batman_battle_for_the_cowl --> batman_and_robin["Batman and Robin"]
-  batman_and_robin --> batman_return_of_bruce_wayne["Return of Bruce Wayne"]
-  final_crisis --> war_of_light["War of Light"]
-  war_of_light --> blackest_night["Blackest Night"]
-  flash_rebirth --> blackest_night
-  blackest_night --> brightest_day["Brightest Day"]
-  blackest_night --> batman_return_of_bruce_wayne
-  batman_return_of_bruce_wayne --> flash_flashpoint["Flash: Flashpoint"]
-  brightest_day --> flash_flashpoint
-
-  batman_under_the_hood["Batman: Under the Hood"] --> infinite_crisis
-  identity_crisis --> batman_under_the_hood
-```
