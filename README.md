@@ -95,11 +95,11 @@ flowchart TD
 
     batman_hush --> identity_crisis["Identity Crisis"]
     grant_morrisons_animal_man --> identity_crisis
+    swamp_thing_by_brian_k_vaughan --> identity_crisis
   end
 
   subgraph pre_infinite_crisis["Pre Infinite Crisis"]
     day_of_judgment --> identity_crisis
-    swamp_thing_reunion --> identity_crisis
 
     identity_crisis --> villains_united["Villains United"]
     identity_crisis --> omac_project["OMAC Project"]

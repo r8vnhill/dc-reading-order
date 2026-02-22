@@ -152,7 +152,7 @@ identity_crisis:
   needs:
     - batman_hush
     - day_of_judgment
-    - swamp_thing_reunion
+    - swamp_thing_by_brian_k_vaughan
     - grant_morrisons_animal_man
   variables:
     ARC_VAR: READ_IDENTITY_CRISIS
