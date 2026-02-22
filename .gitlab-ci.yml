@@ -399,3 +399,11 @@ batman_return_of_bruce_wayne:
   variables:
     ARC_VAR: READ_BATMAN_RETURN_OF_BRUCE_WAYNE
     ARC_NAME: "Return of Bruce Wayne"
+
+# Flash: Flashpoint
+flash_flashpoint:
+  extends: .arc_job
+  needs: [batman_return_of_bruce_wayne, brightest_day]
+  variables:
+    ARC_VAR: READ_FLASH_FLASHPOINT
+    ARC_NAME: "Flash: Flashpoint"

@@ -160,12 +160,13 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_WAR_OF_LIGHT`
 - `READ_BLACKEST_NIGHT`
 - `READ_BRIGHTEST_DAY`
+- `READ_FLASH_FLASHPOINT`
 
 ----
 
 ## Note
 
-The pipeline is based on the attached diagram and currently extends it with additional Batman branches (`Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`), plus `The Flash: Rebirth` and `Brightest Day`.
+The pipeline is based on the attached diagram and currently extends it with additional Batman branches (`Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`), plus `The Flash: Rebirth`, `Brightest Day`, and `Flashpoint`.
 
 Key convergence points are:
 
@@ -259,6 +260,8 @@ flowchart TD
   flash_rebirth --> blackest_night
   blackest_night --> brightest_day["Brightest Day"]
   blackest_night --> batman_return_of_bruce_wayne
+  batman_return_of_bruce_wayne --> flash_flashpoint["Flash: Flashpoint"]
+  brightest_day --> flash_flashpoint
 
   batman_under_the_hood["Batman: Under the Hood"] --> infinite_crisis
   identity_crisis --> batman_under_the_hood
