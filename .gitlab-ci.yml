@@ -275,7 +275,7 @@ war_of_light:
 
 blackest_night:
   extends: .arc_job
-  needs: [war_of_light]
+  needs: [war_of_light, flash_rebirth]
   variables:
     ARC_VAR: READ_BLACKEST_NIGHT
     ARC_NAME: "Blackest Night"

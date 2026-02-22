@@ -161,7 +161,7 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 
 ## Note
 
-The pipeline is based on the attached diagram and currently extends it with additional Batman branches (`Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`).
+The pipeline is based on the attached diagram and currently extends it with additional Batman branches (`Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`), plus `The Flash: Rebirth`.
 
 Key convergence points are:
 
@@ -249,6 +249,7 @@ flowchart TD
   final_crisis --> flash_rebirth["The Flash: Rebirth"]
   final_crisis --> war_of_light["War of Light"]
   war_of_light --> blackest_night["Blackest Night"]
+  flash_rebirth --> blackest_night
 
   batman_under_the_hood["Batman: Under the Hood"] --> infinite_crisis
   identity_crisis --> batman_under_the_hood
