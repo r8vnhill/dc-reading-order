@@ -165,6 +165,7 @@ flowchart TD
   batman_return_of_bruce_wayne --> flash_flashpoint["Flash: Flashpoint"]
   brightest_day --> flash_flashpoint
   flash_rebirth --> flash_flashpoint
+  flash_flashpoint --> animal_man_the_hunt["Animal Man: The Hunt"]
 ```
 
 ----
@@ -293,19 +294,21 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_BLACKEST_NIGHT`
 - `READ_BRIGHTEST_DAY`
 - `READ_FLASH_FLASHPOINT`
+- `READ_ANIMAL_MAN_THE_HUNT`
 
 ----
 
 ## Note
 
-The pipeline is based on the attached diagram and currently extends it with additional branches (`Roots of the Swamp Thing` plus an Alan Moore-era Swamp Thing run, plus Batman-heavy arcs such as `Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`), plus `The Flash: Rebirth`, `Brightest Day`, and `Flashpoint`.
+The pipeline is based on the attached diagram and currently extends it with additional branches (`Roots of the Swamp Thing` plus an Alan Moore-era Swamp Thing run, plus Batman-heavy arcs such as `Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`), plus `The Flash: Rebirth`, `Brightest Day`, `Flashpoint`, and `Animal Man: The Hunt`.
 
 Key convergence points are:
 
+- `Crisis on Multiple Earths`
+- `Crisis on Infinite Earths`
 - `Identity Crisis`
 - `Infinite Crisis`
 - `Final Crisis`
-- `War of Light`
-- `Blackest Night`
+- `Flash: Flashpoint`
 
 ----

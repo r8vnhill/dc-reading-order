@@ -463,3 +463,11 @@ swamp_thing_reunion:
   variables:
     ARC_VAR: READ_SWAMP_THING_REUNION
     ARC_NAME: "Swamp Thing: Reunion"
+
+# Animal Man: The Hunt
+animal_man_the_hunt:
+  extends: .arc_job
+  needs: [flash_flashpoint]
+  variables:
+    ARC_VAR: READ_ANIMAL_MAN_THE_HUNT
+    ARC_NAME: "Animal Man: The Hunt"
