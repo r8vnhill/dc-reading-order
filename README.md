@@ -113,7 +113,7 @@ flowchart TD
   zero_hour --> the_final_night["The Final Night"]
   the_final_night --> day_of_judgment["Day of Judgment"]
 
-  batman_a_lonely_place_of_dying --> identity_crisis["Identity Crisis"]
+  batman_hush --> identity_crisis["Identity Crisis"]
   day_of_judgment --> identity_crisis
 
   identity_crisis --> villains_united["Villains United"]
@@ -139,10 +139,10 @@ flowchart TD
   fifty_two --> seven_soldiers_of_victory
 
   fifty_two --> death_of_the_new_gods["Death of the New Gods"]
-  green_lantern_secret_origin --> death_of_the_new_gods
 
   fifty_two --> sinestro_corps_war["Sinestro Corps War"]
   green_lantern_secret_origin --> sinestro_corps_war
+  one_year_later --> sinestro_corps_war
 
   countdown --> final_crisis["Final Crisis"]
   seven_soldiers_of_victory --> final_crisis

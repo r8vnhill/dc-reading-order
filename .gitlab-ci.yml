@@ -7,6 +7,8 @@ stages:
 
 .arc_job:
   stage: reading_order
+  tags:
+    - local
   script:
     - |
       value="$(printenv "$ARC_VAR" || true)"
