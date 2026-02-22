@@ -153,6 +153,7 @@ identity_crisis:
     - batman_hush
     - day_of_judgment
     - swamp_thing_reunion
+    - grant_morrisons_animal_man
   variables:
     ARC_VAR: READ_IDENTITY_CRISIS
     ARC_NAME: "Identity Crisis"
@@ -467,7 +468,15 @@ swamp_thing_reunion:
 # Animal Man: The Hunt
 animal_man_the_hunt:
   extends: .arc_job
-  needs: [flash_flashpoint]
+  needs: [flash_flashpoint, grant_morrisons_animal_man]
   variables:
     ARC_VAR: READ_ANIMAL_MAN_THE_HUNT
     ARC_NAME: "Animal Man: The Hunt"
+
+# Grant Morrison's Animal Man
+grant_morrisons_animal_man:
+  extends: .arc_job
+  needs: [crisis_on_infinite_earths]
+  variables:
+    ARC_VAR: READ_GRANT_MORRISONS_ANIMAL_MAN
+    ARC_NAME: "Grant Morrison's Animal Man"

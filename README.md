@@ -54,9 +54,9 @@ flowchart TD
     crisis_on_multiple_earths --> roots_of_the_swamp_thing
   end
 
-  crisis_on_multiple_earths --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
-
   subgraph pre_identity_crisis["Pre Identity Crisis"]
+    crisis_on_multiple_earths --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
+
     crisis_on_infinite_earths --> batman_year_one["Batman: Year One"]
     crisis_on_infinite_earths --> the_death_of_superman["The Death of Superman"]
     crisis_on_infinite_earths --> green_lantern_emerald_dawn["Green Lantern: Emerald Dawn"]
@@ -85,6 +85,7 @@ flowchart TD
     roots_of_the_swamp_thing --> crisis_on_infinite_earths
     roots_of_the_swamp_thing --> saga_of_the_swamp_thing["Saga of the Swamp Thing"]
     crisis_on_infinite_earths --> saga_of_the_swamp_thing
+    crisis_on_infinite_earths --> grant_morrisons_animal_man["Grant Morrison's Animal Man"]
     saga_of_the_swamp_thing --> swamp_thing_love_and_death["Swamp Thing: Love and Death"]
     swamp_thing_love_and_death --> swamp_thing_the_curse["Swamp Thing: The Curse"]
     swamp_thing_the_curse --> swamp_thing_a_murder_of_crows["Swamp Thing: A Murder of Crows"]
@@ -162,10 +163,13 @@ flowchart TD
     blackest_night --> batman_return_of_bruce_wayne
   end
   
-  batman_return_of_bruce_wayne --> flash_flashpoint["Flash: Flashpoint"]
-  brightest_day --> flash_flashpoint
-  flash_rebirth --> flash_flashpoint
-  flash_flashpoint --> animal_man_the_hunt["Animal Man: The Hunt"]
+  subgraph new_52["New 52"]
+    batman_return_of_bruce_wayne --> flash_flashpoint["Flash: Flashpoint"]
+    brightest_day --> flash_flashpoint
+    flash_rebirth --> flash_flashpoint
+    grant_morrisons_animal_man --> animal_man_the_hunt["Animal Man: The Hunt"]
+    flash_flashpoint --> animal_man_the_hunt["Animal Man: The Hunt"]
+  end
 ```
 
 ----
@@ -294,13 +298,14 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_BLACKEST_NIGHT`
 - `READ_BRIGHTEST_DAY`
 - `READ_FLASH_FLASHPOINT`
+- `READ_GRANT_MORRISONS_ANIMAL_MAN`
 - `READ_ANIMAL_MAN_THE_HUNT`
 
 ----
 
 ## Note
 
-The pipeline is based on the attached diagram and currently extends it with additional branches (`Roots of the Swamp Thing` plus an Alan Moore-era Swamp Thing run, plus Batman-heavy arcs such as `Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`), plus `The Flash: Rebirth`, `Brightest Day`, `Flashpoint`, and `Animal Man: The Hunt`.
+The pipeline is based on the attached diagram and currently extends it with additional branches (`Roots of the Swamp Thing` plus an Alan Moore-era Swamp Thing run, plus Batman-heavy arcs such as `Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`), plus `The Flash: Rebirth`, `Brightest Day`, `Flashpoint`, `Grant Morrison's Animal Man`, and `Animal Man: The Hunt`.
 
 Key convergence points are:
 
