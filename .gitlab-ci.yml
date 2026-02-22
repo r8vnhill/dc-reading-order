@@ -367,3 +367,11 @@ flash_rebirth:
   variables:
     ARC_VAR: READ_FLASH_REBIRTH
     ARC_NAME: "The Flash: Rebirth"
+
+# Brightest Day
+brightest_day:
+  extends: .arc_job
+  needs: [blackest_night]
+  variables:
+    ARC_VAR: READ_BRIGHTEST_DAY
+    ARC_NAME: "Brightest Day"
