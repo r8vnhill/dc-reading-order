@@ -151,4 +151,7 @@ flowchart TD
 
   final_crisis --> war_of_light["War of Light"]
   war_of_light --> blackest_night["Blackest Night"]
+
+  batman_under_the_hood["Batman: Under the Hood"] --> infinite_crisis
+  identity_crisis --> batman_under_the_hood
 ```

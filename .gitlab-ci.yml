@@ -192,6 +192,7 @@ infinite_crisis:
     - day_of_vengeance
     - rann_thanagar_war
     - green_lantern_rebirth
+    - batman_under_the_hood
   variables:
     ARC_VAR: READ_INFINITE_CRISIS
     ARC_NAME: "Infinite Crisis"
@@ -293,3 +294,11 @@ batman_hush:
   variables:
     ARC_VAR: READ_BATMAN_HUSH
     ARC_NAME: "Batman: Hush"
+
+# Batman: Under the Hood
+batman_under_the_hood:
+  extends: .arc_job
+  needs: [identity_crisis]
+  variables:
+    ARC_VAR: READ_BATMAN_UNDER_THE_HOOD
+    ARC_NAME: "Batman: Under the Hood"
