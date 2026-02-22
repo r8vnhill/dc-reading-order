@@ -10,6 +10,7 @@ Each arc is represented by a pipeline job, and reading-order arrows are modeled 
 
 - [DC Reading Order with GitLab CI/CD](#dc-reading-order-with-gitlab-cicd)
   - [Table of Contents](#table-of-contents)
+  - [Personal context](#personal-context)
   - [Core idea](#core-idea)
   - [Local GitLab Runner setup (`local` tag)](#local-gitlab-runner-setup-local-tag)
   - [How to mark arcs as read](#how-to-mark-arcs-as-read)
@@ -18,6 +19,19 @@ Each arc is represented by a pipeline job, and reading-order arrows are modeled 
   - [Reading variables](#reading-variables)
   - [Note](#note)
   - [Mermaid graph](#mermaid-graph)
+
+----
+
+## Personal context
+
+This is my personal DC Comics mainline recommendation, so it is intentionally opinionated.
+You will notice a lot of Batman and Green Lantern (yes, that is very much on purpose).
+
+My suggestion is to start at one of the major crossovers depending on how many years you want to spend reading:
+
+- Shorter commitment: start at `Identity Crisis`
+- Medium commitment: start at `Infinite Crisis`
+- Longer commitment: start at `Final Crisis` (or from the beginning if you want the full ride)
 
 ----
 
