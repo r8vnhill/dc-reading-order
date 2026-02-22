@@ -101,6 +101,7 @@ flowchart TD
   batman_dark_victory --> batman_the_killing_joke["Batman: The Killing Joke"]
   batman_the_killing_joke --> batman_a_death_in_the_family["Batman: A Death in the Family"]
   batman_a_death_in_the_family --> batman_a_lonely_place_of_dying["Batman: A Lonely Place of Dying"]
+  batman_a_lonely_place_of_dying --> batman_hush["Batman: Hush"]
 
   the_death_of_superman --> rise_of_the_supermen["Rise of the Supermen"]
   rise_of_the_supermen --> the_return_of_superman["The Return of Superman"]

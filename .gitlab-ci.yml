@@ -141,7 +141,7 @@ day_of_judgment:
 identity_crisis:
   extends: .arc_job
   needs:
-    - batman_a_lonely_place_of_dying
+    - batman_hush
     - day_of_judgment
   variables:
     ARC_VAR: READ_IDENTITY_CRISIS
@@ -237,7 +237,6 @@ death_of_the_new_gods:
   extends: .arc_job
   needs:
     - fifty_two
-    - green_lantern_secret_origin
   variables:
     ARC_VAR: READ_DEATH_OF_THE_NEW_GODS
     ARC_NAME: "Death of the New Gods"
@@ -247,6 +246,7 @@ sinestro_corps_war:
   needs:
     - fifty_two
     - green_lantern_secret_origin
+    - one_year_later
   variables:
     ARC_VAR: READ_SINESTRO_CORPS_WAR
     ARC_NAME: "Sinestro Corps War"
@@ -283,3 +283,11 @@ batman_a_lonely_place_of_dying:
   variables:
     ARC_VAR: READ_BATMAN_A_LONELY_PLACE_OF_DYING
     ARC_NAME: "Batman: A Lonely Place of Dying"
+
+# Batman: Hush
+batman_hush:
+  extends: .arc_job
+  needs: [batman_a_lonely_place_of_dying]
+  variables:
+    ARC_VAR: READ_BATMAN_HUSH
+    ARC_NAME: "Batman: Hush"
