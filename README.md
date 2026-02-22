@@ -84,3 +84,69 @@ The pipeline follows the attached diagram flow, including key branching and conv
 - `Final Crisis`
 - `War of Light`
 - `Blackest Night`
+
+## Mermaid graph
+
+```mermaid
+flowchart TD
+  crisis_on_multiple_earths["Crisis on Multiple Earths"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
+
+  crisis_on_infinite_earths --> batman_year_one["Batman: Year One"]
+  crisis_on_infinite_earths --> the_death_of_superman["The Death of Superman"]
+  crisis_on_infinite_earths --> green_lantern_emerald_dawn["Green Lantern: Emerald Dawn"]
+
+  batman_year_one --> batman_haunted_knight["Batman: Haunted Knight"]
+  batman_haunted_knight --> batman_the_long_halloween["Batman: The Long Halloween"]
+  batman_the_long_halloween --> batman_dark_victory["Batman: Dark Victory"]
+  batman_dark_victory --> batman_the_killing_joke["Batman: The Killing Joke"]
+  batman_the_killing_joke --> batman_a_death_in_the_family["Batman: A Death in the Family"]
+
+  the_death_of_superman --> rise_of_the_supermen["Rise of the Supermen"]
+  rise_of_the_supermen --> the_return_of_superman["The Return of Superman"]
+
+  the_return_of_superman --> green_lantern_emerald_twilight["Green Lantern: Emerald Twilight"]
+  green_lantern_emerald_dawn --> green_lantern_emerald_twilight
+  green_lantern_emerald_twilight --> green_lantern_a_new_dawn["Green Lantern: A New Dawn"]
+  green_lantern_a_new_dawn --> zero_hour["Zero Hour"]
+  zero_hour --> the_final_night["The Final Night"]
+  the_final_night --> day_of_judgment["Day of Judgment"]
+
+  batman_a_death_in_the_family --> identity_crisis["Identity Crisis"]
+  day_of_judgment --> identity_crisis
+
+  identity_crisis --> villains_united["Villains United"]
+  identity_crisis --> omac_project["OMAC Project"]
+  identity_crisis --> day_of_vengeance["Day of Vengeance"]
+  identity_crisis --> rann_thanagar_war["Rann-Thanagar War"]
+  identity_crisis --> green_lantern_rebirth["Green Lantern: Rebirth"]
+
+  villains_united --> infinite_crisis["Infinite Crisis"]
+  omac_project --> infinite_crisis
+  day_of_vengeance --> infinite_crisis
+  rann_thanagar_war --> infinite_crisis
+  green_lantern_rebirth --> infinite_crisis
+
+  infinite_crisis --> one_year_later["One Year Later"]
+  infinite_crisis --> fifty_two["52"]
+  infinite_crisis --> green_lantern_secret_origin["Green Lantern: Secret Origin"]
+
+  one_year_later --> countdown["Countdown"]
+  fifty_two --> countdown
+
+  one_year_later --> seven_soldiers_of_victory["Seven Soldiers of Victory"]
+  fifty_two --> seven_soldiers_of_victory
+
+  fifty_two --> death_of_the_new_gods["Death of the New Gods"]
+  green_lantern_secret_origin --> death_of_the_new_gods
+
+  fifty_two --> sinestro_corps_war["Sinestro Corps War"]
+  green_lantern_secret_origin --> sinestro_corps_war
+
+  countdown --> final_crisis["Final Crisis"]
+  seven_soldiers_of_victory --> final_crisis
+  death_of_the_new_gods --> final_crisis
+  sinestro_corps_war --> final_crisis
+
+  final_crisis --> war_of_light["War of Light"]
+  war_of_light --> blackest_night["Blackest Night"]
+```
