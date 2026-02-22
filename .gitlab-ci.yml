@@ -1,0 +1,277 @@
+workflow:
+  rules:
+    - when: always
+
+stages:
+  - reading_order
+
+.arc_job:
+  stage: reading_order
+  script:
+    - |
+      value="$(printenv "$ARC_VAR" || true)"
+      if [ "$value" = "1" ]; then
+        echo "[OK] $ARC_NAME marked as read"
+      else
+        echo "[FAIL] $ARC_NAME is pending"
+        echo "To pass this job, run the pipeline with $ARC_VAR=1"
+        exit 1
+      fi
+
+crisis_on_multiple_earths:
+  extends: .arc_job
+  variables:
+    ARC_VAR: READ_CRISIS_ON_MULTIPLE_EARTHS
+    ARC_NAME: "Crisis on Multiple Earths"
+
+crisis_on_infinite_earths:
+  extends: .arc_job
+  needs: [crisis_on_multiple_earths]
+  variables:
+    ARC_VAR: READ_CRISIS_ON_INFINITE_EARTHS
+    ARC_NAME: "Crisis on Infinite Earths"
+
+batman_year_one:
+  extends: .arc_job
+  needs: [crisis_on_infinite_earths]
+  variables:
+    ARC_VAR: READ_BATMAN_YEAR_ONE
+    ARC_NAME: "Batman: Year One"
+
+the_death_of_superman:
+  extends: .arc_job
+  needs: [crisis_on_infinite_earths]
+  variables:
+    ARC_VAR: READ_THE_DEATH_OF_SUPERMAN
+    ARC_NAME: "The Death of Superman"
+
+green_lantern_emerald_dawn:
+  extends: .arc_job
+  needs: [crisis_on_infinite_earths]
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_EMERALD_DAWN
+    ARC_NAME: "Green Lantern: Emerald Dawn"
+
+batman_haunted_knight:
+  extends: .arc_job
+  needs: [batman_year_one]
+  variables:
+    ARC_VAR: READ_BATMAN_HAUNTED_KNIGHT
+    ARC_NAME: "Batman: Haunted Knight"
+
+rise_of_the_supermen:
+  extends: .arc_job
+  needs: [the_death_of_superman]
+  variables:
+    ARC_VAR: READ_RISE_OF_THE_SUPERMEN
+    ARC_NAME: "Rise of the Supermen"
+
+batman_the_long_halloween:
+  extends: .arc_job
+  needs: [batman_haunted_knight]
+  variables:
+    ARC_VAR: READ_BATMAN_THE_LONG_HALLOWEEN
+    ARC_NAME: "Batman: The Long Halloween"
+
+the_return_of_superman:
+  extends: .arc_job
+  needs: [rise_of_the_supermen]
+  variables:
+    ARC_VAR: READ_THE_RETURN_OF_SUPERMAN
+    ARC_NAME: "The Return of Superman"
+
+batman_dark_victory:
+  extends: .arc_job
+  needs: [batman_the_long_halloween]
+  variables:
+    ARC_VAR: READ_BATMAN_DARK_VICTORY
+    ARC_NAME: "Batman: Dark Victory"
+
+green_lantern_emerald_twilight:
+  extends: .arc_job
+  needs:
+    - the_return_of_superman
+    - green_lantern_emerald_dawn
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_EMERALD_TWILIGHT
+    ARC_NAME: "Green Lantern: Emerald Twilight"
+
+batman_the_killing_joke:
+  extends: .arc_job
+  needs: [batman_dark_victory]
+  variables:
+    ARC_VAR: READ_BATMAN_THE_KILLING_JOKE
+    ARC_NAME: "Batman: The Killing Joke"
+
+green_lantern_a_new_dawn:
+  extends: .arc_job
+  needs: [green_lantern_emerald_twilight]
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_A_NEW_DAWN
+    ARC_NAME: "Green Lantern: A New Dawn"
+
+batman_a_death_in_the_family:
+  extends: .arc_job
+  needs: [batman_the_killing_joke]
+  variables:
+    ARC_VAR: READ_BATMAN_A_DEATH_IN_THE_FAMILY
+    ARC_NAME: "Batman: A Death in the Family"
+
+zero_hour:
+  extends: .arc_job
+  needs: [green_lantern_a_new_dawn]
+  variables:
+    ARC_VAR: READ_ZERO_HOUR
+    ARC_NAME: "Zero Hour"
+
+the_final_night:
+  extends: .arc_job
+  needs: [zero_hour]
+  variables:
+    ARC_VAR: READ_THE_FINAL_NIGHT
+    ARC_NAME: "The Final Night"
+
+day_of_judgment:
+  extends: .arc_job
+  needs: [the_final_night]
+  variables:
+    ARC_VAR: READ_DAY_OF_JUDGMENT
+    ARC_NAME: "Day of Judgment"
+
+identity_crisis:
+  extends: .arc_job
+  needs:
+    - batman_a_death_in_the_family
+    - day_of_judgment
+  variables:
+    ARC_VAR: READ_IDENTITY_CRISIS
+    ARC_NAME: "Identity Crisis"
+
+villains_united:
+  extends: .arc_job
+  needs: [identity_crisis]
+  variables:
+    ARC_VAR: READ_VILLAINS_UNITED
+    ARC_NAME: "Villains United"
+
+omac_project:
+  extends: .arc_job
+  needs: [identity_crisis]
+  variables:
+    ARC_VAR: READ_OMAC_PROJECT
+    ARC_NAME: "OMAC Project"
+
+day_of_vengeance:
+  extends: .arc_job
+  needs: [identity_crisis]
+  variables:
+    ARC_VAR: READ_DAY_OF_VENGEANCE
+    ARC_NAME: "Day of Vengeance"
+
+rann_thanagar_war:
+  extends: .arc_job
+  needs: [identity_crisis]
+  variables:
+    ARC_VAR: READ_RANN_THANAGAR_WAR
+    ARC_NAME: "Rann-Thanagar War"
+
+green_lantern_rebirth:
+  extends: .arc_job
+  needs: [identity_crisis]
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_REBIRTH
+    ARC_NAME: "Green Lantern: Rebirth"
+
+infinite_crisis:
+  extends: .arc_job
+  needs:
+    - villains_united
+    - omac_project
+    - day_of_vengeance
+    - rann_thanagar_war
+    - green_lantern_rebirth
+  variables:
+    ARC_VAR: READ_INFINITE_CRISIS
+    ARC_NAME: "Infinite Crisis"
+
+one_year_later:
+  extends: .arc_job
+  needs: [infinite_crisis]
+  variables:
+    ARC_VAR: READ_ONE_YEAR_LATER
+    ARC_NAME: "One Year Later"
+
+fifty_two:
+  extends: .arc_job
+  needs: [infinite_crisis]
+  variables:
+    ARC_VAR: READ_52
+    ARC_NAME: "52"
+
+green_lantern_secret_origin:
+  extends: .arc_job
+  needs: [infinite_crisis]
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_SECRET_ORIGIN
+    ARC_NAME: "Green Lantern: Secret Origin"
+
+countdown:
+  extends: .arc_job
+  needs:
+    - one_year_later
+    - fifty_two
+  variables:
+    ARC_VAR: READ_COUNTDOWN
+    ARC_NAME: "Countdown"
+
+seven_soldiers_of_victory:
+  extends: .arc_job
+  needs:
+    - one_year_later
+    - fifty_two
+  variables:
+    ARC_VAR: READ_SEVEN_SOLDIERS_OF_VICTORY
+    ARC_NAME: "Seven Soldiers of Victory"
+
+death_of_the_new_gods:
+  extends: .arc_job
+  needs:
+    - fifty_two
+    - green_lantern_secret_origin
+  variables:
+    ARC_VAR: READ_DEATH_OF_THE_NEW_GODS
+    ARC_NAME: "Death of the New Gods"
+
+sinestro_corps_war:
+  extends: .arc_job
+  needs:
+    - fifty_two
+    - green_lantern_secret_origin
+  variables:
+    ARC_VAR: READ_SINESTRO_CORPS_WAR
+    ARC_NAME: "Sinestro Corps War"
+
+final_crisis:
+  extends: .arc_job
+  needs:
+    - countdown
+    - seven_soldiers_of_victory
+    - death_of_the_new_gods
+    - sinestro_corps_war
+  variables:
+    ARC_VAR: READ_FINAL_CRISIS
+    ARC_NAME: "Final Crisis"
+
+war_of_light:
+  extends: .arc_job
+  needs: [final_crisis]
+  variables:
+    ARC_VAR: READ_WAR_OF_LIGHT
+    ARC_NAME: "War of Light"
+
+blackest_night:
+  extends: .arc_job
+  needs: [war_of_light]
+  variables:
+    ARC_VAR: READ_BLACKEST_NIGHT
+    ARC_NAME: "Blackest Night"
