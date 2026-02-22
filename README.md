@@ -251,13 +251,14 @@ flowchart TD
   batman_rip --> final_crisis
 
   final_crisis --> flash_rebirth["The Flash: Rebirth"]
-  final_crisis --> batman_and_robin["Batman and Robin"]
   final_crisis --> batman_battle_for_the_cowl["Batman: Battle for the Cowl"]
+  batman_battle_for_the_cowl --> batman_and_robin["Batman and Robin"]
   batman_and_robin --> batman_return_of_bruce_wayne["Return of Bruce Wayne"]
   final_crisis --> war_of_light["War of Light"]
   war_of_light --> blackest_night["Blackest Night"]
   flash_rebirth --> blackest_night
   blackest_night --> brightest_day["Brightest Day"]
+  blackest_night --> batman_return_of_bruce_wayne
 
   batman_under_the_hood["Batman: Under the Hood"] --> infinite_crisis
   identity_crisis --> batman_under_the_hood

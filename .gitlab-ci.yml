@@ -395,7 +395,7 @@ batman_battle_for_the_cowl:
 # Return of Bruce Wayne
 batman_return_of_bruce_wayne:
   extends: .arc_job
-  needs: [batman_and_robin]
+  needs: [batman_and_robin, blackest_night]
   variables:
     ARC_VAR: READ_BATMAN_RETURN_OF_BRUCE_WAYNE
     ARC_NAME: "Return of Bruce Wayne"
