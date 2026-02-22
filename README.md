@@ -153,6 +153,7 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_DEATH_OF_THE_NEW_GODS`
 - `READ_SINESTRO_CORPS_WAR`
 - `READ_FINAL_CRISIS`
+- `READ_FLASH_REBIRTH`
 - `READ_WAR_OF_LIGHT`
 - `READ_BLACKEST_NIGHT`
 
@@ -245,6 +246,7 @@ flowchart TD
   sinestro_corps_war --> final_crisis
   batman_rip --> final_crisis
 
+  final_crisis --> flash_rebirth["The Flash: Rebirth"]
   final_crisis --> war_of_light["War of Light"]
   war_of_light --> blackest_night["Blackest Night"]
 

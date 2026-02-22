@@ -359,3 +359,11 @@ batman_rip:
   variables:
     ARC_VAR: READ_BATMAN_RIP
     ARC_NAME: "Batman R.I.P."
+
+# The Flash: Rebirth
+flash_rebirth:
+  extends: .arc_job
+  needs: [final_crisis]
+  variables:
+    ARC_VAR: READ_FLASH_REBIRTH
+    ARC_NAME: "The Flash: Rebirth"
