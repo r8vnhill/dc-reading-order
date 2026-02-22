@@ -9,6 +9,34 @@ Each arc is represented by a pipeline job, and reading-order arrows are modeled 
 - By default, **all jobs fail**.
 - A job only passes if its `READ_*` variable is set to `1`.
 - Jobs also depend on previous arcs, so you cannot progress without completing prerequisites.
+- All jobs are tagged with `local`, so they run on a runner with that tag.
+
+## Local GitLab Runner setup (`local` tag)
+
+1. Install GitLab Runner on your machine.
+2. In GitLab, go to **Settings > CI/CD > Runners** and copy a runner registration token.
+3. Register the runner:
+
+```bash
+gitlab-runner register
+```
+
+4. Use these values during registration:
+- GitLab instance URL: your GitLab URL (for example `https://gitlab.com`)
+- Token: the registration token from your project/group
+- Description: any name (for example `local-runner`)
+- Tags: `local`
+- Run untagged jobs: `false`
+- Lock to current project: `true` (recommended)
+- Executor: `shell` (or your preferred local executor)
+
+5. Start the runner service:
+
+```bash
+gitlab-runner run
+```
+
+If your runner is already installed as a service, ensure it is running and has the `local` tag.
 
 ## How to mark arcs as read
 
@@ -54,6 +82,10 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_BATMAN_THE_KILLING_JOKE`
 - `READ_GREEN_LANTERN_A_NEW_DAWN`
 - `READ_BATMAN_A_DEATH_IN_THE_FAMILY`
+- `READ_ARKHAM_ASYLUM_SERIOUS_HOUSE`
+- `READ_BATMAN_GOTHIC`
+- `READ_BATMAN_A_LONELY_PLACE_OF_DYING`
+- `READ_BATMAN_HUSH`
 - `READ_ZERO_HOUR`
 - `READ_THE_FINAL_NIGHT`
 - `READ_DAY_OF_JUDGMENT`
@@ -63,10 +95,12 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_DAY_OF_VENGEANCE`
 - `READ_RANN_THANAGAR_WAR`
 - `READ_GREEN_LANTERN_REBIRTH`
+- `READ_BATMAN_UNDER_THE_HOOD`
 - `READ_INFINITE_CRISIS`
 - `READ_ONE_YEAR_LATER`
 - `READ_52`
 - `READ_GREEN_LANTERN_SECRET_ORIGIN`
+- `READ_BATMAN_FACE_THE_FACE`
 - `READ_COUNTDOWN`
 - `READ_SEVEN_SOLDIERS_OF_VICTORY`
 - `READ_DEATH_OF_THE_NEW_GODS`
@@ -99,7 +133,10 @@ flowchart TD
   batman_haunted_knight --> batman_the_long_halloween["Batman: The Long Halloween"]
   batman_the_long_halloween --> batman_dark_victory["Batman: Dark Victory"]
   batman_dark_victory --> batman_the_killing_joke["Batman: The Killing Joke"]
-  batman_the_killing_joke --> batman_a_death_in_the_family["Batman: A Death in the Family"]
+  batman_the_killing_joke --> arkham_asylum_serious_house["Arkham Asylum: A Serious House on Serious Earth"]
+  batman_the_killing_joke --> batman_gothic["Batman: Gothic"]
+  arkham_asylum_serious_house --> batman_a_death_in_the_family["Batman: A Death in the Family"]
+  batman_gothic --> batman_a_death_in_the_family
   batman_a_death_in_the_family --> batman_a_lonely_place_of_dying["Batman: A Lonely Place of Dying"]
   batman_a_lonely_place_of_dying --> batman_hush["Batman: Hush"]
 
@@ -131,6 +168,7 @@ flowchart TD
   infinite_crisis --> one_year_later["One Year Later"]
   infinite_crisis --> fifty_two["52"]
   infinite_crisis --> green_lantern_secret_origin["Green Lantern: Secret Origin"]
+  infinite_crisis --> batman_face_the_face["Batman: Face the Face"]
 
   one_year_later --> countdown["Countdown"]
   fifty_two --> countdown

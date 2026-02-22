@@ -114,7 +114,7 @@ green_lantern_a_new_dawn:
 
 batman_a_death_in_the_family:
   extends: .arc_job
-  needs: [batman_the_killing_joke]
+  needs: [arkham_asylum_serious_house, batman_gothic]
   variables:
     ARC_VAR: READ_BATMAN_A_DEATH_IN_THE_FAMILY
     ARC_NAME: "Batman: A Death in the Family"
@@ -302,3 +302,27 @@ batman_under_the_hood:
   variables:
     ARC_VAR: READ_BATMAN_UNDER_THE_HOOD
     ARC_NAME: "Batman: Under the Hood"
+
+# Batman: Face the Face
+batman_face_the_face:
+  extends: .arc_job
+  needs: [infinite_crisis]
+  variables:
+    ARC_VAR: READ_BATMAN_FACE_THE_FACE
+    ARC_NAME: "Batman: Face the Face"
+
+# Arkham Asylum: A Serious House on Serious Earth
+arkham_asylum_serious_house:
+  extends: .arc_job
+  needs: [batman_the_killing_joke]
+  variables:
+    ARC_VAR: READ_ARKHAM_ASYLUM_SERIOUS_HOUSE
+    ARC_NAME: "Arkham Asylum: A Serious House on Serious Earth"
+
+# Batman: Gothic
+batman_gothic:
+  extends: .arc_job
+  needs: [batman_the_killing_joke]
+  variables:
+    ARC_VAR: READ_BATMAN_GOTHIC
+    ARC_NAME: "Batman: Gothic"
