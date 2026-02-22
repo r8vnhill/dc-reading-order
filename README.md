@@ -48,21 +48,13 @@ My suggestion is to start at one of the major crossovers depending on how many y
 
 ```mermaid
 flowchart TD
-  subgraph pre_crisis_on_infinite_earths["Pre Crisis on Infinite Earths"]
+    subgraph pre_crisis_on_infinite_earths["Pre Crisis on Infinite Earths"]
     crisis_on_multiple_earths["Crisis on Multiple Earths"]
     roots_of_the_swamp_thing["Roots of the Swamp Thing"]
     crisis_on_multiple_earths --> roots_of_the_swamp_thing
   end
 
   crisis_on_multiple_earths --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
-  roots_of_the_swamp_thing --> crisis_on_infinite_earths
-  roots_of_the_swamp_thing --> saga_of_the_swamp_thing["Saga of the Swamp Thing"]
-  crisis_on_infinite_earths --> saga_of_the_swamp_thing
-  saga_of_the_swamp_thing --> swamp_thing_love_and_death["Swamp Thing: Love and Death"]
-  swamp_thing_love_and_death --> swamp_thing_the_curse["Swamp Thing: The Curse"]
-  swamp_thing_the_curse --> swamp_thing_a_murder_of_crows["Swamp Thing: A Murder of Crows"]
-  swamp_thing_a_murder_of_crows --> swamp_thing_earth_to_earth["Swamp Thing: Earth to Earth"]
-  swamp_thing_earth_to_earth --> swamp_thing_reunion["Swamp Thing: Reunion"]
 
   subgraph pre_identity_crisis["Pre Identity Crisis"]
     crisis_on_infinite_earths --> batman_year_one["Batman: Year One"]
@@ -90,71 +82,89 @@ flowchart TD
     zero_hour --> the_final_night["The Final Night"]
     the_final_night --> day_of_judgment["Day of Judgment"]
 
+    roots_of_the_swamp_thing --> crisis_on_infinite_earths
+    roots_of_the_swamp_thing --> saga_of_the_swamp_thing["Saga of the Swamp Thing"]
+    crisis_on_infinite_earths --> saga_of_the_swamp_thing
+    saga_of_the_swamp_thing --> swamp_thing_love_and_death["Swamp Thing: Love and Death"]
+    swamp_thing_love_and_death --> swamp_thing_the_curse["Swamp Thing: The Curse"]
+    swamp_thing_the_curse --> swamp_thing_a_murder_of_crows["Swamp Thing: A Murder of Crows"]
+    swamp_thing_a_murder_of_crows --> swamp_thing_earth_to_earth["Swamp Thing: Earth to Earth"]
+    swamp_thing_earth_to_earth --> swamp_thing_reunion["Swamp Thing: Reunion"]
+
     batman_hush --> identity_crisis["Identity Crisis"]
-    day_of_judgment --> identity_crisis
-    swamp_thing_reunion --> identity_crisis
   end
 
-  identity_crisis --> villains_united["Villains United"]
-  identity_crisis --> omac_project["OMAC Project"]
-  identity_crisis --> day_of_vengeance["Day of Vengeance"]
-  identity_crisis --> rann_thanagar_war["Rann-Thanagar War"]
-  identity_crisis --> green_lantern_rebirth["Green Lantern: Rebirth"]
-  day_of_judgment --> green_lantern_rebirth
+  subgraph pre_infinite_crisis["Pre Infinite Crisis"]
+    day_of_judgment --> identity_crisis
+    swamp_thing_reunion --> identity_crisis
 
-  villains_united --> infinite_crisis["Infinite Crisis"]
-  omac_project --> infinite_crisis
-  day_of_vengeance --> infinite_crisis
-  rann_thanagar_war --> infinite_crisis
-  green_lantern_rebirth --> infinite_crisis
+    identity_crisis --> villains_united["Villains United"]
+    identity_crisis --> omac_project["OMAC Project"]
+    identity_crisis --> day_of_vengeance["Day of Vengeance"]
+    identity_crisis --> rann_thanagar_war["Rann-Thanagar War"]
+    identity_crisis --> green_lantern_rebirth["Green Lantern: Rebirth"]
+    day_of_judgment --> green_lantern_rebirth
 
-  infinite_crisis --> one_year_later["One Year Later"]
-  infinite_crisis --> fifty_two["52"]
-  infinite_crisis --> green_lantern_secret_origin["Green Lantern: Secret Origin"]
-  green_lantern_rebirth --> green_lantern_secret_origin
-  infinite_crisis --> batman_face_the_face["Batman: Face the Face"]
-  batman_under_the_hood --> batman_face_the_face
-  batman_face_the_face --> batman_and_son["Batman and Son"]
-  batman_and_son --> batman_resurrection_of_ras_al_ghul["Batman: The Resurrection of Ra's al Ghul"]
-  batman_resurrection_of_ras_al_ghul --> batman_the_black_glove["Batman: The Black Glove"]
-  batman_the_black_glove --> batman_rip["Batman R.I.P."]
+    batman_under_the_hood["Batman: Under the Hood"] --> infinite_crisis
+  end
+  
+  subgraph pre_final_crisis["Pre Final Crisis"]
+    villains_united --> infinite_crisis["Infinite Crisis"]
+    omac_project --> infinite_crisis
+    day_of_vengeance --> infinite_crisis
+    rann_thanagar_war --> infinite_crisis
+    green_lantern_rebirth --> infinite_crisis
 
-  one_year_later --> countdown["Countdown"]
-  fifty_two --> countdown
+    infinite_crisis --> one_year_later["One Year Later"]
+    infinite_crisis --> fifty_two["52"]
+    infinite_crisis --> green_lantern_secret_origin["Green Lantern: Secret Origin"]
+    green_lantern_rebirth --> green_lantern_secret_origin
+    infinite_crisis --> batman_face_the_face["Batman: Face the Face"]
+    batman_under_the_hood --> batman_face_the_face
+    batman_face_the_face --> batman_and_son["Batman and Son"]
+    batman_and_son --> batman_resurrection_of_ras_al_ghul["Batman: The Resurrection of Ra's al Ghul"]
+    batman_resurrection_of_ras_al_ghul --> batman_the_black_glove["Batman: The Black Glove"]
+    batman_the_black_glove --> batman_rip["Batman R.I.P."]
 
-  one_year_later --> seven_soldiers_of_victory["Seven Soldiers of Victory"]
-  fifty_two --> seven_soldiers_of_victory
+    one_year_later --> countdown["Countdown"]
+    fifty_two --> countdown
 
-  fifty_two --> death_of_the_new_gods["Death of the New Gods"]
+    one_year_later --> seven_soldiers_of_victory["Seven Soldiers of Victory"]
+    fifty_two --> seven_soldiers_of_victory
 
-  fifty_two --> sinestro_corps_war["Sinestro Corps War"]
-  green_lantern_secret_origin --> sinestro_corps_war
-  one_year_later --> sinestro_corps_war
+    fifty_two --> death_of_the_new_gods["Death of the New Gods"]
 
-  countdown --> final_crisis["Final Crisis"]
-  seven_soldiers_of_victory --> final_crisis
-  death_of_the_new_gods --> final_crisis
-  sinestro_corps_war --> final_crisis
-  batman_rip --> final_crisis
+    fifty_two --> sinestro_corps_war["Sinestro Corps War"]
+    green_lantern_secret_origin --> sinestro_corps_war
+    one_year_later --> sinestro_corps_war
 
-  final_crisis --> flash_rebirth["The Flash: Rebirth"]
-  final_crisis --> batman_battle_for_the_cowl["Batman: Battle for the Cowl"]
-  batman_rip --> batman_battle_for_the_cowl
-  batman_battle_for_the_cowl --> batman_and_robin["Batman and Robin"]
-  batman_and_robin --> batman_return_of_bruce_wayne["Return of Bruce Wayne"]
-  final_crisis --> war_of_light["War of Light"]
-  sinestro_corps_war --> war_of_light
-  war_of_light --> blackest_night["Blackest Night"]
-  flash_rebirth --> blackest_night
-  blackest_night --> brightest_day["Brightest Day"]
-  blackest_night --> batman_return_of_bruce_wayne
+    identity_crisis --> batman_under_the_hood
+    batman_hush --> batman_under_the_hood
+  end
+
+  subgraph pre_flashpoint["Pre Flashpoint"]
+    countdown --> final_crisis["Final Crisis"]
+    seven_soldiers_of_victory --> final_crisis
+    death_of_the_new_gods --> final_crisis
+    sinestro_corps_war --> final_crisis
+    batman_rip --> final_crisis
+
+    final_crisis --> flash_rebirth["The Flash: Rebirth"]
+    final_crisis --> batman_battle_for_the_cowl["Batman: Battle for the Cowl"]
+    batman_rip --> batman_battle_for_the_cowl
+    batman_battle_for_the_cowl --> batman_and_robin["Batman and Robin"]
+    batman_and_robin --> batman_return_of_bruce_wayne["Return of Bruce Wayne"]
+    final_crisis --> war_of_light["War of Light"]
+    sinestro_corps_war --> war_of_light
+    war_of_light --> blackest_night["Blackest Night"]
+    flash_rebirth --> blackest_night
+    blackest_night --> brightest_day["Brightest Day"]
+    blackest_night --> batman_return_of_bruce_wayne
+  end
+  
   batman_return_of_bruce_wayne --> flash_flashpoint["Flash: Flashpoint"]
   brightest_day --> flash_flashpoint
   flash_rebirth --> flash_flashpoint
-
-  batman_under_the_hood["Batman: Under the Hood"] --> infinite_crisis
-  identity_crisis --> batman_under_the_hood
-  batman_hush --> batman_under_the_hood
 ```
 
 ----
