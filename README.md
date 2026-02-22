@@ -48,8 +48,13 @@ My suggestion is to start at one of the major crossovers depending on how many y
 
 ```mermaid
 flowchart TD
-  crisis_on_multiple_earths["Crisis on Multiple Earths"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
-  crisis_on_multiple_earths --> roots_of_the_swamp_thing["Roots of the Swamp Thing"]
+  subgraph pre_crisis_on_infinite_earths["Pre Crisis on Infinite Earths"]
+    crisis_on_multiple_earths["Crisis on Multiple Earths"]
+    roots_of_the_swamp_thing["Roots of the Swamp Thing"]
+    crisis_on_multiple_earths --> roots_of_the_swamp_thing
+  end
+
+  crisis_on_multiple_earths --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
   roots_of_the_swamp_thing --> crisis_on_infinite_earths
   roots_of_the_swamp_thing --> saga_of_the_swamp_thing["Saga of the Swamp Thing"]
   crisis_on_infinite_earths --> saga_of_the_swamp_thing
