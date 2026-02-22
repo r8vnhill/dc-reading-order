@@ -40,6 +40,8 @@ If your runner is already installed as a service, ensure it is running and has t
 
 ## How to mark arcs as read
 
+Prerequisite: a GitLab Runner with tag `local` must be online, otherwise jobs stay pending.
+
 1. Go to **GitLab > Build > Pipelines > Run pipeline**.
 2. In Variables, add `READ_...=1` for each arc you already read.
 3. Run the pipeline.
@@ -101,6 +103,7 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_52`
 - `READ_GREEN_LANTERN_SECRET_ORIGIN`
 - `READ_BATMAN_FACE_THE_FACE`
+- `READ_BATMAN_AND_SON`
 - `READ_COUNTDOWN`
 - `READ_SEVEN_SOLDIERS_OF_VICTORY`
 - `READ_DEATH_OF_THE_NEW_GODS`
@@ -111,7 +114,9 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 
 ## Note
 
-The pipeline follows the attached diagram flow, including key branching and convergence points toward:
+The pipeline is based on the attached diagram and currently extends it with additional Batman branches (`Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`).
+
+Key convergence points are:
 
 - `Identity Crisis`
 - `Infinite Crisis`
@@ -169,6 +174,7 @@ flowchart TD
   infinite_crisis --> fifty_two["52"]
   infinite_crisis --> green_lantern_secret_origin["Green Lantern: Secret Origin"]
   infinite_crisis --> batman_face_the_face["Batman: Face the Face"]
+  batman_face_the_face --> batman_and_son["Batman and Son"]
 
   one_year_later --> countdown["Countdown"]
   fifty_two --> countdown
@@ -186,6 +192,7 @@ flowchart TD
   seven_soldiers_of_victory --> final_crisis
   death_of_the_new_gods --> final_crisis
   sinestro_corps_war --> final_crisis
+  batman_and_son --> final_crisis
 
   final_crisis --> war_of_light["War of Light"]
   war_of_light --> blackest_night["Blackest Night"]

@@ -261,6 +261,7 @@ final_crisis:
     - seven_soldiers_of_victory
     - death_of_the_new_gods
     - sinestro_corps_war
+    - batman_and_son
   variables:
     ARC_VAR: READ_FINAL_CRISIS
     ARC_NAME: "Final Crisis"
@@ -326,3 +327,11 @@ batman_gothic:
   variables:
     ARC_VAR: READ_BATMAN_GOTHIC
     ARC_NAME: "Batman: Gothic"
+
+# Batman and Son
+batman_and_son:
+  extends: .arc_job
+  needs: [batman_face_the_face]
+  variables:
+    ARC_VAR: READ_BATMAN_AND_SON
+    ARC_NAME: "Batman and Son"
