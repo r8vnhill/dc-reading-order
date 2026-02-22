@@ -4,12 +4,31 @@ This project uses GitLab CI/CD as a visual tracker for reading DC comic arcs.
 
 Each arc is represented by a pipeline job, and reading-order arrows are modeled with `needs`.
 
+----
+
+## Table of Contents
+
+- [DC Reading Order with GitLab CI/CD](#dc-reading-order-with-gitlab-cicd)
+  - [Table of Contents](#table-of-contents)
+  - [Core idea](#core-idea)
+  - [Local GitLab Runner setup (`local` tag)](#local-gitlab-runner-setup-local-tag)
+  - [How to mark arcs as read](#how-to-mark-arcs-as-read)
+  - [Quick example](#quick-example)
+  - [Recommended workflow](#recommended-workflow)
+  - [Reading variables](#reading-variables)
+  - [Note](#note)
+  - [Mermaid graph](#mermaid-graph)
+
+----
+
 ## Core idea
 
 - By default, **all jobs fail**.
 - A job only passes if its `READ_*` variable is set to `1`.
 - Jobs also depend on previous arcs, so you cannot progress without completing prerequisites.
 - All jobs are tagged with `local`, so they run on a runner with that tag.
+
+----
 
 ## Local GitLab Runner setup (`local` tag)
 
@@ -38,6 +57,8 @@ gitlab-runner run
 
 If your runner is already installed as a service, ensure it is running and has the `local` tag.
 
+----
+
 ## How to mark arcs as read
 
 Prerequisite: a GitLab Runner with tag `local` must be online, otherwise jobs stay pending.
@@ -46,6 +67,8 @@ Prerequisite: a GitLab Runner with tag `local` must be online, otherwise jobs st
 2. In Variables, add `READ_...=1` for each arc you already read.
 3. Run the pipeline.
 4. Only jobs enabled by both variables and dependencies will pass.
+
+----
 
 ## Quick example
 
@@ -60,11 +83,15 @@ When you run the pipeline:
 - `crisis_on_infinite_earths` passes.
 - Next jobs fail (or stay blocked) until you add their variables.
 
+----
+
 ## Recommended workflow
 
 1. Start with a pipeline run without variables to see the full pending/failing state.
 2. Every time you finish an arc, add its `READ_*` variable in the next run.
 3. Repeat until you complete the full path.
+
+----
 
 ## Reading variables
 
@@ -104,6 +131,7 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_GREEN_LANTERN_SECRET_ORIGIN`
 - `READ_BATMAN_FACE_THE_FACE`
 - `READ_BATMAN_AND_SON`
+- `READ_BATMAN_RESURRECTION_OF_RAS_AL_GHUL`
 - `READ_COUNTDOWN`
 - `READ_SEVEN_SOLDIERS_OF_VICTORY`
 - `READ_DEATH_OF_THE_NEW_GODS`
@@ -112,9 +140,11 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_WAR_OF_LIGHT`
 - `READ_BLACKEST_NIGHT`
 
+----
+
 ## Note
 
-The pipeline is based on the attached diagram and currently extends it with additional Batman branches (`Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`).
+The pipeline is based on the attached diagram and currently extends it with additional Batman branches (`Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`).
 
 Key convergence points are:
 
@@ -123,6 +153,8 @@ Key convergence points are:
 - `Final Crisis`
 - `War of Light`
 - `Blackest Night`
+
+----
 
 ## Mermaid graph
 
@@ -175,6 +207,7 @@ flowchart TD
   infinite_crisis --> green_lantern_secret_origin["Green Lantern: Secret Origin"]
   infinite_crisis --> batman_face_the_face["Batman: Face the Face"]
   batman_face_the_face --> batman_and_son["Batman and Son"]
+  batman_and_son --> batman_resurrection_of_ras_al_ghul["Batman: The Resurrection of Ra's al Ghul"]
 
   one_year_later --> countdown["Countdown"]
   fifty_two --> countdown
@@ -192,7 +225,7 @@ flowchart TD
   seven_soldiers_of_victory --> final_crisis
   death_of_the_new_gods --> final_crisis
   sinestro_corps_war --> final_crisis
-  batman_and_son --> final_crisis
+  batman_resurrection_of_ras_al_ghul --> final_crisis
 
   final_crisis --> war_of_light["War of Light"]
   war_of_light --> blackest_night["Blackest Night"]
