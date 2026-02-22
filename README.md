@@ -112,6 +112,7 @@ When you run the pipeline:
 These are the variables used by the pipeline. Set each one to `=1` to approve an arc:
 
 - `READ_CRISIS_ON_MULTIPLE_EARTHS`
+- `READ_ROOTS_OF_THE_SWAMP_THING`
 - `READ_CRISIS_ON_INFINITE_EARTHS`
 - `READ_BATMAN_YEAR_ONE`
 - `READ_THE_DEATH_OF_SUPERMAN`
@@ -166,7 +167,7 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 
 ## Note
 
-The pipeline is based on the attached diagram and currently extends it with additional Batman branches (`Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`), plus `The Flash: Rebirth`, `Brightest Day`, and `Flashpoint`.
+The pipeline is based on the attached diagram and currently extends it with additional branches (`Roots of the Swamp Thing`, plus Batman-heavy arcs such as `Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`), plus `The Flash: Rebirth`, `Brightest Day`, and `Flashpoint`.
 
 Key convergence points are:
 
@@ -183,6 +184,8 @@ Key convergence points are:
 ```mermaid
 flowchart TD
   crisis_on_multiple_earths["Crisis on Multiple Earths"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
+  crisis_on_multiple_earths --> roots_of_the_swamp_thing["Roots of the Swamp Thing"]
+  roots_of_the_swamp_thing --> crisis_on_infinite_earths
 
   crisis_on_infinite_earths --> batman_year_one["Batman: Year One"]
   crisis_on_infinite_earths --> the_death_of_superman["The Death of Superman"]

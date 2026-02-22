@@ -26,9 +26,16 @@ crisis_on_multiple_earths:
     ARC_VAR: READ_CRISIS_ON_MULTIPLE_EARTHS
     ARC_NAME: "Crisis on Multiple Earths"
 
-crisis_on_infinite_earths:
+roots_of_the_swamp_thing:
   extends: .arc_job
   needs: [crisis_on_multiple_earths]
+  variables:
+    ARC_VAR: READ_ROOTS_OF_THE_SWAMP_THING
+    ARC_NAME: "Roots of the Swamp Thing"
+
+crisis_on_infinite_earths:
+  extends: .arc_job
+  needs: [crisis_on_multiple_earths, roots_of_the_swamp_thing]
   variables:
     ARC_VAR: READ_CRISIS_ON_INFINITE_EARTHS
     ARC_NAME: "Crisis on Infinite Earths"
