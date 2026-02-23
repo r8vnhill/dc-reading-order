@@ -655,6 +655,7 @@ trinity_war:
     - aquaman_death_of_a_king
     - justice_league_of_america_worlds_most_dangerous
     - batman_requiem
+    - green_lantern_rise_of_the_third_army
   variables:
     ARC_VAR: READ_TRINITY_WAR
     ARC_NAME: "Trinity War"
@@ -789,3 +790,12 @@ green_lantern_revenge_of_the_black_hand:
   variables:
     ARC_VAR: READ_GREEN_LANTERN_REVENGE_OF_THE_BLACK_HAND
     ARC_NAME: "Green Lantern: Revenge of the Black Hand"
+
+# Green Lantern: Rise of the Third Army
+green_lantern_rise_of_the_third_army:
+  extends: .arc_job
+  needs:
+    - green_lantern_revenge_of_the_black_hand
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_RISE_OF_THE_THIRD_ARMY
+    ARC_NAME: "Green Lantern: Rise of the Third Army"
