@@ -654,6 +654,7 @@ trinity_war:
     - throne_of_atlantis
     - aquaman_death_of_a_king
     - justice_league_of_america_worlds_most_dangerous
+    - batman_requiem
   variables:
     ARC_VAR: READ_TRINITY_WAR
     ARC_NAME: "Trinity War"
@@ -754,7 +755,7 @@ batman_faces_of_death:
 batman_endgame:
   extends: .arc_job
   needs:
-    - batman_requiem
+    - forever_evil
     - batman_zero_year
   variables:
     ARC_VAR: READ_BATMAN_ENDGAME

@@ -12,7 +12,6 @@ Each arc is represented by a pipeline job, and reading-order arrows are modeled 
   - [Table of Contents](#table-of-contents)
   - [Personal context](#personal-context)
   - [Core idea](#core-idea)
-  - [Pipeline file organization](#pipeline-file-organization)
   - [Mermaid graph](#mermaid-graph)
   - [Local GitLab Runner setup (`local` tag)](#local-gitlab-runner-setup-local-tag)
   - [How to mark arcs as read](#how-to-mark-arcs-as-read)
@@ -30,9 +29,9 @@ You will notice a lot of Batman and Green Lantern (yes, that is very much on pur
 
 My suggestion is to start at one of the major crossovers depending on how many years you want to spend reading:
 
-- Shorter commitment: start at `Identity Crisis`
-- Medium commitment: start at `Infinite Crisis`
-- Longer commitment: start at `Final Crisis` (or from the beginning if you want the full ride)
+- Longer commitment: start after `Crisis on Infinite Earths` (or from the beginning if you want the full ride)
+- Medium commitment: start after `Infinite Crisis`
+- Shorter commitment: start after `Flashpoint`
 
 ----
 
@@ -42,24 +41,6 @@ My suggestion is to start at one of the major crossovers depending on how many y
 - A job only passes if its `READ_*` variable is set to `1`.
 - Jobs also depend on previous arcs, so you cannot progress without completing prerequisites.
 - All jobs are tagged with `local`, so they run on a runner with that tag.
-
-----
-
-## Pipeline file organization
-
-The `.gitlab-ci.yml` is grouped by reading branches to keep dependencies easier to scan:
-
-- `Core timeline`
-- `Batman branch`
-- `Superman branch`
-- `Green Lantern branch`
-- `Event spine`
-- `Swamp Thing branch`
-- `Animal Man branch`
-- `Aquaman branch`
-- `Justice League branch`
-
-When adding a new arc, place it in the matching section and define `needs` as a multiline list for readability.
 
 ----
 
