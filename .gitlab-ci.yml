@@ -750,6 +750,16 @@ batman_faces_of_death:
     ARC_VAR: READ_BATMAN_FACES_OF_DEATH
     ARC_NAME: "Batman: Faces of Death"
 
+# Batman: Endgame
+batman_endgame:
+  extends: .arc_job
+  needs:
+    - batman_requiem
+    - batman_zero_year
+  variables:
+    ARC_VAR: READ_BATMAN_ENDGAME
+    ARC_NAME: "Batman: Endgame"
+
 # Batman: Superheavy
 batman_superheavy:
   extends: .arc_job

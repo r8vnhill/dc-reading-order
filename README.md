@@ -208,6 +208,29 @@ flowchart TD
     flash_flashpoint --> justice_league_origin["Justice League: Origin"]
     justice_league_origin --> justice_league_villains_journey["Justice League: The Villain's Journey"]
     justice_league_villains_journey --> throne_of_atlantis
+    throne_of_atlantis --> justice_league_of_america_worlds_most_dangerous["Justice League of America: World's Most Dangerous"]
+    throne_of_atlantis --> trinity_war["Trinity War"]
+    aquaman_death_of_a_king --> trinity_war
+    justice_league_of_america_worlds_most_dangerous --> trinity_war
+    trinity_war --> forever_evil["Forever Evil"]
+    forever_evil --> justice_league_injustice_league["Justice League: Injustice League"]
+    justice_league_injustice_league --> justice_league_darkseid_war["Justice League: The Darkseid War"]
+
+    flash_flashpoint --> batman_court_of_owls["Batman: The Court of Owls"]
+    batman_court_of_owls --> batman_night_of_the_owls["Batman: Night of the Owls"]
+    batman_court_of_owls --> batman_and_robin_born_to_kill["Batman and Robin: Born to Kill"]
+    batman_court_of_owls --> batman_faces_of_death["Batman: Faces of Death"]
+    batman_night_of_the_owls --> batman_death_of_the_family["Batman: Death of the Family"]
+    batman_and_robin_born_to_kill --> batman_death_of_the_family
+    batman_faces_of_death --> batman_death_of_the_family
+    batman_death_of_the_family --> batman_requiem["Batman: Requiem"]
+    flash_flashpoint --> batman_zero_year["Batman: Zero Year"]
+    batman_requiem --> batman_endgame["Batman: Endgame"]
+    batman_zero_year --> batman_endgame
+    batman_endgame --> batman_superheavy["Batman: Superheavy"]
+
+    flash_flashpoint --> green_lantern_sinestro["Green Lantern: Sinestro"]
+    green_lantern_sinestro --> green_lantern_revenge_of_the_black_hand["Green Lantern: Revenge of the Black Hand"]
   end
 ```
 
@@ -351,12 +374,28 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_JUSTICE_LEAGUE_VILLAINS_JOURNEY`
 - `READ_THRONE_OF_ATLANTIS`
 - `READ_AQUAMAN_DEATH_OF_A_KING`
+- `READ_JUSTICE_LEAGUE_OF_AMERICA_WORLDS_MOST_DANGEROUS`
+- `READ_TRINITY_WAR`
+- `READ_FOREVER_EVIL`
+- `READ_JUSTICE_LEAGUE_INJUSTICE_LEAGUE`
+- `READ_JUSTICE_LEAGUE_DARKSEID_WAR`
+- `READ_BATMAN_COURT_OF_OWLS`
+- `READ_BATMAN_NIGHT_OF_THE_OWLS`
+- `READ_BATMAN_DEATH_OF_THE_FAMILY`
+- `READ_BATMAN_ZERO_YEAR`
+- `READ_BATMAN_AND_ROBIN_BORN_TO_KILL`
+- `READ_BATMAN_REQUIEM`
+- `READ_BATMAN_FACES_OF_DEATH`
+- `READ_BATMAN_ENDGAME`
+- `READ_BATMAN_SUPERHEAVY`
+- `READ_GREEN_LANTERN_SINESTRO`
+- `READ_GREEN_LANTERN_REVENGE_OF_THE_BLACK_HAND`
 
 ----
 
 ## Note
 
-The pipeline is based on the attached diagram and currently extends it with additional branches (`Roots of the Swamp Thing` plus an Alan Moore-era Swamp Thing run, plus Batman-heavy arcs such as `Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`), plus `The Flash: Rebirth`, `Brightest Day`, `Flashpoint`, `Grant Morrison's Animal Man`, `Animal Man: The Hunt`, `Swamp Thing by Brian K. Vaughan`, `Swamp Thing: Raise Them Bones`, `Swamp Thing: Family Tree`, both Rotworld crossovers, and the Aquaman/Justice League path to `Throne of Atlantis` and `Aquaman: Death of a King`.
+The pipeline is based on the attached diagram and currently extends it with additional branches (`Roots of the Swamp Thing` plus an Alan Moore-era Swamp Thing run, plus Batman-heavy arcs such as `Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`, and New 52 Batman from `Court of Owls` to `Superheavy`), plus `The Flash: Rebirth`, `Brightest Day`, `Flashpoint`, `Grant Morrison's Animal Man`, `Animal Man: The Hunt`, `Swamp Thing by Brian K. Vaughan`, `Swamp Thing: Raise Them Bones`, `Swamp Thing: Family Tree`, both Rotworld crossovers, the Aquaman/Justice League path through `Throne of Atlantis`, and the wider New 52 event spine (`Justice League of America`, `Trinity War`, `Forever Evil`, `Injustice League`, `Darkseid War`) plus post-Flashpoint Green Lantern (`Sinestro`, `Revenge of the Black Hand`).
 
 Key convergence points are:
 
