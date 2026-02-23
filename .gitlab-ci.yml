@@ -682,6 +682,7 @@ justice_league_darkseid_war:
   extends: .arc_job
   needs:
     - justice_league_injustice_league
+    - batman_endgame
   variables:
     ARC_VAR: READ_JUSTICE_LEAGUE_DARKSEID_WAR
     ARC_NAME: "Justice League: The Darkseid War"
