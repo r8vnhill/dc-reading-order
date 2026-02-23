@@ -767,6 +767,7 @@ batman_superheavy:
   extends: .arc_job
   needs:
     - batman_endgame
+    - justice_league_darkseid_war
   variables:
     ARC_VAR: READ_BATMAN_SUPERHEAVY
     ARC_NAME: "Batman: Superheavy"
