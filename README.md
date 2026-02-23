@@ -56,6 +56,8 @@ The `.gitlab-ci.yml` is grouped by reading branches to keep dependencies easier 
 - `Event spine`
 - `Swamp Thing branch`
 - `Animal Man branch`
+- `Aquaman branch`
+- `Justice League branch`
 
 When adding a new arc, place it in the matching section and define `needs` as a multiline list for readability.
 
@@ -193,6 +195,19 @@ flowchart TD
     animal_man_the_hunt --> animal_man_animal_vs_man["Animal Man: Animal vs. Man"]
     swamp_thing_raise_them_bones --> animal_man_animal_vs_man
     swamp_thing_raise_them_bones --> swamp_thing_family_tree["Swamp Thing: Family Tree"]
+    swamp_thing_family_tree --> swamp_thing_rotworld_green_kingdom["Swamp Thing: Rotworld - The Green Kingdom"]
+    animal_man_animal_vs_man --> swamp_thing_rotworld_green_kingdom
+    swamp_thing_family_tree --> animal_man_rotworld_red_kingdom["Animal Man: Rotworld - The Red Kingdom"]
+    animal_man_animal_vs_man --> animal_man_rotworld_red_kingdom
+
+    flash_flashpoint --> aquaman_the_trench["Aquaman: The Trench"]
+    aquaman_the_trench --> aquaman_the_others["Aquaman: The Others"]
+    aquaman_the_others --> throne_of_atlantis["Throne of Atlantis"]
+    throne_of_atlantis --> aquaman_death_of_a_king["Aquaman: Death of a King"]
+
+    flash_flashpoint --> justice_league_origin["Justice League: Origin"]
+    justice_league_origin --> justice_league_villains_journey["Justice League: The Villain's Journey"]
+    justice_league_villains_journey --> throne_of_atlantis
   end
 ```
 
@@ -327,12 +342,21 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_SWAMP_THING_BY_BRIAN_K_VAUGHAN`
 - `READ_SWAMP_THING_RAISE_THEM_BONES`
 - `READ_ANIMAL_MAN_ANIMAL_VS_MAN`
+- `READ_SWAMP_THING_FAMILY_TREE`
+- `READ_SWAMP_THING_ROTWORLD_GREEN_KINGDOM`
+- `READ_ANIMAL_MAN_ROTWORLD_RED_KINGDOM`
+- `READ_AQUAMAN_THE_TRENCH`
+- `READ_AQUAMAN_THE_OTHERS`
+- `READ_JUSTICE_LEAGUE_ORIGIN`
+- `READ_JUSTICE_LEAGUE_VILLAINS_JOURNEY`
+- `READ_THRONE_OF_ATLANTIS`
+- `READ_AQUAMAN_DEATH_OF_A_KING`
 
 ----
 
 ## Note
 
-The pipeline is based on the attached diagram and currently extends it with additional branches (`Roots of the Swamp Thing` plus an Alan Moore-era Swamp Thing run, plus Batman-heavy arcs such as `Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`), plus `The Flash: Rebirth`, `Brightest Day`, `Flashpoint`, `Grant Morrison's Animal Man`, `Animal Man: The Hunt`, `Swamp Thing by Brian K. Vaughan`, `Swamp Thing: Raise Them Bones`, and `Animal Man: Animal vs. Man`.
+The pipeline is based on the attached diagram and currently extends it with additional branches (`Roots of the Swamp Thing` plus an Alan Moore-era Swamp Thing run, plus Batman-heavy arcs such as `Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`), plus `The Flash: Rebirth`, `Brightest Day`, `Flashpoint`, `Grant Morrison's Animal Man`, `Animal Man: The Hunt`, `Swamp Thing by Brian K. Vaughan`, `Swamp Thing: Raise Them Bones`, `Swamp Thing: Family Tree`, both Rotworld crossovers, and the Aquaman/Justice League path to `Throne of Atlantis` and `Aquaman: Death of a King`.
 
 Key convergence points are:
 
