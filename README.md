@@ -13,6 +13,7 @@ Each arc is represented by a pipeline job, and reading-order arrows are modeled 
   - [Personal context](#personal-context)
   - [Core idea](#core-idea)
   - [Mermaid graph](#mermaid-graph)
+    - [Pre-Crisis on Infinite Earths](#pre-crisis-on-infinite-earths)
   - [Local GitLab Runner setup (`local` tag)](#local-gitlab-runner-setup-local-tag)
   - [How to mark arcs as read](#how-to-mark-arcs-as-read)
   - [Quick example](#quick-example)
@@ -46,17 +47,17 @@ My suggestion is to start at one of the major crossovers depending on how many y
 
 ## Mermaid graph
 
+### Pre-Crisis on Infinite Earths
+
 ```mermaid
 flowchart TD
-    subgraph pre_crisis_on_infinite_earths["Pre Crisis on Infinite Earths"]
-    crisis_on_multiple_earths["Crisis on Multiple Earths"]
-    roots_of_the_swamp_thing["Roots of the Swamp Thing"]
-    crisis_on_multiple_earths --> roots_of_the_swamp_thing
-  end
+  crisis_on_multiple_earths["Crisis on Multiple Earths"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
+  roots_of_the_swamp_thing["Roots of the Swamp Thing"] --> crisis_on_infinite_earths
+```
 
+```mermaid
+flowchart TD
   subgraph pre_identity_crisis["Pre Identity Crisis"]
-    crisis_on_multiple_earths --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
-
     crisis_on_infinite_earths --> batman_year_one["Batman: Year One"]
     crisis_on_infinite_earths --> the_death_of_superman["The Death of Superman"]
     crisis_on_infinite_earths --> green_lantern_emerald_dawn["Green Lantern: Emerald Dawn"]
