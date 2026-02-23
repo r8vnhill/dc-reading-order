@@ -562,3 +562,217 @@ swamp_thing_family_tree:
   variables:
     ARC_VAR: READ_SWAMP_THING_FAMILY_TREE
     ARC_NAME: "Swamp Thing: Family Tree"
+
+# Swamp Thing: Rotworld - The Green Kingdom
+swamp_thing_rotworld_green_kingdom:
+  extends: .arc_job
+  needs:
+    - swamp_thing_family_tree
+    - animal_man_animal_vs_man
+  variables:
+    ARC_VAR: READ_SWAMP_THING_ROTWORLD_GREEN_KINGDOM
+    ARC_NAME: "Swamp Thing: Rotworld - The Green Kingdom"
+
+# Animal Man: Rotworld - The Red Kingdom
+animal_man_rotworld_red_kingdom:
+  extends: .arc_job
+  needs:
+    - swamp_thing_family_tree
+    - animal_man_animal_vs_man
+  variables:
+    ARC_VAR: READ_ANIMAL_MAN_ROTWORLD_RED_KINGDOM
+    ARC_NAME: "Animal Man: Rotworld - The Red Kingdom"
+
+# Aquaman: The Trench
+aquaman_the_trench:
+  extends: .arc_job
+  needs:
+    - flash_flashpoint
+  variables:
+    ARC_VAR: READ_AQUAMAN_THE_TRENCH
+    ARC_NAME: "Aquaman: The Trench"
+
+# Aquaman: The Others
+aquaman_the_others:
+  extends: .arc_job
+  needs:
+    - aquaman_the_trench
+  variables:
+    ARC_VAR: READ_AQUAMAN_THE_OTHERS
+    ARC_NAME: "Aquaman: The Others"
+
+# Justice League: Origin
+justice_league_origin:
+  extends: .arc_job
+  needs:
+    - flash_flashpoint
+  variables:
+    ARC_VAR: READ_JUSTICE_LEAGUE_ORIGIN
+    ARC_NAME: "Justice League: Origin"
+
+# Justice League: The Villain's Journey
+justice_league_villains_journey:
+  extends: .arc_job
+  needs:
+    - justice_league_origin
+  variables:
+    ARC_VAR: READ_JUSTICE_LEAGUE_VILLAINS_JOURNEY
+    ARC_NAME: "Justice League: The Villain's Journey"
+
+# Throne of Atlantis
+throne_of_atlantis:
+  extends: .arc_job
+  needs:
+    - aquaman_the_others
+    - justice_league_villains_journey
+  variables:
+    ARC_VAR: READ_THRONE_OF_ATLANTIS
+    ARC_NAME: "Throne of Atlantis"
+
+# Aquaman: Death of a King
+aquaman_death_of_a_king:
+  extends: .arc_job
+  needs:
+    - throne_of_atlantis
+  variables:
+    ARC_VAR: READ_AQUAMAN_DEATH_OF_A_KING
+    ARC_NAME: "Aquaman: Death of a King"
+
+# Justice League of America: World's Most Dangerous
+justice_league_of_america_worlds_most_dangerous:
+  extends: .arc_job
+  needs:
+    - throne_of_atlantis
+  variables:
+    ARC_VAR: READ_JUSTICE_LEAGUE_OF_AMERICA_WORLDS_MOST_DANGEROUS
+    ARC_NAME: "Justice League of America: World's Most Dangerous"
+
+# Trinity War
+trinity_war:
+  extends: .arc_job
+  needs:
+    - throne_of_atlantis
+    - aquaman_death_of_a_king
+    - justice_league_of_america_worlds_most_dangerous
+  variables:
+    ARC_VAR: READ_TRINITY_WAR
+    ARC_NAME: "Trinity War"
+
+# Forever Evil
+forever_evil:
+  extends: .arc_job
+  needs:
+    - trinity_war
+  variables:
+    ARC_VAR: READ_FOREVER_EVIL
+    ARC_NAME: "Forever Evil"
+
+# Justice League: Injustice League
+justice_league_injustice_league:
+  extends: .arc_job
+  needs:
+    - forever_evil
+  variables:
+    ARC_VAR: READ_JUSTICE_LEAGUE_INJUSTICE_LEAGUE
+    ARC_NAME: "Justice League: Injustice League"
+
+# Justice League: The Darkseid War
+justice_league_darkseid_war:
+  extends: .arc_job
+  needs:
+    - justice_league_injustice_league
+  variables:
+    ARC_VAR: READ_JUSTICE_LEAGUE_DARKSEID_WAR
+    ARC_NAME: "Justice League: The Darkseid War"
+
+# Batman: The Court of Owls
+batman_court_of_owls:
+  extends: .arc_job
+  needs:
+    - flash_flashpoint
+  variables:
+    ARC_VAR: READ_BATMAN_COURT_OF_OWLS
+    ARC_NAME: "Batman: The Court of Owls"
+
+# Batman: Night of the Owls
+batman_night_of_the_owls:
+  extends: .arc_job
+  needs:
+    - batman_court_of_owls
+  variables:
+    ARC_VAR: READ_BATMAN_NIGHT_OF_THE_OWLS
+    ARC_NAME: "Batman: Night of the Owls"
+
+# Batman: Death of the Family
+batman_death_of_the_family:
+  extends: .arc_job
+  needs:
+    - batman_night_of_the_owls
+    - batman_and_robin_born_to_kill
+    - batman_faces_of_death
+  variables:
+    ARC_VAR: READ_BATMAN_DEATH_OF_THE_FAMILY
+    ARC_NAME: "Batman: Death of the Family"
+
+# Batman: Zero Year
+batman_zero_year:
+  extends: .arc_job
+  needs:
+    - flash_flashpoint
+  variables:
+    ARC_VAR: READ_BATMAN_ZERO_YEAR
+    ARC_NAME: "Batman: Zero Year"
+
+# Batman and Robin: Born to Kill
+batman_and_robin_born_to_kill:
+  extends: .arc_job
+  needs:
+    - batman_court_of_owls
+  variables:
+    ARC_VAR: READ_BATMAN_AND_ROBIN_BORN_TO_KILL
+    ARC_NAME: "Batman and Robin: Born to Kill"
+
+# Batman: Requiem
+batman_requiem:
+  extends: .arc_job
+  needs:
+    - batman_death_of_the_family
+  variables:
+    ARC_VAR: READ_BATMAN_REQUIEM
+    ARC_NAME: "Batman: Requiem"
+
+# Batman: Faces of Death
+batman_faces_of_death:
+  extends: .arc_job
+  needs:
+    - batman_court_of_owls
+  variables:
+    ARC_VAR: READ_BATMAN_FACES_OF_DEATH
+    ARC_NAME: "Batman: Faces of Death"
+
+# Batman: Superheavy
+batman_superheavy:
+  extends: .arc_job
+  needs:
+    - batman_endgame
+  variables:
+    ARC_VAR: READ_BATMAN_SUPERHEAVY
+    ARC_NAME: "Batman: Superheavy"
+
+# Green Lantern: Sinestro
+green_lantern_sinestro:
+  extends: .arc_job
+  needs:
+    - flash_flashpoint
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_SINESTRO
+    ARC_NAME: "Green Lantern: Sinestro"
+
+# Green Lantern: Revenge of the Black Hand
+green_lantern_revenge_of_the_black_hand:
+  extends: .arc_job
+  needs:
+    - green_lantern_sinestro
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_REVENGE_OF_THE_BLACK_HAND
+    ARC_NAME: "Green Lantern: Revenge of the Black Hand"

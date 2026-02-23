@@ -192,7 +192,7 @@ flowchart TD
     flash_flashpoint --> swamp_thing_raise_them_bones
     animal_man_the_hunt --> animal_man_animal_vs_man["Animal Man: Animal vs. Man"]
     swamp_thing_raise_them_bones --> animal_man_animal_vs_man
-    swamp_thing_by_raise_them_bones --> swamp_thing_family_tree["Swamp Thing: Family Tree"]
+    swamp_thing_raise_them_bones --> swamp_thing_family_tree["Swamp Thing: Family Tree"]
   end
 ```
 
