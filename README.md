@@ -13,7 +13,8 @@ Each arc is represented by a pipeline job, and reading-order arrows are modeled 
   - [Personal context](#personal-context)
   - [Core idea](#core-idea)
   - [Mermaid graph](#mermaid-graph)
-    - [Pre-Crisis on Infinite Earths](#pre-crisis-on-infinite-earths)
+    - [Crisis on Infinite Earths](#crisis-on-infinite-earths)
+    - [Infinite Crisis](#infinite-crisis)
   - [Local GitLab Runner setup (`local` tag)](#local-gitlab-runner-setup-local-tag)
   - [How to mark arcs as read](#how-to-mark-arcs-as-read)
   - [Quick example](#quick-example)
@@ -47,20 +48,34 @@ My suggestion is to start at one of the major crossovers depending on how many y
 
 ## Mermaid graph
 
-### Pre-Crisis on Infinite Earths
+### Crisis on Infinite Earths
 
 ```mermaid
 flowchart TD
+  justice_league_of_america_league_that_defeated_itself["Justice League of America: The League That Defeated Itself"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
   crisis_on_multiple_earths["Crisis on Multiple Earths"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
   roots_of_the_swamp_thing["Roots of the Swamp Thing"] --> crisis_on_infinite_earths
 ```
 
+### Infinite Crisis
+
 ```mermaid
 flowchart TD
-  subgraph pre_identity_crisis["Pre Identity Crisis"]
-    crisis_on_infinite_earths --> batman_year_one["Batman: Year One"]
-    crisis_on_infinite_earths --> the_death_of_superman["The Death of Superman"]
-    crisis_on_infinite_earths --> green_lantern_emerald_dawn["Green Lantern: Emerald Dawn"]
+  crisis_on_infinite_earths["Crisis on Infinite Earths"]
+  crisis_on_infinite_earths --> batman_year_one["Batman: Year One"]
+  crisis_on_infinite_earths --> the_death_of_superman["The Death of Superman"]
+  crisis_on_infinite_earths --> green_lantern_emerald_dawn["Green Lantern: Emerald Dawn"]
+  crisis_on_infinite_earths --> saga_of_the_swamp_thing
+  crisis_on_infinite_earths --> grant_morrisons_animal_man["Grant Morrison's Animal Man"]
+
+  roots_of_the_swamp_thing["Roots of the Swamp Thing"] --> saga_of_the_swamp_thing["Saga of the Swamp Thing"]
+
+  justice_league_of_america_league_that_defeated_itself["Justice League of America: The League That Defeated Itself"] --> identity_crisis["Identity Crisis"]
+
+  subgraph sg_identity_crisis["Identity Crisis"]
+    the_death_of_superman
+    green_lantern_emerald_dawn
+    grant_morrisons_animal_man
 
     batman_year_one --> batman_haunted_knight["Batman: Haunted Knight"]
     batman_haunted_knight --> batman_the_long_halloween["Batman: The Long Halloween"]
@@ -83,10 +98,6 @@ flowchart TD
     zero_hour --> the_final_night["The Final Night"]
     the_final_night --> day_of_judgment["Day of Judgment"]
 
-    roots_of_the_swamp_thing --> crisis_on_infinite_earths
-    roots_of_the_swamp_thing --> saga_of_the_swamp_thing["Saga of the Swamp Thing"]
-    crisis_on_infinite_earths --> saga_of_the_swamp_thing
-    crisis_on_infinite_earths --> grant_morrisons_animal_man["Grant Morrison's Animal Man"]
     saga_of_the_swamp_thing --> swamp_thing_love_and_death["Swamp Thing: Love and Death"]
     swamp_thing_love_and_death --> swamp_thing_the_curse["Swamp Thing: The Curse"]
     swamp_thing_the_curse --> swamp_thing_a_murder_of_crows["Swamp Thing: A Murder of Crows"]
@@ -94,12 +105,8 @@ flowchart TD
     swamp_thing_earth_to_earth --> swamp_thing_reunion["Swamp Thing: Reunion"]
     swamp_thing_reunion --> swamp_thing_by_brian_k_vaughan["Swamp Thing by Brian K. Vaughan"]
 
-    batman_hush --> identity_crisis["Identity Crisis"]
-    grant_morrisons_animal_man --> identity_crisis
-    swamp_thing_by_brian_k_vaughan --> identity_crisis
-  end
+    batman_hush --> identity_crisis
 
-  subgraph pre_infinite_crisis["Pre Infinite Crisis"]
     day_of_judgment --> identity_crisis
 
     identity_crisis --> villains_united["Villains United"]
@@ -109,16 +116,24 @@ flowchart TD
     identity_crisis --> green_lantern_rebirth["Green Lantern: Rebirth"]
     day_of_judgment --> green_lantern_rebirth
 
-    batman_under_the_hood["Batman: Under the Hood"] --> infinite_crisis
-  end
-  
-  subgraph pre_final_crisis["Pre Final Crisis"]
+    batman_under_the_hood["Batman: Under the Hood"] --> infinite_crisis["Infinite Crisis"]
+
+    identity_crisis --> batman_under_the_hood
+    batman_hush --> batman_under_the_hood
+
     villains_united --> infinite_crisis["Infinite Crisis"]
     omac_project --> infinite_crisis
     day_of_vengeance --> infinite_crisis
     rann_thanagar_war --> infinite_crisis
     green_lantern_rebirth --> infinite_crisis
+    grant_morrisons_animal_man --> infinite_crisis
+    swamp_thing_by_brian_k_vaughan --> infinite_crisis
+  end
+```
 
+```mermaid
+flowchart TD
+  subgraph pre_final_crisis["Pre Final Crisis"]
     infinite_crisis --> one_year_later["One Year Later"]
     infinite_crisis --> fifty_two["52"]
     infinite_crisis --> green_lantern_secret_origin["Green Lantern: Secret Origin"]
@@ -141,9 +156,6 @@ flowchart TD
     fifty_two --> sinestro_corps_war["Sinestro Corps War"]
     green_lantern_secret_origin --> sinestro_corps_war
     one_year_later --> sinestro_corps_war
-
-    identity_crisis --> batman_under_the_hood
-    batman_hush --> batman_under_the_hood
   end
 
   subgraph pre_flashpoint["Pre Flashpoint"]
@@ -260,9 +272,10 @@ Prerequisite: a GitLab Runner with tag `local` must be online, otherwise jobs st
 
 ## Quick example
 
-If you already read the first two arcs:
+If you already read the first three arcs:
 
 - `READ_CRISIS_ON_MULTIPLE_EARTHS=1`
+- `READ_JUSTICE_LEAGUE_OF_AMERICA_LEAGUE_THAT_DEFEATED_ITSELF=1`
 - `READ_CRISIS_ON_INFINITE_EARTHS=1`
 
 When you run the pipeline:
@@ -287,6 +300,7 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 
 - `READ_CRISIS_ON_MULTIPLE_EARTHS`
 - `READ_ROOTS_OF_THE_SWAMP_THING`
+- `READ_JUSTICE_LEAGUE_OF_AMERICA_LEAGUE_THAT_DEFEATED_ITSELF`
 - `READ_CRISIS_ON_INFINITE_EARTHS`
 - `READ_SAGA_OF_THE_SWAMP_THING`
 - `READ_SWAMP_THING_LOVE_AND_DEATH`

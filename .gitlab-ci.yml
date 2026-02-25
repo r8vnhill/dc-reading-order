@@ -38,6 +38,7 @@ crisis_on_infinite_earths:
   needs:
     - crisis_on_multiple_earths
     - roots_of_the_swamp_thing
+    - justice_league_of_america_league_that_defeated_itself
   variables:
     ARC_VAR: READ_CRISIS_ON_INFINITE_EARTHS
     ARC_NAME: "Crisis on Infinite Earths"
@@ -335,8 +336,7 @@ identity_crisis:
   needs:
     - batman_hush
     - day_of_judgment
-    - swamp_thing_by_brian_k_vaughan
-    - grant_morrisons_animal_man
+    - justice_league_of_america_league_that_defeated_itself
   variables:
     ARC_VAR: READ_IDENTITY_CRISIS
     ARC_NAME: "Identity Crisis"
@@ -382,6 +382,8 @@ infinite_crisis:
     - rann_thanagar_war
     - green_lantern_rebirth
     - batman_under_the_hood
+    - swamp_thing_by_brian_k_vaughan
+    - grant_morrisons_animal_man
   variables:
     ARC_VAR: READ_INFINITE_CRISIS
     ARC_NAME: "Infinite Crisis"
@@ -797,3 +799,10 @@ green_lantern_rise_of_the_third_army:
   variables:
     ARC_VAR: READ_GREEN_LANTERN_RISE_OF_THE_THIRD_ARMY
     ARC_NAME: "Green Lantern: Rise of the Third Army"
+
+# Justice League of America: The League That Defeated Itself
+justice_league_of_america_league_that_defeated_itself:
+  extends: .arc_job
+  variables:
+    ARC_VAR: READ_JUSTICE_LEAGUE_OF_AMERICA_LEAGUE_THAT_DEFEATED_ITSELF
+    ARC_NAME: "Justice League of America: The League That Defeated Itself"  
