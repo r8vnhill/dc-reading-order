@@ -8,7 +8,8 @@ This project uses GitLab CI/CD as a visual tracker for reading DC comic arcs.
 
 Each arc is represented by a pipeline job, and reading-order arrows are modeled with `needs`.
 
-> **ℹ️ Note:** The CI/CD pipeline functionality is only available on GitLab. The GitHub repository is a mirror for visibility and collaboration.
+>[!NOTE]
+> The CI/CD pipeline functionality is only available on GitLab. The GitHub repository is a mirror for visibility and collaboration.
 
 ----
 
@@ -22,7 +23,8 @@ Each arc is represented by a pipeline job, and reading-order arrows are modeled 
   - [Mermaid graph](#mermaid-graph)
     - [Crisis on Infinite Earths](#crisis-on-infinite-earths)
     - [Infinite Crisis](#infinite-crisis)
-  - [Final Crisis](#final-crisis)
+    - [Final Crisis](#final-crisis)
+    - [Flashpoint](#flashpoint)
   - [Local GitLab Runner setup (`local` tag)](#local-gitlab-runner-setup-local-tag)
   - [How to mark arcs as read](#how-to-mark-arcs-as-read)
   - [Quick example](#quick-example)
@@ -176,7 +178,7 @@ flowchart TD
   end
 ```
 
-## Final Crisis
+### Final Crisis
 
 >[!NOTE]
 > Recommended reading order tweak: read **Green Lantern: Secret Origin** immediately after **Infinite Crisis**.
@@ -208,8 +210,11 @@ flowchart TD
 
     fifty_two --> sinestro_corps_war["Sinestro Corps War"]
     green_lantern_secret_origin --> green_lantern_no_fear["Green Lantern: No Fear"]
+    green_lantern_secret_origin --> green_lantern_corps_recharge["Green Lantern Corps: Recharge"]
+    one_year_later --> green_lantern_no_fear
+    one_year_later --> green_lantern_corps_recharge
     green_lantern_no_fear --> sinestro_corps_war
-    one_year_later --> sinestro_corps_war
+    green_lantern_corps_recharge --> sinestro_corps_war
 
     countdown --> final_crisis["Final Crisis"]
     seven_soldiers_of_victory --> final_crisis
@@ -219,26 +224,34 @@ flowchart TD
   end
 ```
 
+### Flashpoint
+
 ```mermaid
 flowchart TD
-  subgraph pre_flashpoint["Pre Flashpoint"]
-    final_crisis --> flash_rebirth["The Flash: Rebirth"]
-    final_crisis --> batman_battle_for_the_cowl["Batman: Battle for the Cowl"]
-    batman_rip --> batman_battle_for_the_cowl
+  final_crisis["Final Crisis"] --> flash_rebirth["The Flash: Rebirth"]
+  final_crisis --> batman_battle_for_the_cowl["Batman: Battle for the Cowl"]
+  final_crisis --> war_of_light["War of Light"]
+  batman_rip["Batman R.I.P."] --> batman_battle_for_the_cowl
+  sinestro_corps_war["Sinestro Corps War"] --> war_of_light
+
+  subgraph sg_flashpoint["Flashpoint"]
     batman_battle_for_the_cowl --> batman_and_robin["Batman and Robin"]
     batman_and_robin --> batman_return_of_bruce_wayne["Return of Bruce Wayne"]
-    final_crisis --> war_of_light["War of Light"]
-    sinestro_corps_war --> war_of_light
+
     war_of_light --> blackest_night["Blackest Night"]
     flash_rebirth --> blackest_night
     blackest_night --> brightest_day["Brightest Day"]
     blackest_night --> batman_return_of_bruce_wayne
-  end
-  
-  subgraph new_52["New 52"]
+
     batman_return_of_bruce_wayne --> flash_flashpoint["Flash: Flashpoint"]
     brightest_day --> flash_flashpoint
     flash_rebirth --> flash_flashpoint
+  end
+```
+
+```mermaid
+flowchart TD
+  subgraph new_52["New 52"]
     grant_morrisons_animal_man --> animal_man_the_hunt["Animal Man: The Hunt"]
     flash_flashpoint --> animal_man_the_hunt["Animal Man: The Hunt"]
     swamp_thing_by_brian_k_vaughan --> swamp_thing_raise_them_bones["Swamp Thing: Raise Them Bones"]
@@ -390,6 +403,7 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_52`
 - `READ_GREEN_LANTERN_SECRET_ORIGIN`
 - `READ_GREEN_LANTERN_NO_FEAR`
+- `READ_GREEN_LANTERN_CORPS_RECHARGE`
 - `READ_BATMAN_FACE_THE_FACE`
 - `READ_BATMAN_AND_SON`
 - `READ_BATMAN_RESURRECTION_OF_RAS_AL_GHUL`
@@ -463,7 +477,7 @@ This pipeline extends beyond the core Crisis events with carefully selected stor
 #### Green Lantern
 
 - Emerald Twilight: Emerald Dawn, The Return of Superman, Emerald Twilight, A New Dawn
-- Geoff Johns' run: Rebirth, Secret Origin, No Fear, Sinestro Corps War, War of Light, Blackest Night, Brightest Day
+- Geoff Johns' run: Rebirth, Secret Origin, No Fear, Green Lantern Corps: Recharge, Sinestro Corps War, War of Light, Blackest Night, Brightest Day
 - New 52: Sinestro, Revenge of the Black Hand, Rise of the Third Army
 
 #### Swamp Thing & Animal Man
