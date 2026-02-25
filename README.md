@@ -1,8 +1,14 @@
 # DC Reading Order with GitLab CI/CD
 
+[![GitLab Pipeline Status](https://gitlab.com/r8vnhill/dc-reading-order/badges/main/pipeline.svg)](https://gitlab.com/r8vnhill/dc-reading-order/-/pipelines)
+[![GitHub Mirror](https://img.shields.io/badge/mirror-GitHub-181717?logo=github)](https://github.com/r8vnhill/dc-reading-order)
+[![GitLab](https://img.shields.io/badge/source-GitLab-FC6D26?logo=gitlab)](https://gitlab.com/r8vnhill/dc-reading-order)
+
 This project uses GitLab CI/CD as a visual tracker for reading DC comic arcs.
 
 Each arc is represented by a pipeline job, and reading-order arrows are modeled with `needs`.
+
+> **ℹ️ Note:** The CI/CD pipeline functionality is only available on GitLab. The GitHub repository is a mirror for visibility and collaboration.
 
 ----
 
@@ -48,6 +54,8 @@ My suggestion is to start at one of the major crossovers depending on how many y
 
 ## Mermaid graph
 
+> **💡 Tip:** For better visualization of the flowcharts below, copy the mermaid code and paste it into [mermaid.live](https://mermaid.live) for an interactive view with zoom and pan capabilities.
+
 ### Crisis on Infinite Earths
 
 ```mermaid
@@ -72,7 +80,7 @@ flowchart TD
 
   justice_league_of_america_league_that_defeated_itself["Justice League of America: The League That Defeated Itself"] --> identity_crisis["Identity Crisis"]
 
-  subgraph sg_identity_crisis["Identity Crisis"]
+  subgraph sg_infinite_crisis["Infinite Crisis"]
     the_death_of_superman
     green_lantern_emerald_dawn
     grant_morrisons_animal_man
