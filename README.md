@@ -25,6 +25,7 @@ Each arc is represented by a pipeline job, and reading-order arrows are modeled 
     - [Infinite Crisis](#infinite-crisis)
     - [Final Crisis](#final-crisis)
     - [Flashpoint](#flashpoint)
+    - [New 52](#new-52)
   - [Local GitLab Runner setup (`local` tag)](#local-gitlab-runner-setup-local-tag)
   - [How to mark arcs as read](#how-to-mark-arcs-as-read)
   - [Quick example](#quick-example)
@@ -213,8 +214,9 @@ flowchart TD
     green_lantern_secret_origin --> green_lantern_corps_recharge["Green Lantern Corps: Recharge"]
     one_year_later --> green_lantern_no_fear
     one_year_later --> green_lantern_corps_recharge
-    green_lantern_no_fear --> sinestro_corps_war
-    green_lantern_corps_recharge --> sinestro_corps_war
+    green_lantern_no_fear --> green_lantern_revenge_of_the_green_lanterns["Green Lantern: Revenge of the Green Lanterns"]
+    green_lantern_corps_recharge --> green_lantern_revenge_of_the_green_lanterns
+    green_lantern_revenge_of_the_green_lanterns --> sinestro_corps_war
 
     countdown --> final_crisis["Final Crisis"]
     seven_soldiers_of_victory --> final_crisis
@@ -249,13 +251,21 @@ flowchart TD
   end
 ```
 
+### New 52
+
 ```mermaid
 flowchart TD
+  grant_morrisons_animal_man["Grant Morrison's Animal Man"] --> animal_man_the_hunt["Animal Man: The Hunt"]
+  flash_flashpoint["Flash: Flashpoint"] --> animal_man_the_hunt["Animal Man: The Hunt"]
+  swamp_thing_by_brian_k_vaughan["Swamp Thing by Brian K. Vaughan"] --> swamp_thing_raise_them_bones["Swamp Thing: Raise Them Bones"]
+  flash_flashpoint --> swamp_thing_raise_them_bones
+  flash_flashpoint --> aquaman_the_trench["Aquaman: The Trench"]
+  flash_flashpoint --> justice_league_origin["Justice League: Origin"]
+  flash_flashpoint --> batman_court_of_owls["Batman: The Court of Owls"]
+  flash_flashpoint --> batman_zero_year["Batman: Zero Year"]
+  flash_flashpoint --> green_lantern_sinestro["Green Lantern: Sinestro"]
+
   subgraph new_52["New 52"]
-    grant_morrisons_animal_man --> animal_man_the_hunt["Animal Man: The Hunt"]
-    flash_flashpoint --> animal_man_the_hunt["Animal Man: The Hunt"]
-    swamp_thing_by_brian_k_vaughan --> swamp_thing_raise_them_bones["Swamp Thing: Raise Them Bones"]
-    flash_flashpoint --> swamp_thing_raise_them_bones
     animal_man_the_hunt --> animal_man_animal_vs_man["Animal Man: Animal vs. Man"]
     swamp_thing_raise_them_bones --> animal_man_animal_vs_man
     swamp_thing_raise_them_bones --> swamp_thing_family_tree["Swamp Thing: Family Tree"]
@@ -264,12 +274,10 @@ flowchart TD
     swamp_thing_family_tree --> animal_man_rotworld_red_kingdom["Animal Man: Rotworld - The Red Kingdom"]
     animal_man_animal_vs_man --> animal_man_rotworld_red_kingdom
 
-    flash_flashpoint --> aquaman_the_trench["Aquaman: The Trench"]
     aquaman_the_trench --> aquaman_the_others["Aquaman: The Others"]
     aquaman_the_others --> throne_of_atlantis["Throne of Atlantis"]
     throne_of_atlantis --> aquaman_death_of_a_king["Aquaman: Death of a King"]
 
-    flash_flashpoint --> justice_league_origin["Justice League: Origin"]
     justice_league_origin --> justice_league_villains_journey["Justice League: The Villain's Journey"]
     justice_league_villains_journey --> throne_of_atlantis
     throne_of_atlantis --> justice_league_of_america_worlds_most_dangerous["Justice League of America: World's Most Dangerous"]
@@ -280,7 +288,6 @@ flowchart TD
     forever_evil --> justice_league_injustice_league["Justice League: Injustice League"]
     justice_league_injustice_league --> justice_league_darkseid_war["Justice League: The Darkseid War"]
 
-    flash_flashpoint --> batman_court_of_owls["Batman: The Court of Owls"]
     batman_court_of_owls --> batman_night_of_the_owls["Batman: Night of the Owls"]
     batman_court_of_owls --> batman_and_robin_born_to_kill["Batman and Robin: Born to Kill"]
     batman_court_of_owls --> batman_faces_of_death["Batman: Faces of Death"]
@@ -288,12 +295,10 @@ flowchart TD
     batman_and_robin_born_to_kill --> batman_death_of_the_family
     batman_faces_of_death --> batman_death_of_the_family
     batman_death_of_the_family --> batman_requiem["Batman: Requiem"]
-    flash_flashpoint --> batman_zero_year["Batman: Zero Year"]
     batman_requiem --> batman_endgame["Batman: Endgame"]
     batman_zero_year --> batman_endgame
     batman_endgame --> batman_superheavy["Batman: Superheavy"]
 
-    flash_flashpoint --> green_lantern_sinestro["Green Lantern: Sinestro"]
     green_lantern_sinestro --> green_lantern_revenge_of_the_black_hand["Green Lantern: Revenge of the Black Hand"]
     green_lantern_revenge_of_the_black_hand --> green_lantern_rise_of_the_third_army["Green Lantern: Rise of the Third Army"]
     batman_requiem --> trinity_war
@@ -404,6 +409,7 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_GREEN_LANTERN_SECRET_ORIGIN`
 - `READ_GREEN_LANTERN_NO_FEAR`
 - `READ_GREEN_LANTERN_CORPS_RECHARGE`
+- `READ_GREEN_LANTERN_REVENGE_OF_THE_GREEN_LANTERNS`
 - `READ_BATMAN_FACE_THE_FACE`
 - `READ_BATMAN_AND_SON`
 - `READ_BATMAN_RESURRECTION_OF_RAS_AL_GHUL`

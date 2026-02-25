@@ -274,8 +274,7 @@ sinestro_corps_war:
   extends: .arc_job
   needs:
     - fifty_two
-    - green_lantern_no_fear
-    - green_lantern_corps_recharge
+    - green_lantern_revenge_of_the_green_lanterns
   variables:
     ARC_VAR: READ_SINESTRO_CORPS_WAR
     ARC_NAME: "Sinestro Corps War"
@@ -835,3 +834,13 @@ green_lantern_corps_recharge:
   variables:
     ARC_VAR: READ_GREEN_LANTERN_CORPS_RECHARGE
     ARC_NAME: "Green Lantern Corps: Recharge"
+
+# Green Lantern: Revenge of the Green Lanterns
+green_lantern_revenge_of_the_green_lanterns:
+  extends: .arc_job
+  needs:
+    - green_lantern_no_fear
+    - green_lantern_corps_recharge
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_REVENGE_OF_THE_GREEN_LANTERNS
+    ARC_NAME: "Green Lantern: Revenge of the Green Lanterns"
