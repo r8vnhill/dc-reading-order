@@ -18,6 +18,7 @@ Each arc is represented by a pipeline job, and reading-order arrows are modeled 
   - [Table of Contents](#table-of-contents)
   - [Personal context](#personal-context)
   - [Core idea](#core-idea)
+  - [Quick Start](#quick-start)
   - [Mermaid graph](#mermaid-graph)
     - [Crisis on Infinite Earths](#crisis-on-infinite-earths)
     - [Infinite Crisis](#infinite-crisis)
@@ -26,7 +27,15 @@ Each arc is represented by a pipeline job, and reading-order arrows are modeled 
   - [Quick example](#quick-example)
   - [Recommended workflow](#recommended-workflow)
   - [Reading variables](#reading-variables)
-  - [Note](#note)
+  - [Additional Information](#additional-information)
+    - [What's included in this reading order?](#whats-included-in-this-reading-order)
+      - [Batman](#batman)
+      - [Superman](#superman)
+      - [Green Lantern](#green-lantern)
+      - [Swamp Thing \& Animal Man](#swamp-thing--animal-man)
+      - [Justice League \& Aquaman](#justice-league--aquaman)
+      - [Major Events (convergence points)](#major-events-convergence-points)
+    - [Key convergence points](#key-convergence-points)
 
 ----
 
@@ -50,11 +59,34 @@ My suggestion is to start at one of the major crossovers depending on how many y
 - Jobs also depend on previous arcs, so you cannot progress without completing prerequisites.
 - All jobs are tagged with `local`, so they run on a runner with that tag.
 
+>[!TIP] Why a local runner?
+> Using a local GitLab Runner means you won't waste your CI/CD quota on silly reading trackers, plus it's a great exercise to learn how runners work c:
+
+----
+
+## Quick Start
+
+1. **Fork or clone the repository** (on GitLab for full pipeline functionality)
+2. **Set up a local GitLab Runner** with the `local` tag (see [setup instructions](#local-gitlab-runner-setup-local-tag))
+3. **Choose your starting point**:
+   - New to DC? Start from the beginning (Crisis on Multiple Earths)
+   - Want the modern era? Start after Flashpoint
+   - Want something in between? Start after Crisis on Infinite Earths or Infinite Crisis
+4. **Run your first pipeline** on GitLab without any variables to see all jobs fail
+5. **As you read each arc**, rerun the pipeline with the corresponding `READ_*` variable set to `1`
+6. **Watch your progress** through the visual pipeline graph as jobs turn green!
+
+**Example**: After reading your first arc, go to **Build > Pipelines > Run pipeline** and add:
+```
+READ_CRISIS_ON_MULTIPLE_EARTHS=1
+```
+
 ----
 
 ## Mermaid graph
 
-> **💡 Tip:** For better visualization of the flowcharts below, copy the mermaid code and paste it into [mermaid.live](https://mermaid.live) for an interactive view with zoom and pan capabilities.
+>[!TIP]
+> For better visualization of the flowcharts below, copy the mermaid code and paste it into [mermaid.live](https://mermaid.live) for an interactive view with zoom and pan capabilities.
 
 ### Crisis on Infinite Earths
 
@@ -233,6 +265,9 @@ flowchart TD
 
     flash_flashpoint --> green_lantern_sinestro["Green Lantern: Sinestro"]
     green_lantern_sinestro --> green_lantern_revenge_of_the_black_hand["Green Lantern: Revenge of the Black Hand"]
+    green_lantern_revenge_of_the_black_hand --> green_lantern_rise_of_the_third_army["Green Lantern: Rise of the Third Army"]
+    batman_requiem --> trinity_war
+    green_lantern_rise_of_the_third_army --> trinity_war
   end
 ```
 
@@ -242,26 +277,16 @@ flowchart TD
 
 1. Install GitLab Runner on your machine.
 2. In GitLab, go to **Settings > CI/CD > Runners** and copy a runner registration token.
-3. Register the runner:
-
-```bash
-gitlab-runner register
-```
-
+3. Register the runner: `gitlab-runner register`
 4. Use these values during registration:
-- GitLab instance URL: your GitLab URL (for example `https://gitlab.com`)
-- Token: the registration token from your project/group
-- Description: any name (for example `local-runner`)
-- Tags: `local`
-- Run untagged jobs: `false`
-- Lock to current project: `true` (recommended)
-- Executor: `shell` (or your preferred local executor)
-
-5. Start the runner service:
-
-```bash
-gitlab-runner run
-```
+   - GitLab instance URL: your GitLab URL (for example `https://gitlab.com`)
+   - Token: the registration token from your project/group
+   - Description: any name (for example `local-runner`)
+   - Tags: `local`
+   - Run untagged jobs: `false`
+   - Lock to current project: `true` (recommended)
+   - Executor: `shell` (or your preferred local executor)
+5. Start the runner service: `gitlab-runner run`
 
 If your runner is already installed as a service, ensure it is running and has the `local` tag.
 
@@ -394,20 +419,63 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_BATMAN_SUPERHEAVY`
 - `READ_GREEN_LANTERN_SINESTRO`
 - `READ_GREEN_LANTERN_REVENGE_OF_THE_BLACK_HAND`
+- `READ_GREEN_LANTERN_RISE_OF_THE_THIRD_ARMY`
 
 ----
 
-## Note
+## Additional Information
 
-The pipeline is based on the attached diagram and currently extends it with additional branches (`Roots of the Swamp Thing` plus an Alan Moore-era Swamp Thing run, plus Batman-heavy arcs such as `Arkham Asylum`, `Gothic`, `A Lonely Place of Dying`, `Hush`, `Under the Hood`, `Face the Face`, `Batman and Son`, `The Resurrection of Ra's al Ghul`, `The Black Glove`, `Batman R.I.P.`, `Batman and Robin`, `Batman: Battle for the Cowl`, `Return of Bruce Wayne`, and New 52 Batman from `Court of Owls` to `Superheavy`), plus `The Flash: Rebirth`, `Brightest Day`, `Flashpoint`, `Grant Morrison's Animal Man`, `Animal Man: The Hunt`, `Swamp Thing by Brian K. Vaughan`, `Swamp Thing: Raise Them Bones`, `Swamp Thing: Family Tree`, both Rotworld crossovers, the Aquaman/Justice League path through `Throne of Atlantis`, and the wider New 52 event spine (`Justice League of America`, `Trinity War`, `Forever Evil`, `Injustice League`, `Darkseid War`) plus post-Flashpoint Green Lantern (`Sinestro`, `Revenge of the Black Hand`).
+### What's included in this reading order?
 
-Key convergence points are:
+This pipeline extends beyond the core Crisis events with carefully selected story arcs organized by character/team:
 
-- `Crisis on Multiple Earths`
-- `Crisis on Infinite Earths`
-- `Identity Crisis`
-- `Infinite Crisis`
-- `Final Crisis`
-- `Flash: Flashpoint`
+#### Batman
 
-----
+- Early Post-Crisis: Year One, Haunted Knight, The Long Halloween, Dark Victory
+- Classic: The Killing Joke, Arkham Asylum, Gothic, A Death in the Family, A Lonely Place of Dying
+- Modern: Hush, Under the Hood, Face the Face, Batman and Son, Resurrection of Ra's al Ghul
+- Morrison's run: The Black Glove, R.I.P., Battle for the Cowl, Batman and Robin, Return of Bruce Wayne
+- New 52: Court of Owls, Night of the Owls, Death of the Family, Zero Year, Requiem, Endgame, Superheavy, Faces of Death
+
+#### Superman
+  
+- Death and Return: The Death of Superman, Rise of the Supermen, The Return of Superman
+
+#### Green Lantern
+
+- Rebirth era: Emerald Dawn, Emerald Twilight, A New Dawn, Rebirth, Secret Origin
+- Geoff Johns' run: Sinestro Corps War, War of Light, Blackest Night, Brightest Day
+- New 52: Sinestro, Revenge of the Black Hand, Rise of the Third Army
+
+#### Swamp Thing & Animal Man
+
+- Alan Moore era: Roots, Saga of the Swamp Thing, Love and Death, The Curse, A Murder of Crows, Earth to Earth, Reunion
+- Morrison's Animal Man
+- Modern: Swamp Thing by Brian K. Vaughan
+- New 52: Raise Them Bones, The Hunt, Animal vs. Man, Family Tree, both Rotworld crossovers
+
+#### Justice League & Aquaman
+
+- New 52 Justice League: Origin, The Villain's Journey, World's Most Dangerous, Injustice League, Darkseid War
+- Aquaman run: The Trench, The Others, Throne of Atlantis, Death of a King
+
+#### Major Events (convergence points)
+
+- Crisis on Multiple Earths → Crisis on Infinite Earths
+- Zero Hour → The Final Night → Day of Judgment → Identity Crisis
+- Countdown to Infinite Crisis: Villains United, OMAC Project, Day of Vengeance, Rann-Thanagar War
+- Infinite Crisis → 52 & One Year Later → Seven Soldiers of Victory
+- Death of the New Gods → Final Crisis
+- The Flash: Rebirth → Flashpoint (reboot)
+- Trinity War → Forever Evil
+
+### Key convergence points
+
+These are the major crossover events where multiple storylines merge:
+
+1. **Crisis on Multiple Earths** - The beginning
+2. **Crisis on Infinite Earths** - DC's first universe reboot
+3. **Identity Crisis** - Dark turning point for DC heroes
+4. **Infinite Crisis** - Aftermath of Identity Crisis
+5. **Final Crisis** - Grant Morrison's New Gods epic
+6. **Flash: Flashpoint** - New 52 reboot point
