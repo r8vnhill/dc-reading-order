@@ -274,7 +274,7 @@ sinestro_corps_war:
   extends: .arc_job
   needs:
     - fifty_two
-    - green_lantern_secret_origin
+    - green_lantern_no_fear
     - one_year_later
   variables:
     ARC_VAR: READ_SINESTRO_CORPS_WAR
@@ -815,3 +815,12 @@ jla_crisis_of_conscience:
   variables:
     ARC_VAR: READ_JLA_CRISIS_OF_CONSCIENCE
     ARC_NAME: "JLA: Crisis of Conscience"
+
+# Green Lantern: No Fear
+green_lantern_no_fear:
+  extends: .arc_job
+  needs:
+    - green_lantern_secret_origin
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_NO_FEAR
+    ARC_NAME: "Green Lantern: No Fear"

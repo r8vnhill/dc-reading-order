@@ -22,6 +22,7 @@ Each arc is represented by a pipeline job, and reading-order arrows are modeled 
   - [Mermaid graph](#mermaid-graph)
     - [Crisis on Infinite Earths](#crisis-on-infinite-earths)
     - [Infinite Crisis](#infinite-crisis)
+  - [Final Crisis](#final-crisis)
   - [Local GitLab Runner setup (`local` tag)](#local-gitlab-runner-setup-local-tag)
   - [How to mark arcs as read](#how-to-mark-arcs-as-read)
   - [Quick example](#quick-example)
@@ -175,15 +176,23 @@ flowchart TD
   end
 ```
 
+## Final Crisis
+
+>[!NOTE]
+> Recommended reading order tweak: read **Green Lantern: Secret Origin** immediately after **Infinite Crisis**.
+> Even though *Secret Origin* was published later, it became Hal Jordan's new canonical origin after *Infinite Crisis*.
+
 ```mermaid
 flowchart TD
-  subgraph pre_final_crisis["Pre Final Crisis"]
-    infinite_crisis --> one_year_later["One Year Later"]
-    infinite_crisis --> fifty_two["52"]
-    infinite_crisis --> green_lantern_secret_origin["Green Lantern: Secret Origin"]
-    green_lantern_rebirth --> green_lantern_secret_origin
-    infinite_crisis --> batman_face_the_face["Batman: Face the Face"]
-    batman_under_the_hood --> batman_face_the_face
+  infinite_crisis["Infinite Crisis"] --> one_year_later["One Year Later"]
+  infinite_crisis --> one_year_later["One Year Later"]
+  infinite_crisis --> fifty_two["52"]
+  infinite_crisis --> green_lantern_secret_origin["Green Lantern: Secret Origin"]
+  green_lantern_rebirth["Green Lantern: Rebirth"] --> green_lantern_secret_origin
+  infinite_crisis --> batman_face_the_face["Batman: Face the Face"]
+  batman_under_the_hood["Batman: Under the Hood"] --> batman_face_the_face
+
+  subgraph sg_final_crisis["Final Crisis"]
     batman_face_the_face --> batman_and_son["Batman and Son"]
     batman_and_son --> batman_resurrection_of_ras_al_ghul["Batman: The Resurrection of Ra's al Ghul"]
     batman_resurrection_of_ras_al_ghul --> batman_the_black_glove["Batman: The Black Glove"]
@@ -198,17 +207,21 @@ flowchart TD
     fifty_two --> death_of_the_new_gods["Death of the New Gods"]
 
     fifty_two --> sinestro_corps_war["Sinestro Corps War"]
-    green_lantern_secret_origin --> sinestro_corps_war
+    green_lantern_secret_origin --> green_lantern_no_fear["Green Lantern: No Fear"]
+    green_lantern_no_fear --> sinestro_corps_war
     one_year_later --> sinestro_corps_war
-  end
 
-  subgraph pre_flashpoint["Pre Flashpoint"]
     countdown --> final_crisis["Final Crisis"]
     seven_soldiers_of_victory --> final_crisis
     death_of_the_new_gods --> final_crisis
     sinestro_corps_war --> final_crisis
     batman_rip --> final_crisis
+  end
+```
 
+```mermaid
+flowchart TD
+  subgraph pre_flashpoint["Pre Flashpoint"]
     final_crisis --> flash_rebirth["The Flash: Rebirth"]
     final_crisis --> batman_battle_for_the_cowl["Batman: Battle for the Cowl"]
     batman_rip --> batman_battle_for_the_cowl
@@ -376,6 +389,7 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_ONE_YEAR_LATER`
 - `READ_52`
 - `READ_GREEN_LANTERN_SECRET_ORIGIN`
+- `READ_GREEN_LANTERN_NO_FEAR`
 - `READ_BATMAN_FACE_THE_FACE`
 - `READ_BATMAN_AND_SON`
 - `READ_BATMAN_RESURRECTION_OF_RAS_AL_GHUL`
@@ -448,8 +462,8 @@ This pipeline extends beyond the core Crisis events with carefully selected stor
 
 #### Green Lantern
 
-- Rebirth era: Emerald Dawn, Emerald Twilight, A New Dawn, Rebirth, Secret Origin
-- Geoff Johns' run: Sinestro Corps War, War of Light, Blackest Night, Brightest Day
+- Emerald Twilight: Emerald Dawn, The Return of Superman, Emerald Twilight, A New Dawn
+- Geoff Johns' run: Rebirth, Secret Origin, No Fear, Sinestro Corps War, War of Light, Blackest Night, Brightest Day
 - New 52: Sinestro, Revenge of the Black Hand, Rise of the Third Army
 
 #### Swamp Thing & Animal Man
