@@ -81,6 +81,9 @@ My suggestion is to start at one of the major crossovers depending on how many y
 READ_CRISIS_ON_MULTIPLE_EARTHS=1
 ```
 
+>[!NOTE] About Crisis on Multiple Earths Collections
+> If you're reading the *Crisis on Multiple Earths* thematic collections (Crossing Over, Crisis Crossed, Countdown to Crisis), note that *Justice League of America: The League That Defeated Itself* is relatively contemporary to *Countdown to Crisis*. However, *Crisis on Multiple Earths* is **not required** as a prerequisite for JLA.
+
 ----
 
 ## Mermaid graph
@@ -149,10 +152,11 @@ flowchart TD
 
     day_of_judgment --> identity_crisis
 
-    identity_crisis --> villains_united["Villains United"]
-    identity_crisis --> omac_project["OMAC Project"]
-    identity_crisis --> day_of_vengeance["Day of Vengeance"]
-    identity_crisis --> rann_thanagar_war["Rann-Thanagar War"]
+    identity_crisis --> jla_crisis_of_conscience["JLA: Crisis of Conscience"]
+    jla_crisis_of_conscience --> villains_united["Villains United"]
+    jla_crisis_of_conscience --> omac_project["OMAC Project"]
+    jla_crisis_of_conscience --> day_of_vengeance["Day of Vengeance"]
+    jla_crisis_of_conscience --> rann_thanagar_war["Rann-Thanagar War"]
     identity_crisis --> green_lantern_rebirth["Green Lantern: Rebirth"]
     day_of_judgment --> green_lantern_rebirth
 
@@ -361,6 +365,7 @@ These are the variables used by the pipeline. Set each one to `=1` to approve an
 - `READ_THE_FINAL_NIGHT`
 - `READ_DAY_OF_JUDGMENT`
 - `READ_IDENTITY_CRISIS`
+- `READ_JLA_CRISIS_OF_CONSCIENCE`
 - `READ_VILLAINS_UNITED`
 - `READ_OMAC_PROJECT`
 - `READ_DAY_OF_VENGEANCE`
@@ -463,7 +468,7 @@ This pipeline extends beyond the core Crisis events with carefully selected stor
 
 - Crisis on Multiple Earths → Crisis on Infinite Earths
 - Zero Hour → The Final Night → Day of Judgment → Identity Crisis
-- Countdown to Infinite Crisis: Villains United, OMAC Project, Day of Vengeance, Rann-Thanagar War
+- Countdown to Infinite Crisis — JLA: Crisis of Conscience, Villains United, OMAC Project, Day of Vengeance, Rann-Thanagar War
 - Infinite Crisis → 52 & One Year Later → Seven Soldiers of Victory
 - Death of the New Gods → Final Crisis
 - The Flash: Rebirth → Flashpoint (reboot)

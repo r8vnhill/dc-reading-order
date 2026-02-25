@@ -344,7 +344,7 @@ identity_crisis:
 villains_united:
   extends: .arc_job
   needs:
-    - identity_crisis
+    - jla_crisis_of_conscience
   variables:
     ARC_VAR: READ_VILLAINS_UNITED
     ARC_NAME: "Villains United"
@@ -352,7 +352,7 @@ villains_united:
 omac_project:
   extends: .arc_job
   needs:
-    - identity_crisis
+    - jla_crisis_of_conscience
   variables:
     ARC_VAR: READ_OMAC_PROJECT
     ARC_NAME: "OMAC Project"
@@ -360,7 +360,7 @@ omac_project:
 day_of_vengeance:
   extends: .arc_job
   needs:
-    - identity_crisis
+    - jla_crisis_of_conscience
   variables:
     ARC_VAR: READ_DAY_OF_VENGEANCE
     ARC_NAME: "Day of Vengeance"
@@ -368,7 +368,7 @@ day_of_vengeance:
 rann_thanagar_war:
   extends: .arc_job
   needs:
-    - identity_crisis
+    - jla_crisis_of_conscience
   variables:
     ARC_VAR: READ_RANN_THANAGAR_WAR
     ARC_NAME: "Rann-Thanagar War"
@@ -806,3 +806,12 @@ justice_league_of_america_league_that_defeated_itself:
   variables:
     ARC_VAR: READ_JUSTICE_LEAGUE_OF_AMERICA_LEAGUE_THAT_DEFEATED_ITSELF
     ARC_NAME: "Justice League of America: The League That Defeated Itself"  
+
+# JLA: Crisis of Conscience
+jla_crisis_of_conscience:
+  extends: .arc_job
+  needs:
+    - identity_crisis
+  variables:
+    ARC_VAR: READ_JLA_CRISIS_OF_CONSCIENCE
+    ARC_NAME: "JLA: Crisis of Conscience"
