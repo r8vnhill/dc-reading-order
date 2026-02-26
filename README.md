@@ -217,7 +217,8 @@ flowchart TD
     green_lantern_no_fear --> green_lantern_revenge_of_the_green_lanterns["Green Lantern: Revenge of the Green Lanterns"]
     green_lantern_corps_recharge --> green_lantern_revenge_of_the_green_lanterns
     green_lantern_revenge_of_the_green_lanterns --> wanted_hal_jordan["Wanted: Hal Jordan"]
-    wanted_hal_jordan --> sinestro_corps_war
+    wanted_hal_jordan --> green_lantern_mystery_of_the_star_sapphires["Green Lantern: Mystery of the Star Sapphires"]
+    green_lantern_mystery_of_the_star_sapphires --> sinestro_corps_war
 
     countdown --> final_crisis["Final Crisis"]
     seven_soldiers_of_victory --> final_crisis
@@ -485,7 +486,7 @@ This pipeline extends beyond the core Crisis events with carefully selected stor
 #### Green Lantern
 
 - Emerald Twilight: Emerald Dawn, The Return of Superman, Emerald Twilight, A New Dawn
-- Geoff Johns' run: Rebirth, Secret Origin, No Fear, Green Lantern Corps: Recharge, Sinestro Corps War, War of Light, Blackest Night, Brightest Day
+- Geoff Johns' run: Rebirth, Secret Origin, No Fear, Green Lantern Corps: Recharge, Green Lantern: Revenge of the Green Lanterns, Wanted: Hal Jordan, Green Lantern: Mystery of the Star Sapphires, Sinestro Corps War, War of Light, Blackest Night, Brightest Day
 - New 52: Sinestro, Revenge of the Black Hand, Rise of the Third Army
 
 #### Swamp Thing & Animal Man

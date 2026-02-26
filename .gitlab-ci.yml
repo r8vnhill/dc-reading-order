@@ -274,7 +274,7 @@ sinestro_corps_war:
   extends: .arc_job
   needs:
     - fifty_two
-    - wanted_hal_jordan
+    - green_lantern_mystery_of_the_star_sapphires
   variables:
     ARC_VAR: READ_SINESTRO_CORPS_WAR
     ARC_NAME: "Sinestro Corps War"
@@ -853,3 +853,12 @@ wanted_hal_jordan:
   variables:
     ARC_VAR: READ_WANTED_HAL_JORDAN
     ARC_NAME: "Wanted: Hal Jordan"
+
+# Green Lantern: Mystery of the Star Sapphires
+green_lantern_mystery_of_the_star_sapphires:
+  extends: .arc_job
+  needs:
+    - wanted_hal_jordan
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_MYSTERY_OF_THE_STAR_SAPPHIRES
+    ARC_NAME: "Green Lantern: Mystery of the Star Sapphires"
