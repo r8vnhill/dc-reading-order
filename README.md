@@ -216,7 +216,8 @@ flowchart TD
     one_year_later --> green_lantern_corps_recharge
     green_lantern_no_fear --> green_lantern_revenge_of_the_green_lanterns["Green Lantern: Revenge of the Green Lanterns"]
     green_lantern_corps_recharge --> green_lantern_revenge_of_the_green_lanterns
-    green_lantern_revenge_of_the_green_lanterns --> sinestro_corps_war
+    green_lantern_revenge_of_the_green_lanterns --> wanted_hal_jordan["Wanted: Hal Jordan"]
+    wanted_hal_jordan --> sinestro_corps_war
 
     countdown --> final_crisis["Final Crisis"]
     seven_soldiers_of_victory --> final_crisis
