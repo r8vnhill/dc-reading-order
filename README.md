@@ -86,7 +86,7 @@ READ_CRISIS_ON_MULTIPLE_EARTHS=1
 ```
 
 >[!NOTE] About Crisis on Multiple Earths Collections
-> If you're reading the *Crisis on Multiple Earths* thematic collections (Crossing Over, Crisis Crossed, Countdown to Crisis), note that *Justice League of America: The League That Defeated Itself* is relatively contemporary to *Countdown to Crisis*. However, *Crisis on Multiple Earths* is **not required** as a prerequisite for JLA.
+> If you're reading the *Crisis on Multiple Earths* thematic collections (Crossing Over, Crisis Crossed, Countdown to Crisis), note that *Justice League of America: The League That Defeated Itself* is relatively contemporary to *Countdown to Crisis*. Also, *Batman: Tales of the Demon* can be read without *Crisis on Multiple Earths*; but if you read both, place *Tales of the Demon* around the same period as *Crisis Crossed*.
 
 ----
 
@@ -102,6 +102,7 @@ flowchart TD
   justice_league_of_america_league_that_defeated_itself["Justice League of America: The League That Defeated Itself"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
   crisis_on_multiple_earths["Crisis on Multiple Earths"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
   roots_of_the_swamp_thing["Roots of the Swamp Thing"] --> crisis_on_infinite_earths
+  batman_tales_of_the_demon["Batman: Tales of the Demon"] --> crisis_on_infinite_earths
 ```
 
 ### Infinite Crisis
@@ -118,13 +119,14 @@ flowchart TD
   roots_of_the_swamp_thing["Roots of the Swamp Thing"] --> saga_of_the_swamp_thing["Saga of the Swamp Thing"]
 
   justice_league_of_america_league_that_defeated_itself["Justice League of America: The League That Defeated Itself"] --> identity_crisis["Identity Crisis"]
+  batman_tales_of_the_demon["Batman: Tales of the Demon"] --> batman_haunted_knight["Batman: Haunted Knight"]
 
   subgraph sg_infinite_crisis["Infinite Crisis"]
     the_death_of_superman
     green_lantern_emerald_dawn
     grant_morrisons_animal_man
 
-    batman_year_one --> batman_haunted_knight["Batman: Haunted Knight"]
+    batman_year_one --> batman_haunted_knight
     batman_haunted_knight --> batman_the_long_halloween["Batman: The Long Halloween"]
     batman_the_long_halloween --> batman_dark_victory["Batman: Dark Victory"]
     batman_dark_victory --> batman_the_killing_joke["Batman: The Killing Joke"]
@@ -194,10 +196,11 @@ flowchart TD
   green_lantern_rebirth["Green Lantern: Rebirth"] --> green_lantern_secret_origin
   infinite_crisis --> batman_face_the_face["Batman: Face the Face"]
   batman_under_the_hood["Batman: Under the Hood"] --> batman_face_the_face
+  batman_tales_of_the_demon["Batman: Tales of the Demon"] --> batman_resurrection_of_ras_al_ghul["Batman: The Resurrection of Ra's al Ghul"]
 
   subgraph sg_final_crisis["Final Crisis"]
     batman_face_the_face --> batman_and_son["Batman and Son"]
-    batman_and_son --> batman_resurrection_of_ras_al_ghul["Batman: The Resurrection of Ra's al Ghul"]
+    batman_and_son --> batman_resurrection_of_ras_al_ghul
     batman_resurrection_of_ras_al_ghul --> batman_the_black_glove["Batman: The Black Glove"]
     batman_the_black_glove --> batman_rip["Batman R.I.P."]
 
