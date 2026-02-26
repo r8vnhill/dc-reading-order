@@ -120,6 +120,7 @@ flowchart TD
 
   justice_league_of_america_league_that_defeated_itself["Justice League of America: The League That Defeated Itself"] --> identity_crisis["Identity Crisis"]
   batman_tales_of_the_demon["Batman: Tales of the Demon"] --> batman_son_of_the_demon["Batman: Son of the Demon"]
+  batman_son_of_the_demon --> batman_death_and_the_maidens["Batman: Death and the Maidens"]
 
   subgraph sg_infinite_crisis["Infinite Crisis"]
     the_death_of_superman
@@ -136,7 +137,8 @@ flowchart TD
     arkham_asylum_serious_house --> batman_a_death_in_the_family["Batman: A Death in the Family"]
     batman_gothic --> batman_a_death_in_the_family
     batman_a_death_in_the_family --> batman_a_lonely_place_of_dying["Batman: A Lonely Place of Dying"]
-    batman_a_lonely_place_of_dying --> batman_hush["Batman: Hush"]
+    batman_a_lonely_place_of_dying --> batman_death_and_the_maidens
+    batman_death_and_the_maidens --> batman_hush["Batman: Hush"]
 
     the_death_of_superman --> rise_of_the_supermen["Rise of the Supermen"]
     rise_of_the_supermen --> the_return_of_superman["The Return of Superman"]
@@ -198,10 +200,11 @@ flowchart TD
   infinite_crisis --> batman_face_the_face["Batman: Face the Face"]
   batman_under_the_hood["Batman: Under the Hood"] --> batman_face_the_face
   batman_son_of_the_demon["Batman: Son of the Demon"] --> batman_and_son["Batman and Son"]
+  batman_death_and_the_maidens["Batman: Death and the Maidens"] --> batman_resurrection_of_ras_al_ghul["Batman: The Resurrection of Ra's al Ghul"]
 
   subgraph sg_final_crisis["Final Crisis"]
     batman_face_the_face --> batman_and_son
-    batman_and_son --> batman_resurrection_of_ras_al_ghul["Batman: The Resurrection of Ra's al Ghul"]
+    batman_and_son --> batman_resurrection_of_ras_al_ghul
     batman_resurrection_of_ras_al_ghul --> batman_the_black_glove["Batman: The Black Glove"]
     batman_the_black_glove --> batman_rip["Batman R.I.P."]
 
