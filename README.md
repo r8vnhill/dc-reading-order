@@ -251,7 +251,8 @@ flowchart TD
     batman_battle_for_the_cowl --> batman_and_robin["Batman and Robin"]
     batman_and_robin --> batman_return_of_bruce_wayne["Return of Bruce Wayne"]
 
-    green_lantern_rage_of_the_red_lanterns --> blackest_night["Blackest Night"]
+    green_lantern_rage_of_the_red_lanterns --> green_lantern_agent_orange["Green Lantern: Agent Orange"]
+    green_lantern_agent_orange --> blackest_night["Blackest Night"]
     green_lantern_corps_sins_of_the_star_sapphire --> blackest_night
     flash_rebirth --> blackest_night
     blackest_night --> brightest_day["Brightest Day"]

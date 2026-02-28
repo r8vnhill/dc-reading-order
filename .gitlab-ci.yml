@@ -3,10 +3,12 @@ workflow:
     - when: always
 
 stages:
-  - reading_order
+  - core_timeline
+  - character_branches
+  - events
+  - beyond_flashpoint
 
 .arc_job:
-  stage: reading_order
   tags:
     - local
   script:
@@ -23,18 +25,21 @@ stages:
 # Core timeline
 crisis_on_multiple_earths:
   extends: .arc_job
+  stage: core_timeline
   variables:
     ARC_VAR: READ_CRISIS_ON_MULTIPLE_EARTHS
     ARC_NAME: "Crisis on Multiple Earths"
 
 roots_of_the_swamp_thing:
   extends: .arc_job
+  stage: core_timeline
   variables:
     ARC_VAR: READ_ROOTS_OF_THE_SWAMP_THING
     ARC_NAME: "Roots of the Swamp Thing"
 
 crisis_on_infinite_earths:
   extends: .arc_job
+  stage: core_timeline
   needs:
     - crisis_on_multiple_earths
     - roots_of_the_swamp_thing
@@ -46,6 +51,7 @@ crisis_on_infinite_earths:
 # Batman branch
 batman_year_one:
   extends: .arc_job
+  stage: character_branches
   needs:
     - crisis_on_infinite_earths
   variables:
@@ -54,6 +60,7 @@ batman_year_one:
 
 batman_haunted_knight:
   extends: .arc_job
+  stage: character_branches
   needs:
     - batman_son_of_the_demon
   variables:
@@ -62,6 +69,7 @@ batman_haunted_knight:
 
 batman_the_long_halloween:
   extends: .arc_job
+  stage: character_branches
   needs:
     - batman_haunted_knight
   variables:
@@ -70,6 +78,7 @@ batman_the_long_halloween:
 
 batman_dark_victory:
   extends: .arc_job
+  stage: character_branches
   needs:
     - batman_the_long_halloween
   variables:
@@ -78,6 +87,7 @@ batman_dark_victory:
 
 batman_the_killing_joke:
   extends: .arc_job
+  stage: character_branches
   needs:
     - batman_dark_victory
   variables:
@@ -86,6 +96,7 @@ batman_the_killing_joke:
 
 arkham_asylum_serious_house:
   extends: .arc_job
+  stage: character_branches
   needs:
     - batman_the_killing_joke
   variables:
@@ -94,6 +105,7 @@ arkham_asylum_serious_house:
 
 batman_gothic:
   extends: .arc_job
+  stage: character_branches
   needs:
     - batman_the_killing_joke
   variables:
@@ -102,6 +114,7 @@ batman_gothic:
 
 batman_a_death_in_the_family:
   extends: .arc_job
+  stage: character_branches
   needs:
     - arkham_asylum_serious_house
     - batman_gothic
@@ -111,6 +124,7 @@ batman_a_death_in_the_family:
 
 batman_a_lonely_place_of_dying:
   extends: .arc_job
+  stage: character_branches
   needs:
     - batman_a_death_in_the_family
   variables:
@@ -119,6 +133,7 @@ batman_a_lonely_place_of_dying:
 
 batman_hush:
   extends: .arc_job
+  stage: character_branches
   needs:
     - batman_a_lonely_place_of_dying
   variables:
@@ -127,6 +142,7 @@ batman_hush:
 
 batman_under_the_hood:
   extends: .arc_job
+  stage: character_branches
   needs:
     - identity_crisis
     - batman_hush
@@ -136,6 +152,7 @@ batman_under_the_hood:
 
 batman_face_the_face:
   extends: .arc_job
+  stage: character_branches
   needs:
     - infinite_crisis
     - batman_under_the_hood
@@ -145,6 +162,7 @@ batman_face_the_face:
 
 batman_and_son:
   extends: .arc_job
+  stage: character_branches
   needs:
     - batman_face_the_face
     - batman_son_of_the_demon
@@ -154,6 +172,7 @@ batman_and_son:
 
 batman_resurrection_of_ras_al_ghul:
   extends: .arc_job
+  stage: character_branches
   needs:
     - batman_and_son
     - batman_death_and_the_maidens
@@ -163,6 +182,7 @@ batman_resurrection_of_ras_al_ghul:
 
 batman_the_black_glove:
   extends: .arc_job
+  stage: character_branches
   needs:
     - batman_resurrection_of_ras_al_ghul
   variables:
@@ -171,6 +191,7 @@ batman_the_black_glove:
 
 batman_rip:
   extends: .arc_job
+  stage: character_branches
   needs:
     - batman_the_black_glove
   variables:
@@ -179,6 +200,7 @@ batman_rip:
 
 batman_battle_for_the_cowl:
   extends: .arc_job
+  stage: character_branches
   needs:
     - final_crisis
     - batman_rip
@@ -188,6 +210,7 @@ batman_battle_for_the_cowl:
 
 batman_and_robin:
   extends: .arc_job
+  stage: character_branches
   needs:
     - batman_battle_for_the_cowl
   variables:
@@ -196,6 +219,7 @@ batman_and_robin:
 
 batman_return_of_bruce_wayne:
   extends: .arc_job
+  stage: character_branches
   needs:
     - batman_and_robin
     - blackest_night
@@ -206,6 +230,7 @@ batman_return_of_bruce_wayne:
 # Superman branch
 the_death_of_superman:
   extends: .arc_job
+  stage: character_branches
   needs:
     - crisis_on_infinite_earths
   variables:
@@ -214,6 +239,7 @@ the_death_of_superman:
 
 rise_of_the_supermen:
   extends: .arc_job
+  stage: character_branches
   needs:
     - the_death_of_superman
   variables:
@@ -222,6 +248,7 @@ rise_of_the_supermen:
 
 the_return_of_superman:
   extends: .arc_job
+  stage: character_branches
   needs:
     - rise_of_the_supermen
   variables:
@@ -231,6 +258,7 @@ the_return_of_superman:
 # Green Lantern branch
 green_lantern_emerald_dawn:
   extends: .arc_job
+  stage: character_branches
   needs:
     - crisis_on_infinite_earths
   variables:
@@ -239,6 +267,7 @@ green_lantern_emerald_dawn:
 
 green_lantern_emerald_twilight:
   extends: .arc_job
+  stage: character_branches
   needs:
     - the_return_of_superman
     - green_lantern_emerald_dawn
@@ -248,6 +277,7 @@ green_lantern_emerald_twilight:
 
 green_lantern_a_new_dawn:
   extends: .arc_job
+  stage: character_branches
   needs:
     - green_lantern_emerald_twilight
   variables:
@@ -256,6 +286,7 @@ green_lantern_a_new_dawn:
 
 green_lantern_rebirth:
   extends: .arc_job
+  stage: character_branches
   needs:
     - identity_crisis
     - day_of_judgment
@@ -265,6 +296,7 @@ green_lantern_rebirth:
 
 green_lantern_secret_origin:
   extends: .arc_job
+  stage: character_branches
   needs:
     - infinite_crisis
     - green_lantern_rebirth
@@ -274,6 +306,7 @@ green_lantern_secret_origin:
 
 sinestro_corps_war:
   extends: .arc_job
+  stage: events
   needs:
     - fifty_two
     - green_lantern_mystery_of_the_star_sapphires
@@ -281,19 +314,11 @@ sinestro_corps_war:
     ARC_VAR: READ_SINESTRO_CORPS_WAR
     ARC_NAME: "Sinestro Corps War"
 
-war_of_light:
-  extends: .arc_job
-  needs:
-    - final_crisis
-    - sinestro_corps_war
-  variables:
-    ARC_VAR: READ_WAR_OF_LIGHT
-    ARC_NAME: "War of Light"
-
 blackest_night:
   extends: .arc_job
+  stage: events
   needs:
-    - green_lantern_rage_of_the_red_lanterns
+    - green_lantern_agent_orange
     - green_lantern_corps_sins_of_the_star_sapphire
     - flash_rebirth
   variables:
@@ -302,6 +327,7 @@ blackest_night:
 
 brightest_day:
   extends: .arc_job
+  stage: events
   needs:
     - blackest_night
   variables:
@@ -311,6 +337,7 @@ brightest_day:
 # Event spine
 zero_hour:
   extends: .arc_job
+  stage: events
   needs:
     - green_lantern_a_new_dawn
   variables:
@@ -319,6 +346,7 @@ zero_hour:
 
 the_final_night:
   extends: .arc_job
+  stage: events
   needs:
     - zero_hour
   variables:
@@ -327,6 +355,7 @@ the_final_night:
 
 day_of_judgment:
   extends: .arc_job
+  stage: events
   needs:
     - the_final_night
   variables:
@@ -335,6 +364,7 @@ day_of_judgment:
 
 identity_crisis:
   extends: .arc_job
+  stage: events
   needs:
     - batman_death_and_the_maidens
     - day_of_judgment
@@ -345,6 +375,7 @@ identity_crisis:
 
 villains_united:
   extends: .arc_job
+  stage: events
   needs:
     - jla_crisis_of_conscience
   variables:
@@ -353,6 +384,7 @@ villains_united:
 
 omac_project:
   extends: .arc_job
+  stage: events
   needs:
     - jla_crisis_of_conscience
   variables:
@@ -361,6 +393,7 @@ omac_project:
 
 day_of_vengeance:
   extends: .arc_job
+  stage: events
   needs:
     - jla_crisis_of_conscience
   variables:
@@ -369,6 +402,7 @@ day_of_vengeance:
 
 rann_thanagar_war:
   extends: .arc_job
+  stage: events
   needs:
     - jla_crisis_of_conscience
   variables:
@@ -377,6 +411,7 @@ rann_thanagar_war:
 
 infinite_crisis:
   extends: .arc_job
+  stage: events
   needs:
     - villains_united
     - omac_project
@@ -392,6 +427,7 @@ infinite_crisis:
 
 one_year_later:
   extends: .arc_job
+  stage: events
   needs:
     - infinite_crisis
   variables:
@@ -400,6 +436,7 @@ one_year_later:
 
 fifty_two:
   extends: .arc_job
+  stage: events
   needs:
     - infinite_crisis
   variables:
@@ -408,6 +445,7 @@ fifty_two:
 
 countdown:
   extends: .arc_job
+  stage: events
   needs:
     - one_year_later
     - fifty_two
@@ -417,6 +455,7 @@ countdown:
 
 seven_soldiers_of_victory:
   extends: .arc_job
+  stage: events
   needs:
     - one_year_later
     - fifty_two
@@ -426,6 +465,7 @@ seven_soldiers_of_victory:
 
 death_of_the_new_gods:
   extends: .arc_job
+  stage: events
   needs:
     - fifty_two
   variables:
@@ -434,6 +474,7 @@ death_of_the_new_gods:
 
 final_crisis:
   extends: .arc_job
+  stage: events
   needs:
     - countdown
     - seven_soldiers_of_victory
@@ -446,6 +487,7 @@ final_crisis:
 
 flash_rebirth:
   extends: .arc_job
+  stage: events
   needs:
     - final_crisis
   variables:
@@ -454,6 +496,7 @@ flash_rebirth:
 
 flash_flashpoint:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - batman_return_of_bruce_wayne
     - brightest_day
@@ -465,6 +508,7 @@ flash_flashpoint:
 # Swamp Thing branch
 saga_of_the_swamp_thing:
   extends: .arc_job
+  stage: character_branches
   needs:
     - crisis_on_infinite_earths
     - roots_of_the_swamp_thing
@@ -474,6 +518,7 @@ saga_of_the_swamp_thing:
 
 swamp_thing_love_and_death:
   extends: .arc_job
+  stage: character_branches
   needs:
     - saga_of_the_swamp_thing
   variables:
@@ -482,6 +527,7 @@ swamp_thing_love_and_death:
 
 swamp_thing_the_curse:
   extends: .arc_job
+  stage: character_branches
   needs:
     - swamp_thing_love_and_death
   variables:
@@ -490,6 +536,7 @@ swamp_thing_the_curse:
 
 swamp_thing_a_murder_of_crows:
   extends: .arc_job
+  stage: character_branches
   needs:
     - swamp_thing_the_curse
   variables:
@@ -498,6 +545,7 @@ swamp_thing_a_murder_of_crows:
 
 swamp_thing_earth_to_earth:
   extends: .arc_job
+  stage: character_branches
   needs:
     - swamp_thing_a_murder_of_crows
   variables:
@@ -506,6 +554,7 @@ swamp_thing_earth_to_earth:
 
 swamp_thing_reunion:
   extends: .arc_job
+  stage: character_branches
   needs:
     - swamp_thing_earth_to_earth
   variables:
@@ -514,6 +563,7 @@ swamp_thing_reunion:
 
 swamp_thing_by_brian_k_vaughan:
   extends: .arc_job
+  stage: character_branches
   needs:
     - swamp_thing_reunion
   variables:
@@ -522,6 +572,7 @@ swamp_thing_by_brian_k_vaughan:
 
 swamp_thing_raise_them_bones:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - swamp_thing_by_brian_k_vaughan
     - flash_flashpoint
@@ -532,6 +583,7 @@ swamp_thing_raise_them_bones:
 # Animal Man branch
 grant_morrisons_animal_man:
   extends: .arc_job
+  stage: character_branches
   needs:
     - crisis_on_infinite_earths
   variables:
@@ -540,6 +592,7 @@ grant_morrisons_animal_man:
 
 animal_man_the_hunt:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - flash_flashpoint
     - grant_morrisons_animal_man
@@ -549,6 +602,7 @@ animal_man_the_hunt:
 
 animal_man_animal_vs_man:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - animal_man_the_hunt
     - swamp_thing_raise_them_bones
@@ -559,6 +613,7 @@ animal_man_animal_vs_man:
 # Swamp Thing: Family Tree
 swamp_thing_family_tree:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - swamp_thing_raise_them_bones
   variables:
@@ -568,6 +623,7 @@ swamp_thing_family_tree:
 # Swamp Thing: Rotworld - The Green Kingdom
 swamp_thing_rotworld_green_kingdom:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - swamp_thing_family_tree
     - animal_man_animal_vs_man
@@ -578,6 +634,7 @@ swamp_thing_rotworld_green_kingdom:
 # Animal Man: Rotworld - The Red Kingdom
 animal_man_rotworld_red_kingdom:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - swamp_thing_family_tree
     - animal_man_animal_vs_man
@@ -588,6 +645,7 @@ animal_man_rotworld_red_kingdom:
 # Aquaman: The Trench
 aquaman_the_trench:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - flash_flashpoint
   variables:
@@ -597,6 +655,7 @@ aquaman_the_trench:
 # Aquaman: The Others
 aquaman_the_others:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - aquaman_the_trench
   variables:
@@ -606,6 +665,7 @@ aquaman_the_others:
 # Justice League: Origin
 justice_league_origin:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - flash_flashpoint
   variables:
@@ -615,6 +675,7 @@ justice_league_origin:
 # Justice League: The Villain's Journey
 justice_league_villains_journey:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - justice_league_origin
   variables:
@@ -624,6 +685,7 @@ justice_league_villains_journey:
 # Throne of Atlantis
 throne_of_atlantis:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - aquaman_the_others
     - justice_league_villains_journey
@@ -634,6 +696,7 @@ throne_of_atlantis:
 # Aquaman: Death of a King
 aquaman_death_of_a_king:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - throne_of_atlantis
   variables:
@@ -643,6 +706,7 @@ aquaman_death_of_a_king:
 # Justice League of America: World's Most Dangerous
 justice_league_of_america_worlds_most_dangerous:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - throne_of_atlantis
   variables:
@@ -652,6 +716,7 @@ justice_league_of_america_worlds_most_dangerous:
 # Trinity War
 trinity_war:
   extends: .arc_job
+  stage: events
   needs:
     - throne_of_atlantis
     - aquaman_death_of_a_king
@@ -665,6 +730,7 @@ trinity_war:
 # Forever Evil
 forever_evil:
   extends: .arc_job
+  stage: events
   needs:
     - trinity_war
   variables:
@@ -674,6 +740,7 @@ forever_evil:
 # Justice League: Injustice League
 justice_league_injustice_league:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - forever_evil
   variables:
@@ -683,6 +750,7 @@ justice_league_injustice_league:
 # Justice League: The Darkseid War
 justice_league_darkseid_war:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - justice_league_injustice_league
     - batman_endgame
@@ -693,6 +761,7 @@ justice_league_darkseid_war:
 # Batman: The Court of Owls
 batman_court_of_owls:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - flash_flashpoint
   variables:
@@ -702,6 +771,7 @@ batman_court_of_owls:
 # Batman: Night of the Owls
 batman_night_of_the_owls:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - batman_court_of_owls
   variables:
@@ -711,6 +781,7 @@ batman_night_of_the_owls:
 # Batman: Death of the Family
 batman_death_of_the_family:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - batman_night_of_the_owls
     - batman_and_robin_born_to_kill
@@ -722,6 +793,7 @@ batman_death_of_the_family:
 # Batman: Zero Year
 batman_zero_year:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - flash_flashpoint
   variables:
@@ -731,6 +803,7 @@ batman_zero_year:
 # Batman and Robin: Born to Kill
 batman_and_robin_born_to_kill:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - batman_court_of_owls
   variables:
@@ -740,6 +813,7 @@ batman_and_robin_born_to_kill:
 # Batman: Requiem
 batman_requiem:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - batman_death_of_the_family
   variables:
@@ -749,6 +823,7 @@ batman_requiem:
 # Batman: Faces of Death
 batman_faces_of_death:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - batman_court_of_owls
   variables:
@@ -758,6 +833,7 @@ batman_faces_of_death:
 # Batman: Endgame
 batman_endgame:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - forever_evil
     - batman_zero_year
@@ -768,6 +844,7 @@ batman_endgame:
 # Batman: Superheavy
 batman_superheavy:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - batman_endgame
     - justice_league_darkseid_war
@@ -778,6 +855,7 @@ batman_superheavy:
 # Green Lantern: Sinestro
 green_lantern_sinestro:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - flash_flashpoint
   variables:
@@ -787,6 +865,7 @@ green_lantern_sinestro:
 # Green Lantern: Revenge of the Black Hand
 green_lantern_revenge_of_the_black_hand:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - green_lantern_sinestro
   variables:
@@ -796,6 +875,7 @@ green_lantern_revenge_of_the_black_hand:
 # Green Lantern: Rise of the Third Army
 green_lantern_rise_of_the_third_army:
   extends: .arc_job
+  stage: beyond_flashpoint
   needs:
     - green_lantern_revenge_of_the_black_hand
   variables:
@@ -805,6 +885,7 @@ green_lantern_rise_of_the_third_army:
 # Justice League of America: The League That Defeated Itself
 justice_league_of_america_league_that_defeated_itself:
   extends: .arc_job
+  stage: core_timeline
   variables:
     ARC_VAR: READ_JUSTICE_LEAGUE_OF_AMERICA_LEAGUE_THAT_DEFEATED_ITSELF
     ARC_NAME: "Justice League of America: The League That Defeated Itself"  
@@ -812,6 +893,7 @@ justice_league_of_america_league_that_defeated_itself:
 # JLA: Crisis of Conscience
 jla_crisis_of_conscience:
   extends: .arc_job
+  stage: events
   needs:
     - identity_crisis
   variables:
@@ -821,6 +903,7 @@ jla_crisis_of_conscience:
 # Green Lantern: No Fear
 green_lantern_no_fear:
   extends: .arc_job
+  stage: character_branches
   needs:
     - green_lantern_secret_origin
     - one_year_later
@@ -831,6 +914,7 @@ green_lantern_no_fear:
 # Green Lantern Corps: Recharge
 green_lantern_corps_recharge:
   extends: .arc_job
+  stage: character_branches
   needs:
     - green_lantern_secret_origin
     - one_year_later
@@ -841,6 +925,7 @@ green_lantern_corps_recharge:
 # Green Lantern: Revenge of the Green Lanterns
 green_lantern_revenge_of_the_green_lanterns:
   extends: .arc_job
+  stage: character_branches
   needs:
     - green_lantern_no_fear
     - green_lantern_corps_recharge
@@ -851,6 +936,7 @@ green_lantern_revenge_of_the_green_lanterns:
 # Wanted: Hal Jordan
 wanted_hal_jordan:
   extends: .arc_job
+  stage: character_branches
   needs:
     - green_lantern_revenge_of_the_green_lanterns
   variables:
@@ -860,6 +946,7 @@ wanted_hal_jordan:
 # Green Lantern: Mystery of the Star Sapphires
 green_lantern_mystery_of_the_star_sapphires:
   extends: .arc_job
+  stage: character_branches
   needs:
     - wanted_hal_jordan
   variables:
@@ -869,6 +956,7 @@ green_lantern_mystery_of_the_star_sapphires:
 # Batman: Tales of the Demon
 batman_tales_of_the_demon:
   extends: .arc_job
+  stage: character_branches
   variables:
     ARC_VAR: READ_BATMAN_TALES_OF_THE_DEMON
     ARC_NAME: "Batman: Tales of the Demon"
@@ -876,6 +964,7 @@ batman_tales_of_the_demon:
 # Batman: Son of the Demon
 batman_son_of_the_demon:
   extends: .arc_job
+  stage: character_branches
   needs:
     - batman_tales_of_the_demon
     - batman_year_one
@@ -886,6 +975,7 @@ batman_son_of_the_demon:
 # Batman: Death and the Maidens
 batman_death_and_the_maidens:
   extends: .arc_job
+  stage: character_branches
   needs:
     - batman_son_of_the_demon
     - batman_hush
@@ -896,6 +986,7 @@ batman_death_and_the_maidens:
 # Green Lantern: Rage of the Red Lanterns
 green_lantern_rage_of_the_red_lanterns:
   extends: .arc_job
+  stage: character_branches
   needs:
     - sinestro_corps_war
   variables:
@@ -905,8 +996,19 @@ green_lantern_rage_of_the_red_lanterns:
 # Green Lantern Corps: Sins of the Star Sapphire
 green_lantern_corps_sins_of_the_star_sapphire:
   extends: .arc_job
+  stage: character_branches
   needs:
     - sinestro_corps_war
   variables:
     ARC_VAR: READ_GREEN_LANTERN_CORPS_SINS_OF_THE_STAR_SAPPHIRE
     ARC_NAME: "Green Lantern Corps: Sins of the Star Sapphire"
+
+# Green Lantern: Agent Orange
+green_lantern_agent_orange:
+  extends: .arc_job
+  stage: character_branches
+  needs:
+    - green_lantern_rage_of_the_red_lanterns
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_AGENT_ORANGE
+    ARC_NAME: "Green Lantern: Agent Orange"
