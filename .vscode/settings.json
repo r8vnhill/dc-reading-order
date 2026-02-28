@@ -11,5 +11,8 @@
         "statusBar.debuggingForeground": "#FFFBFB",
         "statusBar.noFolderBackground": "#610606",
         "statusBar.noFolderForeground": "#FFFBFB"
-    }
+    },
+    "cSpell.words": [
+        "sinestro"
+    ]
 }

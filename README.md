@@ -243,13 +243,13 @@ flowchart TD
   final_crisis --> batman_battle_for_the_cowl["Batman: Battle for the Cowl"]
   final_crisis --> war_of_light["War of Light"]
   batman_rip["Batman R.I.P."] --> batman_battle_for_the_cowl
-  sinestro_corps_war["Sinestro Corps War"] --> war_of_light
+  sinestro_corps_war["Sinestro Corps War"] --> green_lantern_rage_of_the_red_lanterns["Green Lantern: Rage of the Red Lanterns" ]
 
   subgraph sg_flashpoint["Flashpoint"]
     batman_battle_for_the_cowl --> batman_and_robin["Batman and Robin"]
     batman_and_robin --> batman_return_of_bruce_wayne["Return of Bruce Wayne"]
 
-    war_of_light --> blackest_night["Blackest Night"]
+    green_lantern_rage_of_the_red_lanterns --> blackest_night["Blackest Night"]
     flash_rebirth --> blackest_night
     blackest_night --> brightest_day["Brightest Day"]
     blackest_night --> batman_return_of_bruce_wayne

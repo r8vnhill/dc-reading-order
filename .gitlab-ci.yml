@@ -293,7 +293,7 @@ war_of_light:
 blackest_night:
   extends: .arc_job
   needs:
-    - war_of_light
+    - green_lantern_rage_of_the_red_lanterns
     - flash_rebirth
   variables:
     ARC_VAR: READ_BLACKEST_NIGHT
@@ -891,3 +891,12 @@ batman_death_and_the_maidens:
   variables:
     ARC_VAR: READ_BATMAN_DEATH_AND_THE_MAIDENS
     ARC_NAME: "Batman: Death and the Maidens"
+
+# Green Lantern: Rage of the Red Lanterns
+green_lantern_rage_of_the_red_lanterns:
+  extends: .arc_job
+  needs:
+    - sinestro_corps_war
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_RAGE_OF_THE_RED_LANTERNS
+    ARC_NAME: "Green Lantern: Rage of the Red Lanterns"
