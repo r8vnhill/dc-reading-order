@@ -294,6 +294,7 @@ blackest_night:
   extends: .arc_job
   needs:
     - green_lantern_rage_of_the_red_lanterns
+    - green_lantern_corps_sins_of_the_star_sapphire
     - flash_rebirth
   variables:
     ARC_VAR: READ_BLACKEST_NIGHT
@@ -900,3 +901,12 @@ green_lantern_rage_of_the_red_lanterns:
   variables:
     ARC_VAR: READ_GREEN_LANTERN_RAGE_OF_THE_RED_LANTERNS
     ARC_NAME: "Green Lantern: Rage of the Red Lanterns"
+
+# Green Lantern Corps: Sins of the Star Sapphire
+green_lantern_corps_sins_of_the_star_sapphire:
+  extends: .arc_job
+  needs:
+    - sinestro_corps_war
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_CORPS_SINS_OF_THE_STAR_SAPPHIRE
+    ARC_NAME: "Green Lantern Corps: Sins of the Star Sapphire"
