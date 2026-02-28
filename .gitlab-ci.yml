@@ -3,10 +3,10 @@ workflow:
     - when: always
 
 stages:
-  - core_timeline
+  - crisis_on_infinite_earths_era
   - post_crisis_era
   - infinite_crisis_era
-  - final_crisis_era
+  - flashpoint_era
   - new_52_era
 
 .arc_job:
@@ -26,21 +26,21 @@ stages:
 # Core timeline
 crisis_on_multiple_earths:
   extends: .arc_job
-  stage: core_timeline
+  stage: crisis_on_infinite_earths_era
   variables:
     ARC_VAR: READ_CRISIS_ON_MULTIPLE_EARTHS
     ARC_NAME: "Crisis on Multiple Earths"
 
 roots_of_the_swamp_thing:
   extends: .arc_job
-  stage: core_timeline
+  stage: crisis_on_infinite_earths_era
   variables:
     ARC_VAR: READ_ROOTS_OF_THE_SWAMP_THING
     ARC_NAME: "Roots of the Swamp Thing"
 
 crisis_on_infinite_earths:
   extends: .arc_job
-  stage: core_timeline
+  stage: crisis_on_infinite_earths_era
   needs:
     - crisis_on_multiple_earths
     - roots_of_the_swamp_thing
@@ -201,7 +201,7 @@ batman_rip:
 
 batman_battle_for_the_cowl:
   extends: .arc_job
-  stage: final_crisis_era
+  stage: flashpoint_era
   needs:
     - final_crisis
     - batman_rip
@@ -211,7 +211,7 @@ batman_battle_for_the_cowl:
 
 batman_and_robin:
   extends: .arc_job
-  stage: final_crisis_era
+  stage: flashpoint_era
   needs:
     - batman_battle_for_the_cowl
   variables:
@@ -220,7 +220,7 @@ batman_and_robin:
 
 batman_return_of_bruce_wayne:
   extends: .arc_job
-  stage: final_crisis_era
+  stage: flashpoint_era
   needs:
     - batman_and_robin
     - blackest_night
@@ -317,10 +317,10 @@ sinestro_corps_war:
 
 blackest_night:
   extends: .arc_job
-  stage: final_crisis_era
+  stage: flashpoint_era
   needs:
     - green_lantern_agent_orange
-    - green_lantern_corps_sins_of_the_star_sapphire
+    - green_lantern_corps_emerald_eclipse
     - flash_rebirth
   variables:
     ARC_VAR: READ_BLACKEST_NIGHT
@@ -328,7 +328,7 @@ blackest_night:
 
 brightest_day:
   extends: .arc_job
-  stage: final_crisis_era
+  stage: flashpoint_era
   needs:
     - blackest_night
   variables:
@@ -475,7 +475,7 @@ death_of_the_new_gods:
 
 final_crisis:
   extends: .arc_job
-  stage: final_crisis_era
+  stage: flashpoint_era
   needs:
     - countdown
     - seven_soldiers_of_victory
@@ -488,7 +488,7 @@ final_crisis:
 
 flash_rebirth:
   extends: .arc_job
-  stage: final_crisis_era
+  stage: flashpoint_era
   needs:
     - final_crisis
   variables:
@@ -497,7 +497,7 @@ flash_rebirth:
 
 flash_flashpoint:
   extends: .arc_job
-  stage: final_crisis_era
+  stage: flashpoint_era
   needs:
     - batman_return_of_bruce_wayne
     - brightest_day
@@ -886,7 +886,7 @@ green_lantern_rise_of_the_third_army:
 # Justice League of America: The League That Defeated Itself
 justice_league_of_america_league_that_defeated_itself:
   extends: .arc_job
-  stage: core_timeline
+  stage: crisis_on_infinite_earths_era
   variables:
     ARC_VAR: READ_JUSTICE_LEAGUE_OF_AMERICA_LEAGUE_THAT_DEFEATED_ITSELF
     ARC_NAME: "Justice League of America: The League That Defeated Itself"  
@@ -987,7 +987,7 @@ batman_death_and_the_maidens:
 # Green Lantern: Rage of the Red Lanterns
 green_lantern_rage_of_the_red_lanterns:
   extends: .arc_job
-  stage: final_crisis_era
+  stage:
   needs:
     - sinestro_corps_war
   variables:
@@ -997,7 +997,7 @@ green_lantern_rage_of_the_red_lanterns:
 # Green Lantern Corps: Sins of the Star Sapphire
 green_lantern_corps_sins_of_the_star_sapphire:
   extends: .arc_job
-  stage: final_crisis_era
+  stage: flashpoint_era
   needs:
     - sinestro_corps_war
   variables:
@@ -1007,9 +1007,19 @@ green_lantern_corps_sins_of_the_star_sapphire:
 # Green Lantern: Agent Orange
 green_lantern_agent_orange:
   extends: .arc_job
-  stage: final_crisis_era
+  stage: flashpoint_era
   needs:
     - green_lantern_rage_of_the_red_lanterns
   variables:
     ARC_VAR: READ_GREEN_LANTERN_AGENT_ORANGE
     ARC_NAME: "Green Lantern: Agent Orange"
+
+# Green Lantern Corps: Emerald Eclipse
+green_lantern_corps_emerald_eclipse:
+  extends: .arc_job
+  stage: flashpoint_era
+  needs:
+    - green_lantern_corps_sins_of_the_star_sapphire
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_CORPS_EMERALD_ECLIPSE
+    ARC_NAME: "Green Lantern Corps: Emerald Eclipse"

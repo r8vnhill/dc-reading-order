@@ -253,7 +253,8 @@ flowchart TD
 
     green_lantern_rage_of_the_red_lanterns --> green_lantern_agent_orange["Green Lantern: Agent Orange"]
     green_lantern_agent_orange --> blackest_night["Blackest Night"]
-    green_lantern_corps_sins_of_the_star_sapphire --> blackest_night
+    green_lantern_corps_sins_of_the_star_sapphire --> green_lantern_corps_emerald_eclipse["Green Lantern Corps: Emerald Eclipse"]
+    green_lantern_corps_emerald_eclipse --> blackest_night
     flash_rebirth --> blackest_night
     blackest_night --> brightest_day["Brightest Day"]
     blackest_night --> batman_return_of_bruce_wayne
