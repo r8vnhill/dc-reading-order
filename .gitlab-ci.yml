@@ -168,6 +168,9 @@ batman_face_the_face:
     ARC_VAR: READ_BATMAN_FACE_THE_FACE
     ARC_NAME: "Batman: Face the Face"
 
+## Final Crisis era ##
+
+### Batman branch ###
 batman_and_son:
   extends: .arc_job
   stage: final_crisis_era
@@ -196,6 +199,17 @@ batman_the_black_glove:
   variables:
     ARC_VAR: READ_BATMAN_THE_BLACK_GLOVE
     ARC_NAME: "Batman: The Black Glove"
+
+#### Batman: Heart of Hush ####
+batman_heart_of_hush:
+  extends: .arc_job
+  stage: final_crisis_era
+  needs:
+    - batman_the_black_glove
+    - batman_hush_returns
+  variables:
+    ARC_VAR: READ_BATMAN_HEART_OF_HUSH
+    ARC_NAME: "Batman: Heart of Hush"
 
 batman_rip:
   extends: .arc_job
@@ -1042,14 +1056,3 @@ green_lantern_corps_emerald_eclipse:
   variables:
     ARC_VAR: READ_GREEN_LANTERN_CORPS_EMERALD_ECLIPSE
     ARC_NAME: "Green Lantern Corps: Emerald Eclipse"
-
-# Batman: Heart of Hush
-batman_heart_of_hush:
-  extends: .arc_job
-  stage: final_crisis_era
-  needs:
-    - batman_the_black_glove
-    - batman_hush_returns
-  variables:
-    ARC_VAR: READ_BATMAN_HEART_OF_HUSH
-    ARC_NAME: "Batman: Heart of Hush"
