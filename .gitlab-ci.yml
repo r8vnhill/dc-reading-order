@@ -931,7 +931,7 @@ batman_death_and_the_maidens:
 # Infinite Crisis era
 batman_hush_returns:
   extends: .arc_job
-  stage: infinite_crisis_era
+  stage: post_crisis_era
   needs:
     - batman_hush
   variables:
