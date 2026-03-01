@@ -203,14 +203,15 @@ flowchart TD
   batman_under_the_hood["Batman: Under the Hood"] --> batman_face_the_face
   batman_son_of_the_demon["Batman: Son of the Demon"] --> batman_and_son["Batman and Son"]
   batman_death_and_the_maidens["Batman: Death and the Maidens"] --> batman_resurrection_of_ras_al_ghul["Batman: The Resurrection of Ra's al Ghul"]
+  batman_hush_returns["Batman: Hush Returns"] --> batman_heart_of_hush["Batman: Heart of Hush"]
 
   subgraph sg_final_crisis["Final Crisis"]
     batman_face_the_face --> batman_and_son
     batman_and_son --> batman_resurrection_of_ras_al_ghul
     batman_resurrection_of_ras_al_ghul --> batman_the_black_glove["Batman: The Black Glove"]
-    batman_hush_returns --> batman_heart_of_hush["Batman: Heart of Hush"]
     batman_heart_of_hush --> batman_rip["Batman R.I.P."]
     batman_the_black_glove --> batman_rip
+    batman_the_black_glove --> batman_heart_of_hush
 
     one_year_later --> countdown["Countdown"]
     fifty_two --> countdown
