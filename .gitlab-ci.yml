@@ -256,6 +256,17 @@ batman_and_robin:
     ARC_VAR: READ_BATMAN_AND_ROBIN
     ARC_NAME: "Batman and Robin (1-12)"
 
+#### Batman: Long Shadows ####
+batman_long_shadows:
+  extends: .arc_job
+  stage: flashpoint_era
+  needs:
+    - batman_battle_for_the_cowl
+  variables:
+    ARC_VAR: READ_BATMAN_LONG_SHADOWS
+    ARC_NAME: "Batman: Long Shadows"
+
+#### Batman: Return of Bruce Wayne ####
 batman_return_of_bruce_wayne:
   extends: .arc_job
   stage: flashpoint_era
@@ -264,6 +275,7 @@ batman_return_of_bruce_wayne:
     - batgirl_batgirl_rising
     - blackest_night
     - batman_hush_money
+    - batman_long_shadows
   variables:
     ARC_VAR: READ_BATMAN_RETURN_OF_BRUCE_WAYNE
     ARC_NAME: "Return of Bruce Wayne"
