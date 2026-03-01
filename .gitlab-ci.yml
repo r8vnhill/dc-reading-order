@@ -198,8 +198,9 @@ batman_the_black_glove:
 
 batman_rip:
   extends: .arc_job
-  stage: infinite_crisis_era
+  stage: final_crisis_era
   needs:
+    - batman_heart_of_hush
     - batman_the_black_glove
   variables:
     ARC_VAR: READ_BATMAN_RIP
@@ -1040,3 +1041,14 @@ green_lantern_corps_emerald_eclipse:
   variables:
     ARC_VAR: READ_GREEN_LANTERN_CORPS_EMERALD_ECLIPSE
     ARC_NAME: "Green Lantern Corps: Emerald Eclipse"
+
+# Batman: Heart of Hush
+batman_heart_of_hush:
+  extends: .arc_job
+  stage: final_crisis_era
+  needs:
+    - batman_the_black_glove
+    - batman_hush_returns
+  variables:
+    ARC_VAR: READ_BATMAN_HEART_OF_HUSH
+    ARC_NAME: "Batman: Heart of Hush"

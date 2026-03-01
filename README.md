@@ -208,7 +208,9 @@ flowchart TD
     batman_face_the_face --> batman_and_son
     batman_and_son --> batman_resurrection_of_ras_al_ghul
     batman_resurrection_of_ras_al_ghul --> batman_the_black_glove["Batman: The Black Glove"]
-    batman_the_black_glove --> batman_rip["Batman R.I.P."]
+    batman_hush_returns --> batman_heart_of_hush["Batman: Heart of Hush"]
+    batman_heart_of_hush --> batman_rip["Batman R.I.P."]
+    batman_the_black_glove --> batman_rip
 
     one_year_later --> countdown["Countdown"]
     fifty_two --> countdown
@@ -481,6 +483,7 @@ These are the variables used by the pipeline. Set each one to =1 to approve an a
 - `READ_BATMAN_SON_OF_THE_DEMON`
 - `READ_BATMAN_DEATH_AND_THE_MAIDENS`
 - `READ_BATMAN_HUSH_RETURNS`
+- `READ_BATMAN_HEART_OF_HUSH`
 - `READ_JLA_CRISIS_OF_CONSCIENCE`
 - `READ_GREEN_LANTERN_NO_FEAR`
 - `READ_GREEN_LANTERN_CORPS_RECHARGE`
