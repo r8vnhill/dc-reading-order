@@ -250,8 +250,11 @@ flowchart TD
   subgraph sg_flashpoint["Flashpoint"]
     batman_battle_for_the_cowl --> batman_and_robin["Batman and Robin"]
     batman_battle_for_the_cowl --> batgirl_batgirl_rising["Batgirl: Batgirl Rising"]
-    batman_and_robin --> batman_return_of_bruce_wayne["Return of Bruce Wayne"]
-    batgirl_batgirl_rising --> batman_return_of_bruce_wayne
+    
+    subgraph sg_batman_reborn["Batman Reborn"]
+      batman_and_robin --> batman_return_of_bruce_wayne["Return of Bruce Wayne"]
+      batgirl_batgirl_rising --> batman_return_of_bruce_wayne
+    end
 
     green_lantern_rage_of_the_red_lanterns --> green_lantern_agent_orange["Green Lantern: Agent Orange"]
     green_lantern_agent_orange --> blackest_night["Blackest Night"]
