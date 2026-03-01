@@ -987,7 +987,7 @@ batman_death_and_the_maidens:
 # Green Lantern: Rage of the Red Lanterns
 green_lantern_rage_of_the_red_lanterns:
   extends: .arc_job
-  stage:
+  stage: flashpoint_era
   needs:
     - sinestro_corps_war
   variables:
