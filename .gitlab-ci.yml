@@ -1046,7 +1046,7 @@ green_lantern_corps_emerald_eclipse:
 # Batman: Heart of Hush
 batman_heart_of_hush:
   extends: .arc_job
-  stage: infinite_crisis_era
+  stage: final_crisis_era
   needs:
     - batman_the_black_glove
     - batman_hush_returns
