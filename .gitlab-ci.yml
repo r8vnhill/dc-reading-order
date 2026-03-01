@@ -247,6 +247,7 @@ batman_hush_money:
     ARC_VAR: READ_BATMAN_HUSH_MONEY
     ARC_NAME: "Batman: Hush Money"
 
+#### Batman and Robin: Batman Reborn ####
 batman_and_robin:
   extends: .arc_job
   stage: flashpoint_era
@@ -254,7 +255,7 @@ batman_and_robin:
     - batman_battle_for_the_cowl
   variables:
     ARC_VAR: READ_BATMAN_AND_ROBIN
-    ARC_NAME: "Batman and Robin (1-12)"
+    ARC_NAME: "Batman and Robin: Batman Reborn"
 
 #### Batman: Long Shadows ####
 batman_long_shadows:
@@ -266,6 +267,16 @@ batman_long_shadows:
     ARC_VAR: READ_BATMAN_LONG_SHADOWS
     ARC_NAME: "Batman: Long Shadows"
 
+#### Outsiders: The Deep ####
+outsiders_the_deep:
+  extends: .arc_job
+  stage: flashpoint_era
+  needs:
+    - batman_battle_for_the_cowl
+  variables:
+    ARC_VAR: READ_OUTSIDERS_THE_DEEP
+    ARC_NAME: "Outsiders: The Deep"
+
 #### Batman: Return of Bruce Wayne ####
 batman_return_of_bruce_wayne:
   extends: .arc_job
@@ -276,6 +287,7 @@ batman_return_of_bruce_wayne:
     - blackest_night
     - batman_hush_money
     - batman_long_shadows
+    - outsiders_the_deep
   variables:
     ARC_VAR: READ_BATMAN_RETURN_OF_BRUCE_WAYNE
     ARC_NAME: "Return of Bruce Wayne"
