@@ -223,6 +223,7 @@ batman_return_of_bruce_wayne:
   stage: flashpoint_era
   needs:
     - batman_and_robin
+    - batgirl_batgirl_rising
     - blackest_night
   variables:
     ARC_VAR: READ_BATMAN_RETURN_OF_BRUCE_WAYNE
@@ -1023,3 +1024,13 @@ green_lantern_corps_emerald_eclipse:
   variables:
     ARC_VAR: READ_GREEN_LANTERN_CORPS_EMERALD_ECLIPSE
     ARC_NAME: "Green Lantern Corps: Emerald Eclipse"
+
+# Batgirl: Batgirl Rising
+batgirl_batgirl_rising:
+  extends: .arc_job
+  stage: flashpoint_era
+  needs:
+    - batman_battle_for_the_cowl
+  variables:
+    ARC_VAR: READ_BATGIRL_BATGIRL_RISING
+    ARC_NAME: "Batgirl: Batgirl Rising"
