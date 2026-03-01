@@ -6,6 +6,7 @@ stages:
   - crisis_on_infinite_earths_era
   - post_crisis_era
   - infinite_crisis_era
+  - final_crisis_era
   - flashpoint_era
   - new_52_era
 
@@ -169,7 +170,7 @@ batman_face_the_face:
 
 batman_and_son:
   extends: .arc_job
-  stage: infinite_crisis_era
+  stage: final_crisis_era
   needs:
     - batman_face_the_face
     - batman_son_of_the_demon
@@ -179,7 +180,7 @@ batman_and_son:
 
 batman_resurrection_of_ras_al_ghul:
   extends: .arc_job
-  stage: infinite_crisis_era
+  stage: final_crisis_era
   needs:
     - batman_and_son
     - batman_death_and_the_maidens
@@ -189,7 +190,7 @@ batman_resurrection_of_ras_al_ghul:
 
 batman_the_black_glove:
   extends: .arc_job
-  stage: infinite_crisis_era
+  stage: final_crisis_era
   needs:
     - batman_resurrection_of_ras_al_ghul
   variables:
@@ -1045,7 +1046,7 @@ green_lantern_corps_emerald_eclipse:
 # Batman: Heart of Hush
 batman_heart_of_hush:
   extends: .arc_job
-  stage: final_crisis_era
+  stage: infinite_crisis_era
   needs:
     - batman_the_black_glove
     - batman_hush_returns
