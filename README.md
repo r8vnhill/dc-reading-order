@@ -264,6 +264,7 @@ flowchart TD
     subgraph sg_batman_reborn["Batman Reborn"]
       batman_and_robin
       batgirl_batgirl_rising
+      batman_hush_money
     end
 
     green_lantern_rage_of_the_red_lanterns --> green_lantern_agent_orange["Green Lantern: Agent Orange"]
