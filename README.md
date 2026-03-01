@@ -102,7 +102,6 @@ flowchart TD
   justice_league_of_america_league_that_defeated_itself["Justice League of America: The League That Defeated Itself"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
   crisis_on_multiple_earths["Crisis on Multiple Earths"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
   roots_of_the_swamp_thing["Roots of the Swamp Thing"] --> crisis_on_infinite_earths
-  batman_tales_of_the_demon["Batman: Tales of the Demon"] --> crisis_on_infinite_earths
 ```
 
 ### Infinite Crisis
@@ -259,11 +258,13 @@ flowchart TD
     batman_battle_for_the_cowl --> batman_hush_money["Batman: Hush Money"]
     batman_battle_for_the_cowl --> batman_long_shadows["Batman: Long Shadows"]
     batman_battle_for_the_cowl --> outsiders_the_deep["Outsiders: The Deep"]
+    batman_battle_for_the_cowl --> batwoman_elegy["Batwoman: Elegy"]
     batman_and_robin --> batman_return_of_bruce_wayne["Return of Bruce Wayne"]
     batgirl_batgirl_rising --> batman_return_of_bruce_wayne
     batman_hush_money --> batman_return_of_bruce_wayne
     batman_long_shadows --> batman_return_of_bruce_wayne
     outsiders_the_deep --> batman_return_of_bruce_wayne
+    batwoman_elegy --> batman_return_of_bruce_wayne
 
     subgraph sg_batman_reborn["Batman Reborn"]
       batman_and_robin
@@ -271,6 +272,7 @@ flowchart TD
       batman_hush_money
       batman_long_shadows
       outsiders_the_deep
+      batwoman_elegy
     end
 
     green_lantern_rage_of_the_red_lanterns --> green_lantern_agent_orange["Green Lantern: Agent Orange"]
@@ -423,6 +425,10 @@ These are the variables used by the pipeline. Set each one to =1 to approve an a
 - `READ_BATMAN_RIP`
 - `READ_BATMAN_BATTLE_FOR_THE_COWL`
 - `READ_BATMAN_AND_ROBIN`
+- `READ_BATMAN_HUSH_MONEY`
+- `READ_BATMAN_LONG_SHADOWS`
+- `READ_OUTSIDERS_THE_DEEP`
+- `READ_BATWOMAN_ELEGY`
 - `READ_BATMAN_RETURN_OF_BRUCE_WAYNE`
 - `READ_THE_DEATH_OF_SUPERMAN`
 - `READ_RISE_OF_THE_SUPERMEN`

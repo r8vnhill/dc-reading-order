@@ -277,6 +277,16 @@ outsiders_the_deep:
     ARC_VAR: READ_OUTSIDERS_THE_DEEP
     ARC_NAME: "Outsiders: The Deep"
 
+#### Batwoman: Elegy ####
+batwoman_elegy:
+  extends: .arc_job
+  stage: flashpoint_era
+  needs:
+    - batman_battle_for_the_cowl
+  variables:
+    ARC_VAR: READ_BATWOMAN_ELEGY
+    ARC_NAME: "Batwoman: Elegy"
+
 #### Batman: Return of Bruce Wayne ####
 batman_return_of_bruce_wayne:
   extends: .arc_job
@@ -288,6 +298,7 @@ batman_return_of_bruce_wayne:
     - batman_hush_money
     - batman_long_shadows
     - outsiders_the_deep
+    - batwoman_elegy
   variables:
     ARC_VAR: READ_BATMAN_RETURN_OF_BRUCE_WAYNE
     ARC_NAME: "Return of Bruce Wayne"
