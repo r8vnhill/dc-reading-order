@@ -221,6 +221,11 @@ batman_rip:
     ARC_VAR: READ_BATMAN_RIP
     ARC_NAME: "Batman R.I.P."
 
+## Flashpoint era ##
+
+### Batman branch ###
+
+#### Batman: Battle for the Cowl ####
 batman_battle_for_the_cowl:
   extends: .arc_job
   stage: flashpoint_era
@@ -230,6 +235,17 @@ batman_battle_for_the_cowl:
   variables:
     ARC_VAR: READ_BATMAN_BATTLE_FOR_THE_COWL
     ARC_NAME: "Batman: Battle for the Cowl"
+
+#### Batman: Hush Money ####
+batman_hush_money:
+  extends: .arc_job
+  stage: flashpoint_era
+  needs:
+    - batman_battle_for_the_cowl
+    - batman_heart_of_hush
+  variables:
+    ARC_VAR: READ_BATMAN_HUSH_MONEY
+    ARC_NAME: "Batman: Hush Money"
 
 batman_and_robin:
   extends: .arc_job
@@ -247,6 +263,7 @@ batman_return_of_bruce_wayne:
     - batman_and_robin
     - batgirl_batgirl_rising
     - blackest_night
+    - batman_hush_money
   variables:
     ARC_VAR: READ_BATMAN_RETURN_OF_BRUCE_WAYNE
     ARC_NAME: "Return of Bruce Wayne"
