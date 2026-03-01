@@ -23,7 +23,8 @@ stages:
         exit 1
       fi
 
-# Core timeline
+## Crisis on Infinite Earths era ##
+
 crisis_on_multiple_earths:
   extends: .arc_job
   stage: crisis_on_infinite_earths_era
@@ -49,7 +50,10 @@ crisis_on_infinite_earths:
     ARC_VAR: READ_CRISIS_ON_INFINITE_EARTHS
     ARC_NAME: "Crisis on Infinite Earths"
 
-# Batman branch
+## Post-Crisis era ##
+
+### Batman branch ###
+
 batman_year_one:
   extends: .arc_job
   stage: post_crisis_era
@@ -136,17 +140,19 @@ batman_hush:
   extends: .arc_job
   stage: post_crisis_era
   needs:
-    - batman_a_lonely_place_of_dying
+    - batman_death_and_the_maidens
   variables:
     ARC_VAR: READ_BATMAN_HUSH
     ARC_NAME: "Batman: Hush"
+
+## Infinite Crisis era ##
 
 batman_under_the_hood:
   extends: .arc_job
   stage: infinite_crisis_era
   needs:
     - identity_crisis
-    - batman_hush
+    - batman_hush_returns
   variables:
     ARC_VAR: READ_BATMAN_UNDER_THE_HOOD
     ARC_NAME: "Batman: Under the Hood"
@@ -368,7 +374,7 @@ identity_crisis:
   extends: .arc_job
   stage: post_crisis_era
   needs:
-    - batman_death_and_the_maidens
+    - batman_hush_returns
     - day_of_judgment
     - justice_league_of_america_league_that_defeated_itself
   variables:
@@ -884,78 +890,17 @@ green_lantern_rise_of_the_third_army:
     ARC_VAR: READ_GREEN_LANTERN_RISE_OF_THE_THIRD_ARMY
     ARC_NAME: "Green Lantern: Rise of the Third Army"
 
-# Justice League of America: The League That Defeated Itself
+# Supplementary arcs grouped by era
+
+# Crisis on Infinite Earths era
 justice_league_of_america_league_that_defeated_itself:
   extends: .arc_job
   stage: crisis_on_infinite_earths_era
   variables:
     ARC_VAR: READ_JUSTICE_LEAGUE_OF_AMERICA_LEAGUE_THAT_DEFEATED_ITSELF
-    ARC_NAME: "Justice League of America: The League That Defeated Itself"  
+    ARC_NAME: "Justice League of America: The League That Defeated Itself"
 
-# JLA: Crisis of Conscience
-jla_crisis_of_conscience:
-  extends: .arc_job
-  stage: infinite_crisis_era
-  needs:
-    - identity_crisis
-  variables:
-    ARC_VAR: READ_JLA_CRISIS_OF_CONSCIENCE
-    ARC_NAME: "JLA: Crisis of Conscience"
-
-# Green Lantern: No Fear
-green_lantern_no_fear:
-  extends: .arc_job
-  stage: infinite_crisis_era
-  needs:
-    - green_lantern_secret_origin
-    - one_year_later
-  variables:
-    ARC_VAR: READ_GREEN_LANTERN_NO_FEAR
-    ARC_NAME: "Green Lantern: No Fear"
-
-# Green Lantern Corps: Recharge
-green_lantern_corps_recharge:
-  extends: .arc_job
-  stage: infinite_crisis_era
-  needs:
-    - green_lantern_secret_origin
-    - one_year_later
-  variables:
-    ARC_VAR: READ_GREEN_LANTERN_CORPS_RECHARGE
-    ARC_NAME: "Green Lantern Corps: Recharge"
-
-# Green Lantern: Revenge of the Green Lanterns
-green_lantern_revenge_of_the_green_lanterns:
-  extends: .arc_job
-  stage: infinite_crisis_era
-  needs:
-    - green_lantern_no_fear
-    - green_lantern_corps_recharge
-  variables:
-    ARC_VAR: READ_GREEN_LANTERN_REVENGE_OF_THE_GREEN_LANTERNS
-    ARC_NAME: "Green Lantern: Revenge of the Green Lanterns"
-
-# Wanted: Hal Jordan
-wanted_hal_jordan:
-  extends: .arc_job
-  stage: infinite_crisis_era
-  needs:
-    - green_lantern_revenge_of_the_green_lanterns
-  variables:
-    ARC_VAR: READ_WANTED_HAL_JORDAN
-    ARC_NAME: "Wanted: Hal Jordan"
-
-# Green Lantern: Mystery of the Star Sapphires
-green_lantern_mystery_of_the_star_sapphires:
-  extends: .arc_job
-  stage: infinite_crisis_era
-  needs:
-    - wanted_hal_jordan
-  variables:
-    ARC_VAR: READ_GREEN_LANTERN_MYSTERY_OF_THE_STAR_SAPPHIRES
-    ARC_NAME: "Green Lantern: Mystery of the Star Sapphires"
-
-# Batman: Tales of the Demon
+# Post-Crisis era
 batman_tales_of_the_demon:
   extends: .arc_job
   stage: post_crisis_era
@@ -963,7 +908,6 @@ batman_tales_of_the_demon:
     ARC_VAR: READ_BATMAN_TALES_OF_THE_DEMON
     ARC_NAME: "Batman: Tales of the Demon"
 
-# Batman: Son of the Demon
 batman_son_of_the_demon:
   extends: .arc_job
   stage: post_crisis_era
@@ -974,18 +918,93 @@ batman_son_of_the_demon:
     ARC_VAR: READ_BATMAN_SON_OF_THE_DEMON
     ARC_NAME: "Batman: Son of the Demon"
 
-# Batman: Death and the Maidens
 batman_death_and_the_maidens:
   extends: .arc_job
   stage: post_crisis_era
   needs:
     - batman_son_of_the_demon
-    - batman_hush
+    - batman_a_lonely_place_of_dying
   variables:
     ARC_VAR: READ_BATMAN_DEATH_AND_THE_MAIDENS
     ARC_NAME: "Batman: Death and the Maidens"
 
-# Green Lantern: Rage of the Red Lanterns
+# Infinite Crisis era
+batman_hush_returns:
+  extends: .arc_job
+  stage: infinite_crisis_era
+  needs:
+    - batman_hush
+  variables:
+    ARC_VAR: READ_BATMAN_HUSH_RETURNS
+    ARC_NAME: "Batman: Hush Returns"
+
+jla_crisis_of_conscience:
+  extends: .arc_job
+  stage: infinite_crisis_era
+  needs:
+    - identity_crisis
+  variables:
+    ARC_VAR: READ_JLA_CRISIS_OF_CONSCIENCE
+    ARC_NAME: "JLA: Crisis of Conscience"
+
+green_lantern_no_fear:
+  extends: .arc_job
+  stage: infinite_crisis_era
+  needs:
+    - green_lantern_secret_origin
+    - one_year_later
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_NO_FEAR
+    ARC_NAME: "Green Lantern: No Fear"
+
+green_lantern_corps_recharge:
+  extends: .arc_job
+  stage: infinite_crisis_era
+  needs:
+    - green_lantern_secret_origin
+    - one_year_later
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_CORPS_RECHARGE
+    ARC_NAME: "Green Lantern Corps: Recharge"
+
+green_lantern_revenge_of_the_green_lanterns:
+  extends: .arc_job
+  stage: infinite_crisis_era
+  needs:
+    - green_lantern_no_fear
+    - green_lantern_corps_recharge
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_REVENGE_OF_THE_GREEN_LANTERNS
+    ARC_NAME: "Green Lantern: Revenge of the Green Lanterns"
+
+wanted_hal_jordan:
+  extends: .arc_job
+  stage: infinite_crisis_era
+  needs:
+    - green_lantern_revenge_of_the_green_lanterns
+  variables:
+    ARC_VAR: READ_WANTED_HAL_JORDAN
+    ARC_NAME: "Wanted: Hal Jordan"
+
+green_lantern_mystery_of_the_star_sapphires:
+  extends: .arc_job
+  stage: infinite_crisis_era
+  needs:
+    - wanted_hal_jordan
+  variables:
+    ARC_VAR: READ_GREEN_LANTERN_MYSTERY_OF_THE_STAR_SAPPHIRES
+    ARC_NAME: "Green Lantern: Mystery of the Star Sapphires"
+
+# Flashpoint era
+batgirl_batgirl_rising:
+  extends: .arc_job
+  stage: flashpoint_era
+  needs:
+    - batman_battle_for_the_cowl
+  variables:
+    ARC_VAR: READ_BATGIRL_BATGIRL_RISING
+    ARC_NAME: "Batgirl: Batgirl Rising"
+
 green_lantern_rage_of_the_red_lanterns:
   extends: .arc_job
   stage: flashpoint_era
@@ -995,7 +1014,6 @@ green_lantern_rage_of_the_red_lanterns:
     ARC_VAR: READ_GREEN_LANTERN_RAGE_OF_THE_RED_LANTERNS
     ARC_NAME: "Green Lantern: Rage of the Red Lanterns"
 
-# Green Lantern Corps: Sins of the Star Sapphire
 green_lantern_corps_sins_of_the_star_sapphire:
   extends: .arc_job
   stage: flashpoint_era
@@ -1005,7 +1023,6 @@ green_lantern_corps_sins_of_the_star_sapphire:
     ARC_VAR: READ_GREEN_LANTERN_CORPS_SINS_OF_THE_STAR_SAPPHIRE
     ARC_NAME: "Green Lantern Corps: Sins of the Star Sapphire"
 
-# Green Lantern: Agent Orange
 green_lantern_agent_orange:
   extends: .arc_job
   stage: flashpoint_era
@@ -1015,7 +1032,6 @@ green_lantern_agent_orange:
     ARC_VAR: READ_GREEN_LANTERN_AGENT_ORANGE
     ARC_NAME: "Green Lantern: Agent Orange"
 
-# Green Lantern Corps: Emerald Eclipse
 green_lantern_corps_emerald_eclipse:
   extends: .arc_job
   stage: flashpoint_era
@@ -1024,13 +1040,3 @@ green_lantern_corps_emerald_eclipse:
   variables:
     ARC_VAR: READ_GREEN_LANTERN_CORPS_EMERALD_ECLIPSE
     ARC_NAME: "Green Lantern Corps: Emerald Eclipse"
-
-# Batgirl: Batgirl Rising
-batgirl_batgirl_rising:
-  extends: .arc_job
-  stage: flashpoint_era
-  needs:
-    - batman_battle_for_the_cowl
-  variables:
-    ARC_VAR: READ_BATGIRL_BATGIRL_RISING
-    ARC_NAME: "Batgirl: Batgirl Rising"
