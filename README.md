@@ -287,10 +287,12 @@ flowchart TD
     flash_rebirth --> blackest_night
     blackest_night --> brightest_day["Brightest Day"]
     blackest_night --> batman_return_of_bruce_wayne
+    blackest_night --> flash_dastardly_death_of_the_rogues["Flash: The Dastardly Death of the Rogues"]
+    flash_rebirth --> flash_dastardly_death_of_the_rogues
 
     batman_return_of_bruce_wayne --> flash_flashpoint["Flash: Flashpoint"]
     brightest_day --> flash_flashpoint
-    flash_rebirth --> flash_flashpoint
+    flash_dastardly_death_of_the_rogues --> flash_flashpoint
   end
 ```
 

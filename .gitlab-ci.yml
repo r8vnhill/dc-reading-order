@@ -432,6 +432,29 @@ brightest_day:
     ARC_VAR: READ_BRIGHTEST_DAY
     ARC_NAME: "Brightest Day"
 
+### The Flash branch ###
+
+#### The Flash: Rebirth ####
+flash_rebirth:
+  extends: .arc_job
+  stage: flashpoint_era
+  needs:
+    - final_crisis
+  variables:
+    ARC_VAR: READ_FLASH_REBIRTH
+    ARC_NAME: "The Flash: Rebirth"
+
+#### The Flash: The Dastardly Death of the Rogues ####
+flash_dastardly_death_of_the_rogues:
+  extends: .arc_job
+  stage: flashpoint_era
+  needs:
+    - flash_rebirth
+    - blackest_night
+  variables:
+    ARC_VAR: READ_FLASH_DASTARDLY_DEATH_OF_THE_ROGUES
+    ARC_NAME: "The Flash: The Dastardly Death of the Rogues"
+
 # Event spine
 zero_hour:
   extends: .arc_job
@@ -583,22 +606,13 @@ final_crisis:
     ARC_VAR: READ_FINAL_CRISIS
     ARC_NAME: "Final Crisis"
 
-flash_rebirth:
-  extends: .arc_job
-  stage: flashpoint_era
-  needs:
-    - final_crisis
-  variables:
-    ARC_VAR: READ_FLASH_REBIRTH
-    ARC_NAME: "The Flash: Rebirth"
-
 flash_flashpoint:
   extends: .arc_job
   stage: flashpoint_era
   needs:
     - batman_return_of_bruce_wayne
     - brightest_day
-    - flash_rebirth
+    - flash_dastardly_death_of_the_rogues
   variables:
     ARC_VAR: READ_FLASH_FLASHPOINT
     ARC_NAME: "Flash: Flashpoint"
