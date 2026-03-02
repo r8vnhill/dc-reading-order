@@ -30,7 +30,6 @@ Each arc is represented by a pipeline job, and reading-order arrows are modeled 
   - [How to mark arcs as read](#how-to-mark-arcs-as-read)
   - [Quick example](#quick-example)
   - [Recommended workflow](#recommended-workflow)
-  - [Reading variables](#reading-variables)
   - [Additional Information](#additional-information)
     - [What's included in this reading order?](#whats-included-in-this-reading-order)
       - [Batman](#batman)
@@ -259,12 +258,16 @@ flowchart TD
     batman_battle_for_the_cowl --> batman_long_shadows["Batman: Long Shadows"]
     batman_battle_for_the_cowl --> outsiders_the_deep["Outsiders: The Deep"]
     batman_battle_for_the_cowl --> batwoman_elegy["Batwoman: Elegy"]
+    batman_battle_for_the_cowl --> red_robin_the_grail["Red Robin: The Grail"]
+    batman_battle_for_the_cowl --> gotham_city_sirens_union["Gotham City Sirens: Union"]
     batman_and_robin --> batman_return_of_bruce_wayne["Return of Bruce Wayne"]
     batgirl_batgirl_rising --> batman_return_of_bruce_wayne
     batman_hush_money --> batman_return_of_bruce_wayne
     batman_long_shadows --> batman_return_of_bruce_wayne
     outsiders_the_deep --> batman_return_of_bruce_wayne
     batwoman_elegy --> batman_return_of_bruce_wayne
+    red_robin_the_grail --> batman_return_of_bruce_wayne
+    gotham_city_sirens_union --> batman_return_of_bruce_wayne
 
     subgraph sg_batman_reborn["Batman Reborn"]
       batman_and_robin
@@ -273,6 +276,8 @@ flowchart TD
       batman_long_shadows
       outsiders_the_deep
       batwoman_elegy
+      red_robin_the_grail
+      gotham_city_sirens_union
     end
 
     green_lantern_rage_of_the_red_lanterns --> green_lantern_agent_orange["Green Lantern: Agent Orange"]
@@ -398,120 +403,6 @@ When you run the pipeline:
 2. Every time you finish an arc, add its `READ_*` variable in the next run.
 3. Repeat until you complete the full path.
 
-----
-
-## Reading variables
-
-These are the variables used by the pipeline. Set each one to =1 to approve an arc:
-
-- `READ_CRISIS_ON_MULTIPLE_EARTHS`
-- `READ_ROOTS_OF_THE_SWAMP_THING`
-- `READ_CRISIS_ON_INFINITE_EARTHS`
-- `READ_BATMAN_YEAR_ONE`
-- `READ_BATMAN_HAUNTED_KNIGHT`
-- `READ_BATMAN_THE_LONG_HALLOWEEN`
-- `READ_BATMAN_DARK_VICTORY`
-- `READ_BATMAN_THE_KILLING_JOKE`
-- `READ_ARKHAM_ASYLUM_SERIOUS_HOUSE`
-- `READ_BATMAN_GOTHIC`
-- `READ_BATMAN_A_DEATH_IN_THE_FAMILY`
-- `READ_BATMAN_A_LONELY_PLACE_OF_DYING`
-- `READ_BATMAN_HUSH`
-- `READ_BATMAN_UNDER_THE_HOOD`
-- `READ_BATMAN_FACE_THE_FACE`
-- `READ_BATMAN_AND_SON`
-- `READ_BATMAN_RESURRECTION_OF_RAS_AL_GHUL`
-- `READ_BATMAN_THE_BLACK_GLOVE`
-- `READ_BATMAN_RIP`
-- `READ_BATMAN_BATTLE_FOR_THE_COWL`
-- `READ_BATMAN_AND_ROBIN`
-- `READ_BATMAN_HUSH_MONEY`
-- `READ_BATMAN_LONG_SHADOWS`
-- `READ_OUTSIDERS_THE_DEEP`
-- `READ_BATWOMAN_ELEGY`
-- `READ_BATMAN_RETURN_OF_BRUCE_WAYNE`
-- `READ_THE_DEATH_OF_SUPERMAN`
-- `READ_RISE_OF_THE_SUPERMEN`
-- `READ_THE_RETURN_OF_SUPERMAN`
-- `READ_GREEN_LANTERN_EMERALD_DAWN`
-- `READ_GREEN_LANTERN_EMERALD_TWILIGHT`
-- `READ_GREEN_LANTERN_A_NEW_DAWN`
-- `READ_GREEN_LANTERN_REBIRTH`
-- `READ_GREEN_LANTERN_SECRET_ORIGIN`
-- `READ_SINESTRO_CORPS_WAR`
-- `READ_BLACKEST_NIGHT`
-- `READ_BRIGHTEST_DAY`
-- `READ_ZERO_HOUR`
-- `READ_THE_FINAL_NIGHT`
-- `READ_DAY_OF_JUDGMENT`
-- `READ_IDENTITY_CRISIS`
-- `READ_VILLAINS_UNITED`
-- `READ_OMAC_PROJECT`
-- `READ_DAY_OF_VENGEANCE`
-- `READ_RANN_THANAGAR_WAR`
-- `READ_INFINITE_CRISIS`
-- `READ_ONE_YEAR_LATER`
-- `READ_52`
-- `READ_COUNTDOWN`
-- `READ_SEVEN_SOLDIERS_OF_VICTORY`
-- `READ_DEATH_OF_THE_NEW_GODS`
-- `READ_FINAL_CRISIS`
-- `READ_FLASH_REBIRTH`
-- `READ_FLASH_FLASHPOINT`
-- `READ_SAGA_OF_THE_SWAMP_THING`
-- `READ_SWAMP_THING_LOVE_AND_DEATH`
-- `READ_SWAMP_THING_THE_CURSE`
-- `READ_SWAMP_THING_A_MURDER_OF_CROWS`
-- `READ_SWAMP_THING_EARTH_TO_EARTH`
-- `READ_SWAMP_THING_REUNION`
-- `READ_SWAMP_THING_BY_BRIAN_K_VAUGHAN`
-- `READ_SWAMP_THING_RAISE_THEM_BONES`
-- `READ_GRANT_MORRISONS_ANIMAL_MAN`
-- `READ_ANIMAL_MAN_THE_HUNT`
-- `READ_ANIMAL_MAN_ANIMAL_VS_MAN`
-- `READ_SWAMP_THING_FAMILY_TREE`
-- `READ_SWAMP_THING_ROTWORLD_GREEN_KINGDOM`
-- `READ_ANIMAL_MAN_ROTWORLD_RED_KINGDOM`
-- `READ_AQUAMAN_THE_TRENCH`
-- `READ_AQUAMAN_THE_OTHERS`
-- `READ_JUSTICE_LEAGUE_ORIGIN`
-- `READ_JUSTICE_LEAGUE_VILLAINS_JOURNEY`
-- `READ_THRONE_OF_ATLANTIS`
-- `READ_AQUAMAN_DEATH_OF_A_KING`
-- `READ_JUSTICE_LEAGUE_OF_AMERICA_WORLDS_MOST_DANGEROUS`
-- `READ_TRINITY_WAR`
-- `READ_FOREVER_EVIL`
-- `READ_JUSTICE_LEAGUE_INJUSTICE_LEAGUE`
-- `READ_JUSTICE_LEAGUE_DARKSEID_WAR`
-- `READ_BATMAN_COURT_OF_OWLS`
-- `READ_BATMAN_NIGHT_OF_THE_OWLS`
-- `READ_BATMAN_DEATH_OF_THE_FAMILY`
-- `READ_BATMAN_ZERO_YEAR`
-- `READ_BATMAN_AND_ROBIN_BORN_TO_KILL`
-- `READ_BATMAN_REQUIEM`
-- `READ_BATMAN_FACES_OF_DEATH`
-- `READ_BATMAN_ENDGAME`
-- `READ_BATMAN_SUPERHEAVY`
-- `READ_GREEN_LANTERN_SINESTRO`
-- `READ_GREEN_LANTERN_REVENGE_OF_THE_BLACK_HAND`
-- `READ_GREEN_LANTERN_RISE_OF_THE_THIRD_ARMY`
-- `READ_JUSTICE_LEAGUE_OF_AMERICA_LEAGUE_THAT_DEFEATED_ITSELF`
-- `READ_BATMAN_TALES_OF_THE_DEMON`
-- `READ_BATMAN_SON_OF_THE_DEMON`
-- `READ_BATMAN_DEATH_AND_THE_MAIDENS`
-- `READ_BATMAN_HUSH_RETURNS`
-- `READ_BATMAN_HEART_OF_HUSH`
-- `READ_JLA_CRISIS_OF_CONSCIENCE`
-- `READ_GREEN_LANTERN_NO_FEAR`
-- `READ_GREEN_LANTERN_CORPS_RECHARGE`
-- `READ_GREEN_LANTERN_REVENGE_OF_THE_GREEN_LANTERNS`
-- `READ_WANTED_HAL_JORDAN`
-- `READ_GREEN_LANTERN_MYSTERY_OF_THE_STAR_SAPPHIRES`
-- `READ_BATGIRL_BATGIRL_RISING`
-- `READ_GREEN_LANTERN_RAGE_OF_THE_RED_LANTERNS`
-- `READ_GREEN_LANTERN_CORPS_SINS_OF_THE_STAR_SAPPHIRE`
-- `READ_GREEN_LANTERN_AGENT_ORANGE`
-- `READ_GREEN_LANTERN_CORPS_EMERALD_ECLIPSE`
 ----
 
 ## Additional Information
