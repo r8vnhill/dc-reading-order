@@ -100,7 +100,16 @@ READ_CRISIS_ON_MULTIPLE_EARTHS=1
 flowchart TD
   justice_league_of_america_league_that_defeated_itself["Justice League of America: The League That Defeated Itself"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
   crisis_on_multiple_earths["Crisis on Multiple Earths"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
-  roots_of_the_swamp_thing["Roots of the Swamp Thing"] --> crisis_on_infinite_earths
+  roots_of_the_swamp_thing["Roots of the Swamp Thing"] --> saga_of_the_swamp_thing["Saga of the Swamp Thing"]
+  saga_of_the_swamp_thing --> swamp_thing_love_and_death["Swamp Thing: Love and Death"]
+  swamp_thing_love_and_death --> swamp_thing_the_curse["Swamp Thing: The Curse"]
+  swamp_thing_the_curse --> swamp_thing_a_murder_of_crows["Swamp Thing: A Murder of Crows"]
+  swamp_thing_earth_to_earth --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
+
+  subgraph sg_crisis_on_infinite_earths["Crisis on Infinite Earths"]
+    crisis_on_infinite_earths --> swamp_thing_earth_to_earth
+    swamp_thing_earth_to_earth
+  end
 ```
 
 ### Infinite Crisis
@@ -111,19 +120,24 @@ flowchart TD
   crisis_on_infinite_earths --> batman_year_one["Batman: Year One"]
   crisis_on_infinite_earths --> the_death_of_superman["The Death of Superman"]
   crisis_on_infinite_earths --> green_lantern_emerald_dawn["Green Lantern: Emerald Dawn"]
-  crisis_on_infinite_earths --> saga_of_the_swamp_thing
+  crisis_on_infinite_earths --> swamp_thing_by_brian_k_vaughan["Swamp Thing by Brian K. Vaughan"]
   crisis_on_infinite_earths --> grant_morrisons_animal_man["Grant Morrison's Animal Man"]
-
-  roots_of_the_swamp_thing["Roots of the Swamp Thing"] --> saga_of_the_swamp_thing["Saga of the Swamp Thing"]
 
   justice_league_of_america_league_that_defeated_itself["Justice League of America: The League That Defeated Itself"] --> identity_crisis["Identity Crisis"]
   batman_tales_of_the_demon["Batman: Tales of the Demon"] --> batman_son_of_the_demon["Batman: Son of the Demon"]
   batman_son_of_the_demon --> batman_death_and_the_maidens["Batman: Death and the Maidens"]
 
+  swamp_thing_reunion --> swamp_thing_by_brian_k_vaughan["Swamp Thing by Brian K. Vaughan"]
+
+  swamp_thing_a_murder_of_crows["Swamp Thing: A Murder of Crows"] --> swamp_thing_earth_to_earth["Swamp Thing: Earth to Earth"]
+  crisis_on_infinite_earths --> swamp_thing_earth_to_earth
+  
   subgraph sg_infinite_crisis["Infinite Crisis"]
     the_death_of_superman
     green_lantern_emerald_dawn
     grant_morrisons_animal_man
+
+    swamp_thing_earth_to_earth --> swamp_thing_reunion["Swamp Thing: Reunion"]
 
     batman_year_one --> batman_son_of_the_demon
     batman_son_of_the_demon --> batman_haunted_knight["Batman: Haunted Knight"]
@@ -150,13 +164,8 @@ flowchart TD
     zero_hour --> the_final_night["The Final Night"]
     the_final_night --> day_of_judgment["Day of Judgment"]
 
-    saga_of_the_swamp_thing --> swamp_thing_love_and_death["Swamp Thing: Love and Death"]
-    swamp_thing_love_and_death --> swamp_thing_the_curse["Swamp Thing: The Curse"]
-    swamp_thing_the_curse --> swamp_thing_a_murder_of_crows["Swamp Thing: A Murder of Crows"]
-    swamp_thing_a_murder_of_crows --> swamp_thing_earth_to_earth["Swamp Thing: Earth to Earth"]
-    swamp_thing_earth_to_earth --> swamp_thing_reunion["Swamp Thing: Reunion"]
-    swamp_thing_reunion --> swamp_thing_by_brian_k_vaughan["Swamp Thing by Brian K. Vaughan"]
-
+    swamp_thing_by_brian_k_vaughan
+    
     batman_hush_returns --> identity_crisis
 
     day_of_judgment --> identity_crisis
@@ -434,6 +443,7 @@ This pipeline extends beyond the core Crisis events with carefully selected stor
 #### Swamp Thing & Animal Man
 
 - Alan Moore era: Roots, Saga of the Swamp Thing, Love and Death, The Curse, A Murder of Crows, Earth to Earth, Reunion
+  - Note: `Swamp Thing (1982) #46`, collected in `Swamp Thing: A Murder of Crows`, is a `Crisis on Infinite Earths` crossover. Most of the heroes appearing in the issue are cameo appearances only, and its events run concurrently with `Crisis on Infinite Earths #5`.
 - Morrison's Animal Man
 - Modern: Swamp Thing by Brian K. Vaughan
 - New 52: Raise Them Bones, The Hunt, Animal vs. Man, Family Tree, both Rotworld crossovers

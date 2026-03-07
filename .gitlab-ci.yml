@@ -40,12 +40,48 @@ roots_of_the_swamp_thing:
     ARC_VAR: READ_ROOTS_OF_THE_SWAMP_THING
     ARC_NAME: "Roots of the Swamp Thing"
 
+saga_of_the_swamp_thing:
+  extends: .arc_job
+  stage: crisis_on_infinite_earths_era
+  needs:
+    - roots_of_the_swamp_thing
+  variables:
+    ARC_VAR: READ_SAGA_OF_THE_SWAMP_THING
+    ARC_NAME: "Saga of the Swamp Thing"
+
+swamp_thing_love_and_death:
+  extends: .arc_job
+  stage: crisis_on_infinite_earths_era
+  needs:
+    - saga_of_the_swamp_thing
+  variables:
+    ARC_VAR: READ_SWAMP_THING_LOVE_AND_DEATH
+    ARC_NAME: "Swamp Thing: Love and Death"
+
+swamp_thing_the_curse:
+  extends: .arc_job
+  stage: crisis_on_infinite_earths_era
+  needs:
+    - swamp_thing_love_and_death
+  variables:
+    ARC_VAR: READ_SWAMP_THING_THE_CURSE
+    ARC_NAME: "Swamp Thing: The Curse"
+
+swamp_thing_a_murder_of_crows:
+  extends: .arc_job
+  stage: crisis_on_infinite_earths_era
+  needs:
+    - swamp_thing_the_curse
+  variables:
+    ARC_VAR: READ_SWAMP_THING_A_MURDER_OF_CROWS
+    ARC_NAME: "Swamp Thing: A Murder of Crows"
+
 crisis_on_infinite_earths:
   extends: .arc_job
   stage: crisis_on_infinite_earths_era
   needs:
     - crisis_on_multiple_earths
-    - roots_of_the_swamp_thing
+    - swamp_thing_the curse
     - justice_league_of_america_league_that_defeated_itself
   variables:
     ARC_VAR: READ_CRISIS_ON_INFINITE_EARTHS
@@ -167,6 +203,27 @@ batman_face_the_face:
   variables:
     ARC_VAR: READ_BATMAN_FACE_THE_FACE
     ARC_NAME: "Batman: Face the Face"
+
+### Swamp Thing Branch ###
+
+swamp_thing_earth_to_earth:
+  extends: .arc_job
+  stage: infinite_crisis_era
+  needs:
+    - swamp_thing_a_murder_of_crows
+    - crisis_on_infinite_earths
+  variables:
+    ARC_VAR: READ_SWAMP_THING_EARTH_TO_EARTH
+    ARC_NAME: "Swamp Thing: Earth to Earth"
+
+swamp_thing_reunion:
+  extends: .arc_job
+  stage: infinite_crisis_era
+  needs:
+    - swamp_thing_earth_to_earth
+  variables:
+    ARC_VAR: READ_SWAMP_THING_REUNION
+    ARC_NAME: "Swamp Thing: Reunion"
 
 ## Final Crisis era ##
 
@@ -616,62 +673,6 @@ flash_flashpoint:
   variables:
     ARC_VAR: READ_FLASH_FLASHPOINT
     ARC_NAME: "Flash: Flashpoint"
-
-# Swamp Thing branch
-saga_of_the_swamp_thing:
-  extends: .arc_job
-  stage: post_crisis_era
-  needs:
-    - crisis_on_infinite_earths
-    - roots_of_the_swamp_thing
-  variables:
-    ARC_VAR: READ_SAGA_OF_THE_SWAMP_THING
-    ARC_NAME: "Saga of the Swamp Thing"
-
-swamp_thing_love_and_death:
-  extends: .arc_job
-  stage: post_crisis_era
-  needs:
-    - saga_of_the_swamp_thing
-  variables:
-    ARC_VAR: READ_SWAMP_THING_LOVE_AND_DEATH
-    ARC_NAME: "Swamp Thing: Love and Death"
-
-swamp_thing_the_curse:
-  extends: .arc_job
-  stage: post_crisis_era
-  needs:
-    - swamp_thing_love_and_death
-  variables:
-    ARC_VAR: READ_SWAMP_THING_THE_CURSE
-    ARC_NAME: "Swamp Thing: The Curse"
-
-swamp_thing_a_murder_of_crows:
-  extends: .arc_job
-  stage: post_crisis_era
-  needs:
-    - swamp_thing_the_curse
-  variables:
-    ARC_VAR: READ_SWAMP_THING_A_MURDER_OF_CROWS
-    ARC_NAME: "Swamp Thing: A Murder of Crows"
-
-swamp_thing_earth_to_earth:
-  extends: .arc_job
-  stage: post_crisis_era
-  needs:
-    - swamp_thing_a_murder_of_crows
-  variables:
-    ARC_VAR: READ_SWAMP_THING_EARTH_TO_EARTH
-    ARC_NAME: "Swamp Thing: Earth to Earth"
-
-swamp_thing_reunion:
-  extends: .arc_job
-  stage: post_crisis_era
-  needs:
-    - swamp_thing_earth_to_earth
-  variables:
-    ARC_VAR: READ_SWAMP_THING_REUNION
-    ARC_NAME: "Swamp Thing: Reunion"
 
 swamp_thing_by_brian_k_vaughan:
   extends: .arc_job
