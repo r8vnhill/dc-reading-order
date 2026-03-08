@@ -120,7 +120,7 @@ flowchart TD
   crisis_on_infinite_earths --> batman_year_one["Batman: Year One"]
   crisis_on_infinite_earths --> the_death_of_superman["The Death of Superman"]
   crisis_on_infinite_earths --> green_lantern_emerald_dawn["Green Lantern: Emerald Dawn"]
-  crisis_on_infinite_earths --> swamp_thing_by_brian_k_vaughan["Swamp Thing by Brian K. Vaughan"]
+  crisis_on_infinite_earths --> swamp_thing_reunion["Swamp Thing: Reunion"]
   crisis_on_infinite_earths --> grant_morrisons_animal_man["Grant Morrison's Animal Man"]
 
   justice_league_of_america_league_that_defeated_itself["Justice League of America: The League That Defeated Itself"] --> identity_crisis["Identity Crisis"]
@@ -131,7 +131,7 @@ flowchart TD
 
   swamp_thing_a_murder_of_crows["Swamp Thing: A Murder of Crows"] --> swamp_thing_earth_to_earth["Swamp Thing: Earth to Earth"]
   crisis_on_infinite_earths --> swamp_thing_earth_to_earth
-  
+
   subgraph sg_infinite_crisis["Infinite Crisis"]
     the_death_of_superman
     green_lantern_emerald_dawn
