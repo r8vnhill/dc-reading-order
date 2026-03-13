@@ -105,6 +105,7 @@ flowchart TD
   saga_of_the_swamp_thing --> swamp_thing_love_and_death["Swamp Thing: Love and Death"]
   swamp_thing_love_and_death --> swamp_thing_the_curse["Swamp Thing: The Curse"]
   swamp_thing_the_curse --> swamp_thing_a_murder_of_crows["Swamp Thing: A Murder of Crows"]
+  swamp_thing_a_murder_of_crows --> swamp_thing_earth_to_earth["Swamp Thing: Earth to Earth"]
   swamp_thing_earth_to_earth --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
 
   subgraph sg_crisis_on_infinite_earths["Crisis on Infinite Earths"]
