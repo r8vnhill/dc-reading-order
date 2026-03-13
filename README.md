@@ -100,6 +100,7 @@ READ_CRISIS_ON_MULTIPLE_EARTHS=1
 flowchart TD
   justice_league_of_america_league_that_defeated_itself["Justice League of America: The League That Defeated Itself"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
   crisis_on_multiple_earths["Crisis on Multiple Earths"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
+  jack_kirbys_fourth_world["Jack Kirby's Fourth World"] --> crisis_on_infinite_earths["Crisis on Infinite Earths"]
   roots_of_the_swamp_thing["Roots of the Swamp Thing"] --> saga_of_the_swamp_thing["Saga of the Swamp Thing"]
   saga_of_the_swamp_thing --> swamp_thing_love_and_death["Swamp Thing: Love and Death"]
   swamp_thing_love_and_death --> swamp_thing_the_curse["Swamp Thing: The Curse"]
@@ -226,6 +227,7 @@ flowchart TD
     one_year_later --> seven_soldiers_of_victory["Seven Soldiers of Victory"]
     fifty_two --> seven_soldiers_of_victory
 
+    jack_kirbys_fourth_world["Jack Kirby's Fourth World"] --> death_of_the_new_gods["Death of the New Gods"]
     fifty_two --> death_of_the_new_gods["Death of the New Gods"]
 
     fifty_two --> sinestro_corps_war["Sinestro Corps War"]
@@ -397,6 +399,7 @@ Prerequisite: a GitLab Runner with tag `local` must be online, otherwise jobs st
 If you already read the first three arcs:
 
 - `READ_CRISIS_ON_MULTIPLE_EARTHS=1`
+- `READ_JACK_KIRBYS_FOURTH_WORLD=1`
 - `READ_JUSTICE_LEAGUE_OF_AMERICA_LEAGUE_THAT_DEFEATED_ITSELF=1`
 - `READ_CRISIS_ON_INFINITE_EARTHS=1`
 
@@ -456,9 +459,11 @@ This pipeline extends beyond the core Crisis events with carefully selected stor
 #### Major Events (convergence points)
 
 - Crisis on Multiple Earths → Crisis on Infinite Earths
+- Jack Kirby's Fourth World → Crisis on Infinite Earths
 - Zero Hour → The Final Night → Day of Judgment → Identity Crisis
 - Countdown to Infinite Crisis — JLA: Crisis of Conscience, Villains United, OMAC Project, Day of Vengeance, Rann-Thanagar War
 - Infinite Crisis → 52 & One Year Later → Seven Soldiers of Victory
+- Jack Kirby's Fourth World → Death of the New Gods
 - Death of the New Gods → Final Crisis
 - The Flash: Rebirth → Flashpoint (reboot)
 - Trinity War → Forever Evil
