@@ -213,8 +213,10 @@ flowchart TD
   batman_son_of_the_demon["Batman: Son of the Demon"] --> batman_and_son["Batman and Son"]
   batman_death_and_the_maidens["Batman: Death and the Maidens"] --> batman_resurrection_of_ras_al_ghul["Batman: The Resurrection of Ra's al Ghul"]
   batman_hush_returns["Batman: Hush Returns"] --> batman_heart_of_hush["Batman: Heart of Hush"]
+  jack_kirbys_fourth_world["Jack Kirby's Fourth World"] --> death_of_the_new_gods["Death of the New Gods"]
 
   subgraph sg_final_crisis["Final Crisis"]
+    death_of_the_new_gods
     batman_face_the_face --> batman_and_son
     batman_and_son --> batman_resurrection_of_ras_al_ghul
     batman_resurrection_of_ras_al_ghul --> batman_the_black_glove["Batman: The Black Glove"]
@@ -228,7 +230,6 @@ flowchart TD
     one_year_later --> seven_soldiers_of_victory["Seven Soldiers of Victory"]
     fifty_two --> seven_soldiers_of_victory
 
-    jack_kirbys_fourth_world["Jack Kirby's Fourth World"] --> death_of_the_new_gods["Death of the New Gods"]
     fifty_two --> death_of_the_new_gods["Death of the New Gods"]
 
     fifty_two --> sinestro_corps_war["Sinestro Corps War"]
